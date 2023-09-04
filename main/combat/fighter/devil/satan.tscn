@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://d6bu0brqyk6j"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_ybxj4"]
+[ext_resource type="Texture2D" uid="uid://cme4ylscao65e" path="res://main/combat/fighter/devil/devil_sprite.png" id="2_71fum"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_onv0m"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_eckut"]
+[ext_resource type="PackedScene" uid="uid://b8v6wvpyx7yag" path="res://main/combat/effect/physical/physical_blood.tscn" id="5_eqoik"]
+
+[sub_resource type="Resource" id="Resource_yj67q"]
+script = ExtResource("3_onv0m")
+max_hp = 160
+max_sp = 0
+hp = 160
+sp = 0
+atk = 7
+def = 7
+agi = 7
+ex = 500
+level = 11
+hp_growth = 0
+sp_growth = 0
+
+[node name="Satan" instance=ExtResource("1_ybxj4")]
+texture = ExtResource("2_71fum")
+display_name = "satan"
+stats = SubResource("Resource_yj67q")
+
+[node name="Attack" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_eckut")
+power = 8.0
+display_name = "heart rip"
+attack_description = "%s ripped your heart out!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_eqoik")
+
+[node name="Attack2" type="Node" parent="Actions" index="1"]
+script = ExtResource("4_eckut")
+power = 5.0
+display_name = "sweep"
+attack_description = "%s swept your party!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("5_eqoik")

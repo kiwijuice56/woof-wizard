@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb68ybhqtq88d"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_jcdqp"]
+[ext_resource type="Texture2D" uid="uid://cpov8ll0f1m8i" path="res://main/combat/fighter/ball/ball4.png" id="2_f2itv"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_1kgwx"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_k27xg"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="5_h3wgs"]
+
+[sub_resource type="Resource" id="Resource_2iuhh"]
+script = ExtResource("3_1kgwx")
+max_hp = 16
+max_sp = 0
+hp = 16
+sp = 0
+atk = 6
+def = 4
+agi = 1
+ex = 6
+level = 5
+hp_growth = 0
+sp_growth = 0
+
+[node name="HiBall" instance=ExtResource("1_jcdqp")]
+texture = ExtResource("2_f2itv")
+display_name = "hi ball"
+stats = SubResource("Resource_2iuhh")
+
+[node name="Kick" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_k27xg")
+power = 4.0
+attack_description = "%s did a badass kick!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_h3wgs")

@@ -1,0 +1,204 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhqoftydhu0ql"]
+
+[ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="1_517me"]
+[ext_resource type="Texture2D" uid="uid://bsk63unkr3ffi" path="res://main/asset/text_box/flicker_triangle.png" id="2_kaskh"]
+[ext_resource type="Script" path="res://main/overworld/ui/overworld_interface.gd" id="2_nux8d"]
+[ext_resource type="PackedScene" uid="uid://c7wnw8nhx1s5l" path="res://main/overworld/ui/party_member_button/party_member_button.tscn" id="4_5cew2"]
+[ext_resource type="Texture2D" uid="uid://4tuqkl2hkaop" path="res://main/overworld/ui/party_icon/active_indicator.png" id="4_t17dr"]
+[ext_resource type="PackedScene" uid="uid://dg3rgtp3o6qu8" path="res://main/overworld/ui/status_container/status_container.tscn" id="6_2bp5s"]
+[ext_resource type="PackedScene" uid="uid://cqgywepo0u2vg" path="res://main/overworld/ui/item_container/item_container.tscn" id="7_vhnrh"]
+[ext_resource type="Script" path="res://main/overworld/ui/item_container/item_container.gd" id="8_r1070"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6c0q"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.509804, 0.392157, 0.505882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tls1n"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.509804, 0.392157, 0.505882, 1)
+
+[node name="OverworldInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_517me")
+script = ExtResource("2_nux8d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Menu" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w6c0q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="ChoiceIconContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="ChoiceIconA" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/ChoiceIconContainer"]
+layout_mode = 2
+texture = ExtResource("2_kaskh")
+stretch_mode = 2
+
+[node name="ChoiceIconA2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/ChoiceIconContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_kaskh")
+stretch_mode = 2
+
+[node name="ChoiceIconA3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/ChoiceIconContainer"]
+layout_mode = 2
+texture = ExtResource("2_kaskh")
+stretch_mode = 2
+
+[node name="ChoiceIconA4" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/ChoiceIconContainer"]
+layout_mode = 2
+texture = ExtResource("2_kaskh")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "status"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "swap"
+
+[node name="Item" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Item
+"
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "quit"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "items"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "flan: 0
+leche: 0
+copal: 0"
+
+[node name="ActiveIndicator" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("4_t17dr")
+stretch_mode = 2
+
+[node name="PartyContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="PartyMemberButton" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
+layout_mode = 2
+
+[node name="PartyMemberButton2" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
+layout_mode = 2
+
+[node name="PartyMemberButton3" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
+layout_mode = 2
+
+[node name="PartyMemberButton4" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
+layout_mode = 2
+
+[node name="PartyMemberButton5" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -27.0
+offset_right = 25.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tls1n")
+
+[node name="StatusContainer" parent="PanelContainer" instance=ExtResource("6_2bp5s")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ItemPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -27.0
+offset_right = 25.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tls1n")
+
+[node name="ItemVBoxContainer" parent="ItemPanelContainer" instance=ExtResource("7_vhnrh")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("8_r1070")

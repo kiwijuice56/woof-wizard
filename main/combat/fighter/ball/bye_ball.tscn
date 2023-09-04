@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu55eplmx38k"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_akd1p"]
+[ext_resource type="Texture2D" uid="uid://b7bdfqy625hun" path="res://main/combat/fighter/ball/ball5.png" id="2_vcsmj"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_yib2u"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_j7wgm"]
+[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="5_mp6c8"]
+
+[sub_resource type="Resource" id="Resource_rx5j8"]
+script = ExtResource("3_yib2u")
+max_hp = 16
+max_sp = 0
+hp = 16
+sp = 0
+atk = 3
+def = 4
+agi = 1
+ex = 7
+level = 5
+hp_growth = 0
+sp_growth = 0
+
+[node name="HiBall" instance=ExtResource("1_akd1p")]
+texture = ExtResource("2_vcsmj")
+display_name = "bye ball"
+stats = SubResource("Resource_rx5j8")
+
+[node name="Pick" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_j7wgm")
+inflicts_burning = true
+attack_description = "%s is for real."
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_mp6c8")

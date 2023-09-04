@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://blyo32q74b3bc"]
+
+[ext_resource type="Script" path="res://main/combat/effect/effect.gd" id="1_7bldf"]
+
+[node name="Effect" type="Node2D"]
+script = ExtResource("1_7bldf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cqgywepo0u2vg"]
+
+[node name="ItemVBoxContainer" type="VBoxContainer"]
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+text = "items"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemContainer" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/ItemContainer"]
+layout_mode = 2
+text = "flan"
+
+[node name="Label2" type="Label" parent="HBoxContainer/ItemContainer"]
+layout_mode = 2
+text = "copal"
+
+[node name="CountContainer" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/CountContainer"]
+layout_mode = 2
+text = "x3"
+
+[node name="Label2" type="Label" parent="HBoxContainer/CountContainer"]
+layout_mode = 2
+text = "x0"

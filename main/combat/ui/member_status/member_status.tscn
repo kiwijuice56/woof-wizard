@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://crd3p4fs73klv"]
+
+[ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="1_yqsmc"]
+[ext_resource type="Script" path="res://main/combat/ui/member_status/member_status.gd" id="2_vcie6"]
+
+[node name="MemberStatus" type="VBoxContainer"]
+custom_minimum_size = Vector2(8, 20)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("1_yqsmc")
+theme_override_constants/separation = 0
+script = ExtResource("2_vcie6")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="H" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.541176, 1)
+text = "H"
+
+[node name="HPLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.898039, 0.588235, 1)
+text = "99"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="S" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.137255, 0.211765, 0.388235, 1)
+text = "s"
+
+[node name="SPLabel" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.309804, 0.431373, 1)
+text = "99"

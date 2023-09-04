@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct5hfi7w6qrl"]
+
+[ext_resource type="Shader" path="res://main/combat/backgrounds/bg.gdshader" id="1_xiah4"]
+[ext_resource type="Texture2D" uid="uid://v55dbvlk17ie" path="res://main/combat/backgrounds/cover_ring.png" id="2_2m0p7"]
+[ext_resource type="Texture2D" uid="uid://b1w76dodirggy" path="res://main/combat/backgrounds/cover_render.png" id="3_65kom"]
+[ext_resource type="Texture2D" uid="uid://cfi7uwftgvarq" path="res://main/combat/backgrounds/cover_shady_circle.png" id="3_j326d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44dpq"]
+shader = ExtResource("1_xiah4")
+shader_parameter/color_a = Color(1, 0.898039, 0.588235, 1)
+shader_parameter/color_b = Color(0.988235, 0.74902, 0.541176, 1)
+shader_parameter/color_c = Color(0.509804, 0.392157, 0.505882, 1)
+shader_parameter/color_d = Color(0.760784, 0.443137, 0.509804, 1)
+shader_parameter/speed_a = 24.0
+shader_parameter/speed_b = 12.0
+shader_parameter/speed_c = 64.0
+shader_parameter/threshold_a = 0.5
+shader_parameter/threshold_b = 0.8
+shader_parameter/threshold_speed = 1.0
+shader_parameter/tex_a = ExtResource("2_2m0p7")
+shader_parameter/tex_b = ExtResource("2_2m0p7")
+shader_parameter/tex_c = ExtResource("3_j326d")
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_44dpq")
+position = Vector2(32, 29)
+texture = ExtResource("3_65kom")

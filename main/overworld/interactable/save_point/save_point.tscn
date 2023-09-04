@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://byg3cj6tduc3b"]
+
+[ext_resource type="PackedScene" uid="uid://dn31fs6db3ybp" path="res://main/overworld/interactable/interactable.tscn" id="1_sosko"]
+[ext_resource type="Script" path="res://main/overworld/interactable/save_point/save_point.gd" id="2_rm3qb"]
+[ext_resource type="Texture2D" uid="uid://dpr0foo4j1rex" path="res://main/overworld/interactable/save_point/save_point_sprite.png" id="2_xm3vx"]
+[ext_resource type="AudioStream" uid="uid://dn5su1uwhe0jk" path="res://main/overworld/interactable/save_point/chime.wav" id="3_jo4v3"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="3_pwuuc"]
+
+[sub_resource type="Resource" id="Resource_rm2cv"]
+script = ExtResource("3_pwuuc")
+text = "save your game?"
+speed = 0.03
+choice_a = "yes"
+choice_b = "no"
+
+[sub_resource type="Resource" id="Resource_c5xs4"]
+script = ExtResource("3_pwuuc")
+text = "your progress has been saved."
+speed = 0.03
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg1a3"]
+size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_xiw13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tmywo"]
+resource_name = "spinnywinny"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ah6st"]
+_data = {
+"RESET": SubResource("Animation_xiw13"),
+"spinnywinny": SubResource("Animation_tmywo")
+}
+
+[node name="SavePoint" instance=ExtResource("1_sosko")]
+script = ExtResource("2_rm3qb")
+save_convo = Array[ExtResource("3_pwuuc")]([SubResource("Resource_rm2cv")])
+save_convo2 = Array[ExtResource("3_pwuuc")]([SubResource("Resource_c5xs4")])
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_fg1a3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_xm3vx")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" index="0"]
+autoplay = "spinnywinny"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_ah6st")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_jo4v3")
+pitch_scale = 1.5

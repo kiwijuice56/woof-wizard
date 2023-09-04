@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://2dec62naj5i4"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_fv182"]
+[ext_resource type="Texture2D" uid="uid://dhrl7cbrl1wjs" path="res://main/combat/fighter/ball/knight_ball3.png" id="2_euo6n"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_nn0fb"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_i5boy"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="5_65xnf"]
+
+[sub_resource type="Resource" id="Resource_rn2q3"]
+script = ExtResource("3_nn0fb")
+max_hp = 70
+max_sp = 0
+hp = 70
+sp = 0
+atk = 5
+def = 8
+agi = 5
+ex = 25
+level = 6
+hp_growth = 0
+sp_growth = 0
+
+[node name="KnightBall" instance=ExtResource("1_fv182")]
+texture = ExtResource("2_euo6n")
+display_name = "all ball"
+stats = SubResource("Resource_rn2q3")
+
+[node name="Kick" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_i5boy")
+power = 8.0
+attack_description = "%s used kinetic energy!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_65xnf")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

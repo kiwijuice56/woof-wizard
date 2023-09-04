@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtnl1gi4mboa1"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_a0qfh"]
+[ext_resource type="Texture2D" uid="uid://clefw7nwr8f02" path="res://main/combat/fighter/ball/ball3.png" id="2_64onq"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_r7j0j"]
+[ext_resource type="Script" path="res://main/combat/action/buff/buff.gd" id="4_bu021"]
+[ext_resource type="PackedScene" uid="uid://b0wmpcxw6vyv6" path="res://main/combat/effect/buff/atk_debuff.tscn" id="5_nossy"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="6_caob6"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="7_hn5eu"]
+[ext_resource type="PackedScene" uid="uid://b8v6wvpyx7yag" path="res://main/combat/effect/physical/physical_blood.tscn" id="7_js080"]
+[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="8_jmpg6"]
+[ext_resource type="Script" path="res://main/combat/fighter/ball/ball_brain.gd" id="10_esdch"]
+[ext_resource type="Script" path="res://main/combat/fighter/brain.gd" id="11_ambf5"]
+
+[sub_resource type="Resource" id="Resource_dhfre"]
+script = ExtResource("3_r7j0j")
+max_hp = 150
+max_sp = 0
+hp = 150
+sp = 0
+atk = 14
+def = 9
+agi = 5
+ex = 100
+level = 10
+hp_growth = 0
+sp_growth = 0
+
+[node name="BowlingBall" instance=ExtResource("1_a0qfh")]
+texture = ExtResource("2_64onq")
+display_name = "poofa"
+stats = SubResource("Resource_dhfre")
+
+[node name="AtkDown" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_bu021")
+buff_type = "atk"
+stage = -1
+display_name = "atk down"
+attack_description = "%s sapped your atk!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("5_nossy")
+
+[node name="Strike" type="Node" parent="Actions" index="1"]
+script = ExtResource("6_caob6")
+power = 10.0
+display_name = "strike"
+attack_description = "%s. strike."
+target_type = "other"
+target_count = "single"
+effect = ExtResource("7_js080")
+
+[node name="Canon" type="Node" parent="Actions" index="2"]
+script = ExtResource("6_caob6")
+inflicts_burning = true
+power = 6.0
+display_name = "canon"
+attack_description = "%s become a phoenix!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("8_jmpg6")
+
+[node name="Rollout" type="Node" parent="Actions" index="3"]
+script = ExtResource("6_caob6")
+power = 6.0
+display_name = "big roll"
+attack_description = "%s rolled!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("7_hn5eu")
+
+[node name="Brain" parent="." index="2"]
+script = ExtResource("10_esdch")
+
+[node name="DamageLabel" parent="." index="6"]
+script = ExtResource("11_ambf5")

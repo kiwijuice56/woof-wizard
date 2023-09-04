@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bue3nxsbl4h25"]
+
+[ext_resource type="Texture2D" uid="uid://wojcu025tm3c" path="res://main/overworld/room/debug/debug_tileset.png" id="1_0dlu8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqa6q"]
+texture = ExtResource("1_0dlu8")
+texture_region_size = Vector2i(4, 4)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_size = Vector2i(4, 4)
+sources/0 = SubResource("TileSetAtlasSource_nqa6q")

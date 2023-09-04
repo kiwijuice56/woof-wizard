@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://2lqq4frs68ut"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_28kk3"]
+[ext_resource type="Texture2D" uid="uid://c3rpc1xjpded7" path="res://main/overworld/room/cliff/cliff_sprite.png" id="2_grirt"]
+[ext_resource type="PackedScene" uid="uid://dyafquys17a5x" path="res://main/overworld/interactable/item_chest/item_chest.tscn" id="3_3maeb"]
+[ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="3_5iqah"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="4_83kvj"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_88xbo"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="5_yc267"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="6_s4gj8"]
+
+[sub_resource type="Resource" id="Resource_bmtpe"]
+script = ExtResource("5_yc267")
+text = "quieres?"
+speed = 0.06
+voice = ExtResource("6_s4gj8")
+icon = ExtResource("4_83kvj")
+choice_a = ""
+choice_b = ""
+
+[node name="CliffTwoRoom" instance=ExtResource("1_28kk3")]
+camera_limit_bot = 64.0
+camera_limit_right = 64.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(32, 32)
+texture = ExtResource("2_grirt")
+
+[node name="CollisionTileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(589824, 65536, 0, 589825, 65536, 0, 589826, 65536, 0, 589827, 65536, 0, 589828, 65536, 0, 589829, 65536, 0, 589830, 65536, 0, 589831, 65536, 0, 589832, 65536, 0, 589833, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 589836, 65536, 0, 589837, 65536, 0, 589838, 65536, 0, 589839, 65536, 0, 524304, 131072, 0, 458768, 131072, 0, 393232, 131072, 0, 327696, 131072, 0, 262160, 131072, 0, 196624, 131072, 0, 131088, 131072, 0, 65552, 131072, 0, 16, 131072, 0, 589823, 131072, 0, 524287, 131072, 0, 458751, 131072, 0, 393215, 131072, 0, 327679, 131072, 0, 262143, 131072, 0, 196607, 131072, 0, 131071, 131072, 0, 65535, 131072, 0, 655359, 131072, 0, 720895, 131072, 0, 786431, 131072, 0, 589840, 131072, 0, 655376, 131072, 0, 720912, 131072, 0, 786448, 131072, 0, 851967, 131072, 0)
+
+[node name="BunnyPerson" parent="." index="3" instance=ExtResource("3_5iqah")]
+position = Vector2(35, 31)
+convo = Array[ExtResource("5_yc267")]([SubResource("Resource_bmtpe")])
+
+[node name="ItemChest" parent="." index="4" instance=ExtResource("3_3maeb")]
+position = Vector2(56, 33)
+item = "leche"
+cnt = 1
+unique_id = "cliff_leche"
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(8, 32)
+
+[node name="Door" parent="." index="6" instance=ExtResource("4_88xbo")]
+position = Vector2(9, 33)
+target_room = "cave_two"
+target_anchor = "Cliff"

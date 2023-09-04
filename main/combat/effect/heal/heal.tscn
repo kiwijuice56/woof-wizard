@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://6bl3g8cedg0b"]
+
+[ext_resource type="PackedScene" uid="uid://blyo32q74b3bc" path="res://main/combat/effect/effect.tscn" id="1_lpjuc"]
+[ext_resource type="Texture2D" uid="uid://cwvkd2g7dp78n" path="res://main/combat/effect/heal/heal.png" id="2_eud3v"]
+[ext_resource type="AudioStream" uid="uid://ck65tjb2hobk1" path="res://main/combat/effect/heal/heal.wav" id="3_aexpf"]
+
+[sub_resource type="Animation" id="Animation_udc4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-16.0]
+}
+
+[sub_resource type="Animation" id="Animation_03opb"]
+resource_name = "effect"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-16.0, -32.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4wc3"]
+_data = {
+"RESET": SubResource("Animation_udc4w"),
+"effect": SubResource("Animation_03opb")
+}
+
+[node name="Heal" instance=ExtResource("1_lpjuc")]
+z_index = 4
+
+[node name="AnimationPlayer" parent="." index="0"]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_a4wc3")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_eud3v")
+hframes = 12
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_aexpf")
+volume_db = -16.0
+pitch_scale = 1.2

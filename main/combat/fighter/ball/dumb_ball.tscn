@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://br24ceaaikq6y"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_34870"]
+[ext_resource type="Texture2D" uid="uid://dnes7xbxmdyhr" path="res://main/combat/fighter/ball/knight_ball4.png" id="2_y1hby"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_323sp"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_pvs1c"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="5_ceie7"]
+
+[sub_resource type="Resource" id="Resource_rn2q3"]
+script = ExtResource("3_323sp")
+max_hp = 70
+max_sp = 0
+hp = 70
+sp = 0
+atk = 5
+def = 8
+agi = 5
+ex = 25
+level = 6
+hp_growth = 0
+sp_growth = 0
+
+[node name="KnightBall" instance=ExtResource("1_34870")]
+texture = ExtResource("2_y1hby")
+display_name = "dumb ball"
+stats = SubResource("Resource_rn2q3")
+
+[node name="Kick" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_pvs1c")
+inflicts_dizzy = true
+power = 4.0
+attack_description = "%s confused you!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_ceie7")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

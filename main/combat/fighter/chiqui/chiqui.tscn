@@ -1,0 +1,630 @@
+[gd_scene load_steps=29 format=3 uid="uid://bs7yh27v444dm"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_gip4g"]
+[ext_resource type="Texture2D" uid="uid://dbuml8l63ton2" path="res://main/combat/fighter/chiqui/chiqui_sprite.png" id="2_lbvn4"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_e38vx"]
+[ext_resource type="Texture2D" uid="uid://dv8c510yflg3u" path="res://main/overworld/ui/party_icon/chiqui.png" id="4_h3jni"]
+[ext_resource type="AudioStream" uid="uid://cl8juow7ugiqx" path="res://main/combat/fighter/chiqui/punch_1.ogg" id="5_2aros"]
+[ext_resource type="Script" path="res://main/combat/action/attack/combo/combo.gd" id="5_u27xb"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="6_i3ol2"]
+[ext_resource type="AudioStream" uid="uid://drusf1j0yli6a" path="res://main/combat/fighter/chiqui/punch_2.ogg" id="6_koptn"]
+[ext_resource type="AudioStream" uid="uid://dc6hub81nut8h" path="res://main/combat/fighter/chiqui/punch_3.ogg" id="7_alxjh"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="7_rhfmq"]
+[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="8_nsqfq"]
+[ext_resource type="Texture2D" uid="uid://c43o0fcqnkdxs" path="res://main/combat/ui/combat_button/icons/loofaicon2.png" id="9_e7mdi"]
+[ext_resource type="PackedScene" uid="uid://6bl3g8cedg0b" path="res://main/combat/effect/heal/heal.tscn" id="10_dc3cx"]
+[ext_resource type="Texture2D" uid="uid://x0pq1lng3v40" path="res://main/combat/ui/combat_button/icons/mcicons1.png" id="10_ygovi"]
+[ext_resource type="AudioStream" uid="uid://42h6fohse066" path="res://main/combat/fighter/chiqui/fume.wav" id="13_24tf3"]
+[ext_resource type="Texture2D" uid="uid://bjwmyyoicr4tr" path="res://main/combat/fighter/chiqui/fume_sprite.png" id="13_iugqn"]
+[ext_resource type="AudioStream" uid="uid://cfalfl88smpji" path="res://main/combat/fighter/chiqui/angel_dance.ogg" id="14_rok28"]
+
+[sub_resource type="Resource" id="Resource_bsort"]
+script = ExtResource("3_e38vx")
+max_hp = 30
+max_sp = 30
+hp = 30
+sp = 30
+atk = 7
+def = 1
+agi = 5
+ex = 0
+level = 8
+hp_growth = 2
+sp_growth = 2
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mdtff"]
+streams_count = 3
+random_volume_offset_db = 3.0
+stream_0/stream = ExtResource("5_2aros")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_koptn")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_alxjh")
+stream_2/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_yh1tt"]
+resource_name = "0"
+length = 0.8
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.3, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 0, 1, 2, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.2, 0.275, 0.325, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-13, 0), Vector2(-13, 0), Vector2(-6, 0), Vector2(-3, 0), Vector2(-13, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dsk6d"]
+resource_name = "1"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.3, 0.4, 0.45, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 0, 1, 3, 0, 4, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.3, 0.35, 0.45, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-14, 0), Vector2(-6, 0), Vector2(-3, 0), Vector2(-13, 0), Vector2(-12, -4), Vector2(-13, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7tgx5"]
+resource_name = "2"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.3, 0.4, 0.45, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 0, 1, 3, 0, 4, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.3, 0.35, 0.45, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-14, 0), Vector2(-6, 0), Vector2(-3, 0), Vector2(-13, 0), Vector2(-12, -4), Vector2(-13, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hv5ma"]
+resource_name = "3"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.3, 0.4, 0.45, 0.6, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 0, 1, 2, 0, 1, 2, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.45, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.3, 0.35, 0.5, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-11, 0), Vector2(-6, 0), Vector2(-3, 0), Vector2(-11, 0), Vector2(-6, 0), Vector2(-3, 0), Vector2(-11, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_abyve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fume:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fume:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FumePlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DancePlayer:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_17k4c"]
+resource_name = "angel bop"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.02, 1.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.52),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DancePlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jnkh2"]
+resource_name = "flop"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 0, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-13, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mjs6l"]
+resource_name = "holy bomb"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"impact"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(-3, 0), Vector2(-8, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fume:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.15, 0.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fume:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FumePlayer:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txbfv"]
+_data = {
+"0": SubResource("Animation_yh1tt"),
+"1": SubResource("Animation_dsk6d"),
+"2": SubResource("Animation_7tgx5"),
+"3": SubResource("Animation_hv5ma"),
+"RESET": SubResource("Animation_abyve"),
+"angel bop": SubResource("Animation_17k4c"),
+"flop": SubResource("Animation_jnkh2"),
+"holy bomb": SubResource("Animation_mjs6l")
+}
+
+[node name="Chiqui" instance=ExtResource("1_gip4g")]
+texture = ExtResource("2_lbvn4")
+hframes = 6
+display_name = "chiqui"
+internal_name = "chiqui"
+stats = SubResource("Resource_bsort")
+party_icon = ExtResource("4_h3jni")
+
+[node name="Combo" type="Node" parent="." index="1"]
+script = ExtResource("5_u27xb")
+display_name = "combo"
+attack_description = "%s attacked!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("6_i3ol2")
+
+[node name="Fume" type="Node" parent="Actions" index="0"]
+script = ExtResource("7_rhfmq")
+inflicts_burning = true
+inflicts_dizzy = true
+power = 0.0
+display_name = "holy bomb"
+attack_description = "%s spit fumes!"
+combo = Array[int]([0, 2, 1])
+target_type = "other"
+target_count = "all"
+cost = 15
+effect = ExtResource("8_nsqfq")
+icon = ExtResource("9_e7mdi")
+
+[node name="AngelBop" type="Node" parent="Actions" index="1"]
+script = ExtResource("7_rhfmq")
+inflicts_blessed = true
+power = 0.0
+display_name = "angel bop"
+attack_description = "%s danced!"
+combo = Array[int]([3, 2, 0])
+target_type = "own"
+target_count = "all"
+cost = 15
+effect = ExtResource("10_dc3cx")
+icon = ExtResource("10_ygovi")
+
+[node name="Dead" parent="." index="12"]
+visible = false
+
+[node name="PunchPlayer" type="AudioStreamPlayer" parent="." index="16"]
+stream = SubResource("AudioStreamRandomizer_mdtff")
+volume_db = -14.0
+
+[node name="FumePlayer" type="AudioStreamPlayer" parent="." index="17"]
+stream = ExtResource("13_24tf3")
+volume_db = -5.905
+
+[node name="DancePlayer" type="AudioStreamPlayer" parent="." index="18"]
+stream = ExtResource("14_rok28")
+volume_db = -6.0
+
+[node name="CustomAnimationPlayer" type="AnimationPlayer" parent="." index="19"]
+libraries = {
+"": SubResource("AnimationLibrary_txbfv")
+}
+
+[node name="Fume" type="Sprite2D" parent="." index="20"]
+visible = false
+position = Vector2(-18, -7)
+texture = ExtResource("13_iugqn")
+hframes = 8

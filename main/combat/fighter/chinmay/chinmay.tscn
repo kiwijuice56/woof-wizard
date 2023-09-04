@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc3am45hvr8iu"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_aml84"]
+[ext_resource type="Texture2D" uid="uid://dp4hf1jm8e0n7" path="res://main/combat/fighter/chinmay/chinmay_sprite.png" id="2_yd31j"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_11als"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_lxgo4"]
+[ext_resource type="PackedScene" uid="uid://b8v6wvpyx7yag" path="res://main/combat/effect/physical/physical_blood.tscn" id="5_bw3da"]
+
+[sub_resource type="Resource" id="Resource_or3cn"]
+script = ExtResource("3_11als")
+max_hp = 55
+max_sp = 0
+hp = 55
+sp = 0
+atk = 15
+def = 9
+agi = 8
+ex = 15
+level = 10
+hp_growth = 0
+sp_growth = 0
+
+[node name="Chinmay" instance=ExtResource("1_aml84")]
+texture = ExtResource("2_yd31j")
+display_name = "chinmay"
+stats = SubResource("Resource_or3cn")
+
+[node name="Attack" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_lxgo4")
+power = 6.0
+display_name = "fire"
+attack_description = "%s shot at you!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_bw3da")

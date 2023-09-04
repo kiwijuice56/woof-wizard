@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmteehet4dstg"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_yy6x3"]
+[ext_resource type="Texture2D" uid="uid://c3rpc1xjpded7" path="res://main/overworld/room/cliff/cliff_sprite.png" id="2_x0n6t"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="3_77xb7"]
+[ext_resource type="PackedScene" uid="uid://dyafquys17a5x" path="res://main/overworld/interactable/item_chest/item_chest.tscn" id="3_wwuf7"]
+
+[node name="CliffRoom" instance=ExtResource("1_yy6x3")]
+camera_limit_bot = 64.0
+camera_limit_right = 64.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(32, 32)
+texture = ExtResource("2_x0n6t")
+
+[node name="CollisionTileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(589824, 65536, 0, 589825, 65536, 0, 589826, 65536, 0, 589827, 65536, 0, 589828, 65536, 0, 589829, 65536, 0, 589830, 65536, 0, 589831, 65536, 0, 589832, 65536, 0, 589833, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 589836, 65536, 0, 589837, 65536, 0, 589838, 65536, 0, 589839, 65536, 0, 524304, 131072, 0, 458768, 131072, 0, 393232, 131072, 0, 327696, 131072, 0, 262160, 131072, 0, 196624, 131072, 0, 131088, 131072, 0, 65552, 131072, 0, 16, 131072, 0, 589823, 131072, 0, 524287, 131072, 0, 458751, 131072, 0, 393215, 131072, 0, 327679, 131072, 0, 262143, 131072, 0, 196607, 131072, 0, 131071, 131072, 0, 65535, 131072, 0, 655359, 131072, 0, 720895, 131072, 0, 786431, 131072, 0, 589840, 131072, 0, 655376, 131072, 0, 720912, 131072, 0, 786448, 131072, 0, 851967, 131072, 0)
+
+[node name="ItemChest" parent="." index="3" instance=ExtResource("3_wwuf7")]
+position = Vector2(49, 33)
+item = "flan"
+cnt = 1
+unique_id = "cliff_flan_why"
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(8, 32)
+
+[node name="Door" parent="." index="5" instance=ExtResource("3_77xb7")]
+position = Vector2(9, 33)
+target_room = "origin_cave"
+target_anchor = "Cliff"

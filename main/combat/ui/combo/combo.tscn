@@ -1,0 +1,202 @@
+[gd_scene load_steps=16 format=3 uid="uid://diinq1tq7bs1i"]
+
+[ext_resource type="Texture2D" uid="uid://dwecql8cdsb4n" path="res://main/combat/ui/combo/outer_combo_circle.png" id="1_0wf5k"]
+[ext_resource type="Script" path="res://main/combat/ui/combo/combo_circle.gd" id="1_jfvaa"]
+[ext_resource type="Texture2D" uid="uid://tu8xfvn8odux" path="res://main/combat/ui/combo/inner_combo_circle.png" id="2_w7jjo"]
+[ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="3_vhhdt"]
+[ext_resource type="AudioStream" uid="uid://bn478qwh0q2cm" path="res://main/combat/ui/combo/crash2.wav" id="5_xf76v"]
+[ext_resource type="AudioStream" uid="uid://c5r7ibnwimj86" path="res://main/combat/ui/combo/miss.wav" id="6_ixrp0"]
+
+[sub_resource type="Gradient" id="Gradient_fehxr"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.193833, 0.418502, 0.612335, 0.863436)
+colors = PackedColorArray(0.509804, 0.392157, 0.505882, 1, 0.760784, 0.443137, 0.509804, 1, 0.968627, 0.643137, 0.545098, 1, 0.988235, 0.74902, 0.541176, 1, 1, 0.898039, 0.588235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ikwt6"]
+gradient = SubResource("Gradient_fehxr")
+
+[sub_resource type="Animation" id="Animation_oj3gd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5s0r3"]
+resource_name = "scale_temp"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.25, 1.25), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2pin"]
+_data = {
+"RESET": SubResource("Animation_oj3gd"),
+"scale_temp": SubResource("Animation_5s0r3")
+}
+
+[sub_resource type="Animation" id="Animation_j3cjy"]
+resource_name = "flicker"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uoi17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hd16f"]
+_data = {
+"RESET": SubResource("Animation_uoi17"),
+"flicker": SubResource("Animation_j3cjy")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hkcf1"]
+streams_count = 1
+random_pitch = 1.3
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("5_xf76v")
+stream_0/weight = 1.0
+
+[node name="ComboCircle" type="Node2D"]
+script = ExtResource("1_jfvaa")
+gradient = SubResource("GradientTexture1D_ikwt6")
+
+[node name="Inner" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, 48)
+texture = ExtResource("2_w7jjo")
+
+[node name="Outer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, 48)
+texture = ExtResource("1_0wf5k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u2pin")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 46.0
+offset_right = 35.0
+offset_bottom = 52.0
+theme = ExtResource("3_vhhdt")
+text = ":("
+horizontal_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = 20.0
+offset_right = 56.0
+offset_bottom = 26.0
+theme = ExtResource("3_vhhdt")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "press WASD"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HelpLabel"]
+autoplay = "flicker"
+libraries = {
+"": SubResource("AnimationLibrary_hd16f")
+}
+
+[node name="Letters" type="HBoxContainer" parent="."]
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 29.0
+offset_bottom = 18.0
+theme_override_constants/separation = 0
+
+[node name="ComboLabel" type="Label" parent="Letters"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+theme = ExtResource("3_vhhdt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "W"
+horizontal_alignment = 2
+
+[node name="ComboLabel2" type="Label" parent="Letters"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+theme = ExtResource("3_vhhdt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "W"
+horizontal_alignment = 2
+
+[node name="ComboLabel3" type="Label" parent="Letters"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+theme = ExtResource("3_vhhdt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "W"
+horizontal_alignment = 2
+
+[node name="SkillLabel" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 12.0
+offset_right = 77.0
+offset_bottom = 18.0
+theme = ExtResource("3_vhhdt")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = ": devour"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CrashPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hkcf1")
+volume_db = -21.0
+
+[node name="MissPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ixrp0")
+volume_db = -8.0

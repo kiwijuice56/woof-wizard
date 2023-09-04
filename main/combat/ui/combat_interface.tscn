@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://beg5agxm2lj4k"]
+
+[ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="1_6foip"]
+[ext_resource type="Script" path="res://main/combat/ui/combat_interface.gd" id="2_3q4fh"]
+[ext_resource type="PackedScene" uid="uid://crd3p4fs73klv" path="res://main/combat/ui/member_status/member_status.tscn" id="2_17jhr"]
+[ext_resource type="PackedScene" uid="uid://cmfn1rgvq8xjp" path="res://main/combat/ui/combat_button/combat_button.tscn" id="3_0q5wi"]
+[ext_resource type="PackedScene" uid="uid://c7noj63ald1vi" path="res://main/combat/ui/select_mark/select_mark.tscn" id="3_7h5bl"]
+[ext_resource type="PackedScene" uid="uid://diinq1tq7bs1i" path="res://main/combat/ui/combo/combo.tscn" id="3_kw2q7"]
+[ext_resource type="Texture2D" uid="uid://dibw308i4h63e" path="res://main/combat/ui/combat_button/icons/outermenu1.png" id="4_2i0g1"]
+[ext_resource type="Texture2D" uid="uid://da130w2vbfyca" path="res://main/combat/ui/combat_button/icons/outermenu2.png" id="5_mgaka"]
+[ext_resource type="Texture2D" uid="uid://cem40bpb8wxg8" path="res://main/combat/ui/combat_button/icons/outermenu3.png" id="6_nf3rr"]
+[ext_resource type="Texture2D" uid="uid://debpdi8kmqwog" path="res://main/combat/ui/combat_button/icons/back2.png" id="8_yc1mh"]
+
+[node name="CombatInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6foip")
+script = ExtResource("2_3q4fh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ComboCircle" parent="." instance=ExtResource("3_kw2q7")]
+position = Vector2(0, 3)
+
+[node name="SelectMark" parent="." instance=ExtResource("3_7h5bl")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 0
+
+[node name="InfoLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+"
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PartyMember1" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_17jhr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="CenterInfo" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/CenterInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "angel bop"
+horizontal_alignment = 1
+
+[node name="TopChoices" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CenterInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_constants/separation = 1
+
+[node name="Fight" parent="MarginContainer/HBoxContainer/CenterInfo/TopChoices" instance=ExtResource("3_0q5wi")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("4_2i0g1")
+title_name = "combo"
+
+[node name="Skill" parent="MarginContainer/HBoxContainer/CenterInfo/TopChoices" instance=ExtResource("3_0q5wi")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("5_mgaka")
+title_name = "skill"
+
+[node name="Item" parent="MarginContainer/HBoxContainer/CenterInfo/TopChoices" instance=ExtResource("3_0q5wi")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("6_nf3rr")
+title_name = "item"
+
+[node name="SkillChoices" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CenterInfo"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_constants/separation = 1
+
+[node name="Back" parent="MarginContainer/HBoxContainer/CenterInfo/SkillChoices" instance=ExtResource("3_0q5wi")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("8_yc1mh")
+title_name = "back"
+
+[node name="ItemChoices" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CenterInfo"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_constants/separation = 1
+
+[node name="Back2" parent="MarginContainer/HBoxContainer/CenterInfo/ItemChoices" instance=ExtResource("3_0q5wi")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("8_yc1mh")
+title_name = "back"
+
+[node name="HelpContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CenterInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Cost" type="Label" parent="MarginContainer/HBoxContainer/CenterInfo/HelpContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.14902, 0.309804, 0.431373, 1)
+text = "99"
+horizontal_alignment = 2
+
+[node name="Combo" type="Label" parent="MarginContainer/HBoxContainer/CenterInfo/HelpContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "LLL"
+
+[node name="PartyMember2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_17jhr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10

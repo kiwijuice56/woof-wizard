@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://brp3de8wg2hc2"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_h1ywh"]
+[ext_resource type="Texture2D" uid="uid://v8o27liey8td" path="res://main/combat/fighter/mr_sign/mr_sign_sprite.png" id="2_5ykly"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="2_d6wkq"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_51ecw"]
+[ext_resource type="PackedScene" uid="uid://b8v6wvpyx7yag" path="res://main/combat/effect/physical/physical_blood.tscn" id="5_jhs6g"]
+
+[sub_resource type="Resource" id="Resource_i8wsq"]
+script = ExtResource("2_d6wkq")
+max_hp = 15
+max_sp = 0
+hp = 15
+sp = 0
+atk = 6
+def = 1
+agi = 4
+ex = 10
+level = 2
+hp_growth = 0
+sp_growth = 0
+
+[node name="MrSign" instance=ExtResource("1_h1ywh")]
+texture = ExtResource("2_5ykly")
+display_name = "sign guy"
+stats = SubResource("Resource_i8wsq")
+
+[node name="Bite" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_51ecw")
+power = 4.0
+display_name = "bite"
+attack_description = "%s chomped down!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_jhs6g")

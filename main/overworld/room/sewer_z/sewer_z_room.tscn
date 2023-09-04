@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://db3oq0387hcnk"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_xiyjo"]
+[ext_resource type="AudioStream" uid="uid://dxnr1t1d7bjvm" path="res://main/asset/music/lightless_dawn.ogg" id="2_wvghl"]
+[ext_resource type="Texture2D" uid="uid://dexx7srcb18j5" path="res://main/overworld/room/sewer_z/sewer_z.png" id="3_pcqi3"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_45ik2"]
+[ext_resource type="PackedScene" uid="uid://dyafquys17a5x" path="res://main/overworld/interactable/item_chest/item_chest.tscn" id="5_cdawh"]
+
+[node name="SewerARoom" instance=ExtResource("1_xiyjo")]
+camera_limit_bot = 74.0
+camera_limit_right = 160.0
+music = ExtResource("2_wvghl")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(1048575, 131072, 0, 983039, 131072, 0, 917503, 131072, 0, 851967, 131072, 0, 1048576, 65536, 0, 1048577, 65536, 0, 1048578, 65536, 0, 1048579, 65536, 0, 1048580, 65536, 0, 1048581, 65536, 0, 1048582, 65536, 0, 1048588, 65536, 0, 1048589, 65536, 0, 1048590, 65536, 0, 1048591, 65536, 0, 1048592, 65536, 0, 1048593, 65536, 0, 1048616, 131072, 0, 983080, 131072, 0, 917544, 131072, 0, 852008, 131072, 0, 786472, 131072, 0, 720936, 131072, 0, 655400, 131072, 0, 589864, 131072, 0, 524328, 131072, 0, 458792, 131072, 0, 393256, 131072, 0, 327720, 131072, 0, 262184, 131072, 0, 196648, 131072, 0, 131112, 131072, 0, 65576, 131072, 0, 40, 131072, 0, 1048583, 65536, 0, 1048594, 65536, 0, 1048595, 65536, 0, 1048596, 65536, 0, 1048597, 65536, 0, 1048598, 65536, 0, 1048599, 65536, 0)
+
+[node name="1" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(12, 60)
+
+[node name="2" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(80, 60)
+
+[node name="3" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(148, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(80, 34)
+texture = ExtResource("3_pcqi3")
+
+[node name="Door" parent="." index="4" instance=ExtResource("4_45ik2")]
+position = Vector2(12, 61)
+target_room = "sewer_e"
+target_anchor = "3"
+
+[node name="Door2" parent="." index="5" instance=ExtResource("4_45ik2")]
+position = Vector2(80, 61)
+target_room = "sewer_f"
+target_anchor = "3"
+
+[node name="Door3" parent="." index="6" instance=ExtResource("4_45ik2")]
+position = Vector2(172, 97)
+target_room = "sewer_d"
+target_anchor = "1"
+
+[node name="ItemChest" parent="." index="7" instance=ExtResource("5_cdawh")]
+position = Vector2(55, 61)
+item = "def charm"
+cnt = 1
+unique_id = "def_charm_obtain"

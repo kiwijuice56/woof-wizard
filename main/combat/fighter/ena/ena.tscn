@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://bo1fpje61672f"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_0yc2m"]
+[ext_resource type="Texture2D" uid="uid://e6khmtkr3rc8" path="res://main/combat/fighter/ena/ena_sprite.png" id="2_bfu5c"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_pai8q"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_2lbq6"]
+[ext_resource type="PackedScene" uid="uid://6bl3g8cedg0b" path="res://main/combat/effect/heal/heal.tscn" id="5_3im0y"]
+[ext_resource type="Script" path="res://main/combat/action/buff/buff.gd" id="6_8kaof"]
+[ext_resource type="PackedScene" uid="uid://dk2rbvjn7n3am" path="res://main/combat/effect/buff/def_debuff.tscn" id="7_n7rn7"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="8_3gnww"]
+[ext_resource type="Script" path="res://main/combat/fighter/ena/ena_brain.gd" id="9_sbje8"]
+
+[sub_resource type="Resource" id="Resource_5mb7y"]
+script = ExtResource("3_pai8q")
+max_hp = 60
+max_sp = 0
+hp = 60
+sp = 0
+atk = 2
+def = 8
+agi = 5
+ex = 25
+level = 8
+hp_growth = 0
+sp_growth = 0
+
+[node name="Jester" instance=ExtResource("1_0yc2m")]
+texture = ExtResource("2_bfu5c")
+display_name = "ena"
+stats = SubResource("Resource_5mb7y")
+
+[node name="Bless" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_2lbq6")
+inflicts_blessed = true
+power = 0.0
+display_name = "angel bop"
+attack_description = "%s danced away!"
+target_type = "own"
+target_count = "all"
+effect = ExtResource("5_3im0y")
+
+[node name="DefDown" type="Node" parent="Actions" index="1"]
+script = ExtResource("6_8kaof")
+buff_type = "def"
+stage = -1
+display_name = "def down"
+attack_description = "%s sapped your def!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("7_n7rn7")
+
+[node name="Smack" type="Node" parent="Actions" index="2"]
+script = ExtResource("4_2lbq6")
+power = 5.0
+display_name = "smack"
+attack_description = "%s smacked you!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("8_3gnww")
+
+[node name="Brain" parent="." index="2"]
+script = ExtResource("9_sbje8")
+
+[node name="Dead" parent="." index="11"]
+visible = false

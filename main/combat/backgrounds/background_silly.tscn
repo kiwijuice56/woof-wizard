@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsjxn5saewhxs"]
+
+[ext_resource type="Shader" path="res://main/combat/backgrounds/bg.gdshader" id="1_j5q1k"]
+[ext_resource type="Texture2D" uid="uid://v55dbvlk17ie" path="res://main/combat/backgrounds/cover_ring.png" id="2_7yvtv"]
+[ext_resource type="Texture2D" uid="uid://b1w76dodirggy" path="res://main/combat/backgrounds/cover_render.png" id="3_v30of"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnv7o"]
+shader = ExtResource("1_j5q1k")
+shader_parameter/color_a = Color(1, 1, 1, 1)
+shader_parameter/color_b = Color(1, 0.898039, 0.588235, 1)
+shader_parameter/color_c = Color(0.968627, 0.643137, 0.545098, 1)
+shader_parameter/color_d = Color(0.988235, 0.74902, 0.541176, 1)
+shader_parameter/tex_a = ExtResource("2_7yvtv")
+shader_parameter/tex_b = ExtResource("2_7yvtv")
+shader_parameter/tex_c = ExtResource("2_7yvtv")
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fnv7o")
+position = Vector2(32, 29)
+texture = ExtResource("3_v30of")

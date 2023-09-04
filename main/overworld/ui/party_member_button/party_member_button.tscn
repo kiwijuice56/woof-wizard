@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7wnw8nhx1s5l"]
+
+[ext_resource type="Texture2D" uid="uid://b1rssktecp7yn" path="res://main/overworld/ui/party_icon/not_found2.png" id="1_gu2n4"]
+[ext_resource type="Script" path="res://main/overworld/ui/party_member_button/party_member_button.gd" id="2_cuevc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jby7j"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.507813, 0.390625, 0.503906, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvy2t"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at3un"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.121094, 0.09375, 0.199219, 1)
+
+[node name="PartyMemberButton" type="Button"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby7j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mvy2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jby7j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_at3un")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mvy2t")
+icon = ExtResource("1_gu2n4")
+script = ExtResource("2_cuevc")

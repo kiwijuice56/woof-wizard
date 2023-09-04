@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkjrg34xfg1ey"]
+
+[ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="1_ehhbr"]
+[ext_resource type="Script" path="res://main/overworld/interactable/npc/enemy/party_enemy.gd" id="2_wnm3f"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="3_3bj78"]
+[ext_resource type="AudioStream" uid="uid://ctduv3cqxfahm" path="res://main/overworld/interactable/npc/enemy/party_join.ogg" id="3_m6khf"]
+
+[sub_resource type="Resource" id="Resource_857p8"]
+script = ExtResource("3_3bj78")
+text = "someone joined your party!"
+speed = 0.06
+choice_a = ""
+choice_b = ""
+
+[node name="PartyEnemy" instance=ExtResource("1_ehhbr")]
+script = ExtResource("2_wnm3f")
+join_convo = Array[ExtResource("3_3bj78")]([SubResource("Resource_857p8")])
+
+[node name="JoinPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("3_m6khf")
+volume_db = -9.0

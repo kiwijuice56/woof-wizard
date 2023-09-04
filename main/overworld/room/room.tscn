@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://e7nm5sx8f6xx"]
+
+[ext_resource type="TileSet" uid="uid://b1yo5ug2xn6pg" path="res://main/overworld/room/collision_tileset.tres" id="1_7h5ws"]
+[ext_resource type="Script" path="res://main/overworld/room/room.gd" id="1_tr1lt"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_tr1lt")
+
+[node name="TileMap" type="TileMap" parent="."]
+cell_quadrant_size = 4
+format = 2
+
+[node name="CollisionTileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_7h5ws")
+cell_quadrant_size = 4
+format = 2
+
+[node name="Anchors" type="Node2D" parent="."]
+
+[node name="Default" type="Marker2D" parent="Anchors"]

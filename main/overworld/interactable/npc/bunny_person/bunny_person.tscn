@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://5q6hgwlq58o1"]
+
+[ext_resource type="PackedScene" uid="uid://elqbbcobedwj" path="res://main/overworld/interactable/npc/npc.tscn" id="1_11hpm"]
+[ext_resource type="Texture2D" uid="uid://cp2hgcs52trwx" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite.png" id="2_xehud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulsar"]
+size = Vector2(6, 10)
+
+[node name="BunnyPerson" instance=ExtResource("1_11hpm")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ulsar")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, -2)
+texture = ExtResource("2_xehud")

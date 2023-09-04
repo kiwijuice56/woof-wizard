@@ -1,0 +1,304 @@
+[gd_scene load_steps=30 format=3 uid="uid://ccolo68arfns7"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_0fqji"]
+[ext_resource type="AudioStream" uid="uid://7vi4ul0rauiu" path="res://main/asset/music/bossa_bossa.ogg" id="2_4hs3w"]
+[ext_resource type="Texture2D" uid="uid://b5l35ima4kfga" path="res://main/overworld/room/loofa_town/loofa_town_sprite.png" id="3_od8uq"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_ppmck"]
+[ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="5_aq54a"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="6_x8fyh"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="7_3r361"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="8_t3j0m"]
+[ext_resource type="Texture2D" uid="uid://cbe0pu0djgxms" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite3.png" id="9_2pufv"]
+[ext_resource type="PackedScene" uid="uid://cm2e0u4xbhafj" path="res://main/overworld/room/loofa_town/windmill.tscn" id="9_ga1br"]
+[ext_resource type="Texture2D" uid="uid://cc0pqdv8v2v8c" path="res://main/asset/text_box/icons/icons4.png" id="9_t26s3"]
+[ext_resource type="Texture2D" uid="uid://cs36c8k6qg2bk" path="res://main/overworld/room/loofa_town/wind_mill2.png" id="11_8lqg8"]
+[ext_resource type="Texture2D" uid="uid://bnm3oeywlwntv" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite2.png" id="11_tf0er"]
+
+[sub_resource type="Resource" id="Resource_2n06g"]
+script = ExtResource("7_3r361")
+text = "you got a problem?"
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_5a0c4"]
+script = ExtResource("7_3r361")
+text = "don't say i didn't warn you."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_4r4qn"]
+script = ExtResource("7_3r361")
+text = "jump."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_7yomt"]
+script = ExtResource("7_3r361")
+text = "NOW."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = "ok"
+choice_b = "ok"
+
+[sub_resource type="Resource" id="Resource_tw3en"]
+script = ExtResource("7_3r361")
+text = "yay!!!!"
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_n4wa2"]
+script = ExtResource("7_3r361")
+text = "........."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_815rk"]
+script = ExtResource("7_3r361")
+text = "hi fishy!"
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_nu12l"]
+script = ExtResource("7_3r361")
+text = "i am no fish."
+speed = 0.05
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("9_t26s3")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_fwqyt"]
+script = ExtResource("7_3r361")
+text = "this is simply my disguise."
+speed = 0.05
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("9_t26s3")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_kh1ry"]
+script = ExtResource("7_3r361")
+text = "oh.... ok..."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_sd6di"]
+script = ExtResource("7_3r361")
+text = "look under there."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_ur5a0"]
+script = ExtResource("7_3r361")
+text = "under where?"
+speed = 0.05
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("9_t26s3")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_4wg5y"]
+script = ExtResource("7_3r361")
+text = "i won."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_8c65p"]
+script = ExtResource("7_3r361")
+text = "that damn ball crew..."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_234y1"]
+script = ExtResource("7_3r361")
+text = "demolished this level of town."
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_fnd6k"]
+script = ExtResource("7_3r361")
+text = "they reside just west of here... "
+speed = 0.03
+voice = ExtResource("8_t3j0m")
+icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[node name="LoofaTownRoom" instance=ExtResource("1_0fqji")]
+camera_limit_bot = 340.0
+camera_limit_right = 512.0
+music = ExtResource("2_4hs3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(256, 256)
+texture = ExtResource("3_od8uq")
+
+[node name="CollisionTileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(2359350, 65536, 0, 2359349, 65536, 0, 2359351, 65536, 0, 2359352, 65536, 0, 2359353, 65536, 0, 2359354, 65536, 0, 2359355, 65536, 0, 2359356, 65536, 0, 2359357, 65536, 0, 2359358, 65536, 0, 2359359, 65536, 0, 2359360, 65536, 0, 2359361, 65536, 0, 2359362, 65536, 0, 2359363, 65536, 0, 2359364, 65536, 0, 2359365, 65536, 0, 2359366, 65536, 0, 2359367, 65536, 0, 2359368, 65536, 0, 2359369, 65536, 0, 2359370, 65536, 0, 2359371, 65536, 0, 2359372, 65536, 0, 2359373, 65536, 0, 2359374, 65536, 0, 2359375, 65536, 0, 2359376, 65536, 0, 2490445, 65536, 0, 2490446, 65536, 0, 2490447, 65536, 0, 2490448, 65536, 0, 2621517, 65536, 0, 2621518, 65536, 0, 2621519, 65536, 0, 2621520, 65536, 0, 2621521, 65536, 0, 2621522, 65536, 0, 2621523, 65536, 0, 2621524, 65536, 0, 2621525, 65536, 0, 2621526, 65536, 0, 2621527, 65536, 0, 2621528, 65536, 0, 2621529, 65536, 0, 2621530, 65536, 0, 2621531, 65536, 0, 2621532, 65536, 0, 2621533, 65536, 0, 2621534, 65536, 0, 2621535, 65536, 0, 2621536, 65536, 0, 2621537, 65536, 0, 2621538, 65536, 0, 2621539, 65536, 0, 2621540, 65536, 0, 2490463, 65536, 0, 2490464, 65536, 0, 2490465, 65536, 0, 2490466, 65536, 0, 2359391, 65536, 0, 2359392, 65536, 0, 2359393, 65536, 0, 2359394, 65536, 0, 2228319, 65536, 0, 2228320, 65536, 0, 2228321, 65536, 0, 2228322, 65536, 0, 2097247, 65536, 0, 2097248, 65536, 0, 2097249, 65536, 0, 2097250, 65536, 0, 2097251, 65536, 0, 2097252, 65536, 0, 2097253, 65536, 0, 2097254, 65536, 0, 2097255, 65536, 0, 2097256, 65536, 0, 2097257, 65536, 0, 2097258, 65536, 0, 2097259, 65536, 0, 2097260, 65536, 0, 2097261, 65536, 0, 2097262, 65536, 0, 2097263, 65536, 0, 2097264, 65536, 0, 2097265, 65536, 0, 2097266, 65536, 0, 2097267, 65536, 0, 2097268, 65536, 0, 3407941, 65536, 0, 3407942, 65536, 0, 3407943, 65536, 0, 3407944, 65536, 0, 3407945, 65536, 0, 3407946, 65536, 0, 3407947, 65536, 0, 3407948, 65536, 0, 3407949, 65536, 0, 3407950, 65536, 0, 3407951, 65536, 0, 3407952, 65536, 0, 3407953, 65536, 0, 3407954, 65536, 0, 3407955, 65536, 0, 3407956, 65536, 0, 3407957, 65536, 0, 3407958, 65536, 0, 3407959, 65536, 0, 3407960, 65536, 0, 3407961, 65536, 0, 3407962, 65536, 0, 3407963, 65536, 0, 3407964, 65536, 0, 3407965, 65536, 0, 3407966, 65536, 0, 3407967, 65536, 0, 3407968, 65536, 0, 3407969, 65536, 0, 3407970, 65536, 0, 3407971, 65536, 0, 3407972, 65536, 0, 3407973, 65536, 0, 3407974, 65536, 0, 3407975, 65536, 0, 3407976, 65536, 0, 3407977, 65536, 0, 3407978, 65536, 0, 3407979, 65536, 0, 3407980, 65536, 0, 3407981, 65536, 0, 3407982, 65536, 0, 3407983, 65536, 0, 3407984, 65536, 0, 3407985, 65536, 0, 3407986, 65536, 0, 4063343, 65536, 0, 4063344, 65536, 0, 4063345, 65536, 0, 4063346, 65536, 0, 3932271, 65536, 0, 3932272, 65536, 0, 3932273, 65536, 0, 3932274, 65536, 0, 3801199, 65536, 0, 3801200, 65536, 0, 3801201, 65536, 0, 3801202, 65536, 0, 3670127, 65536, 0, 3670128, 65536, 0, 3670129, 65536, 0, 3670130, 65536, 0, 3539055, 65536, 0, 3539056, 65536, 0, 3539057, 65536, 0, 3539058, 65536, 0, 4194338, 65536, 0, 4194339, 65536, 0, 4194340, 65536, 0, 4194341, 65536, 0, 4194342, 65536, 0, 4194343, 65536, 0, 4194344, 65536, 0, 4194345, 65536, 0, 4194346, 65536, 0, 4194347, 65536, 0, 4194348, 65536, 0, 4194349, 65536, 0, 4194350, 65536, 0, 4194351, 65536, 0, 4194352, 65536, 0, 4194353, 65536, 0, 4194354, 65536, 0, 4194355, 65536, 0, 4194356, 65536, 0, 4194357, 65536, 0, 4194358, 65536, 0, 4194359, 65536, 0, 4194360, 65536, 0, 4194361, 65536, 0, 4194362, 65536, 0, 4194363, 65536, 0, 4194364, 65536, 0, 4194365, 65536, 0, 4194366, 65536, 0, 4194367, 65536, 0, 4194368, 65536, 0, 4194369, 65536, 0, 4194370, 65536, 0, 4194371, 65536, 0, 4194372, 65536, 0, 4194373, 65536, 0, 4194374, 65536, 0, 4194375, 65536, 0, 4194376, 65536, 0, 4194377, 65536, 0, 4194378, 65536, 0, 4194379, 65536, 0, 4194380, 65536, 0, 4194381, 65536, 0, 4194382, 65536, 0, 4194383, 65536, 0, 4194384, 65536, 0, 4194385, 65536, 0, 4194386, 65536, 0, 4194387, 65536, 0, 4194388, 65536, 0, 4194389, 65536, 0, 4194390, 65536, 0, 4194391, 65536, 0, 4194392, 65536, 0, 4194393, 65536, 0, 4194394, 65536, 0, 4194395, 65536, 0, 4194396, 65536, 0, 4194397, 65536, 0, 4194398, 65536, 0, 4194399, 65536, 0, 4194400, 65536, 0, 4194401, 65536, 0, 4194402, 65536, 0, 4194403, 65536, 0, 4194404, 65536, 0, 4194405, 65536, 0, 4194406, 65536, 0, 4194407, 65536, 0, 4194408, 65536, 0, 4194409, 65536, 0, 4194410, 65536, 0, 4194411, 65536, 0, 4194412, 65536, 0, 4194413, 65536, 0, 4194414, 65536, 0, 4194419, 65536, 0, 4194420, 65536, 0, 4194421, 65536, 0, 4194422, 65536, 0, 4194415, 65536, 0, 4194416, 65536, 0, 4194417, 65536, 0, 4194418, 65536, 0, 4194423, 65536, 0, 4194424, 65536, 0, 4194425, 65536, 0, 4194426, 65536, 0, 4325495, 65536, 0, 4325496, 65536, 0, 4325497, 65536, 0, 4325498, 65536, 0, 4456567, 65536, 0, 4456568, 65536, 0, 4456569, 65536, 0, 4456570, 65536, 0, 4587639, 65536, 0, 4587640, 65536, 0, 4587641, 65536, 0, 4587642, 65536, 0, 4718711, 65536, 0, 4718712, 65536, 0, 4718713, 65536, 0, 4718714, 65536, 0, 4849783, 65536, 0, 4849784, 65536, 0, 4849785, 65536, 0, 4849786, 65536, 0, 4980855, 65536, 0, 4980856, 65536, 0, 4980857, 65536, 0, 5111927, 65536, 0, 5111928, 65536, 0, 5111929, 65536, 0, 5111930, 65536, 0, 5243007, 65536, 0, 5243006, 65536, 0, 5243005, 65536, 0, 5243004, 65536, 0, 5243003, 65536, 0, 5243002, 65536, 0, 5243001, 65536, 0, 5243000, 65536, 0, 5242999, 65536, 0, 5242998, 65536, 0, 5242997, 65536, 0, 5242996, 65536, 0, 5242995, 65536, 0, 5242994, 65536, 0, 5242993, 65536, 0, 5242992, 65536, 0, 5242991, 65536, 0, 5242990, 65536, 0, 5242989, 65536, 0, 5242988, 65536, 0, 5242987, 65536, 0, 5242986, 65536, 0, 5242985, 65536, 0, 5242984, 65536, 0, 5242983, 65536, 0, 5242982, 65536, 0, 5242981, 65536, 0, 5242980, 65536, 0, 5242979, 65536, 0, 5242978, 65536, 0, 5242977, 65536, 0, 5242976, 65536, 0, 5242975, 65536, 0, 5242974, 65536, 0, 5242973, 65536, 0, 5242972, 65536, 0, 5242971, 65536, 0, 5242970, 65536, 0, 5242969, 65536, 0, 5242968, 65536, 0, 5242967, 65536, 0, 5242966, 65536, 0, 5242965, 65536, 0, 5242964, 65536, 0, 5242963, 65536, 0, 5242962, 65536, 0, 5242961, 65536, 0, 5242960, 65536, 0, 5242959, 65536, 0, 5242958, 65536, 0, 5242957, 65536, 0, 5242956, 65536, 0, 5242955, 65536, 0, 5242954, 65536, 0, 5242953, 65536, 0, 5242952, 65536, 0, 5242951, 65536, 0, 5242950, 65536, 0, 5242949, 65536, 0, 5242948, 65536, 0, 5242947, 65536, 0, 5242946, 65536, 0, 5242944, 65536, 0, 5242943, 65536, 0, 5242942, 65536, 0, 5242941, 65536, 0, 5242940, 65536, 0, 5242939, 65536, 0, 5242938, 65536, 0, 5242937, 65536, 0, 5242936, 65536, 0, 5242945, 65536, 0, 5242935, 65536, 0, 5242934, 65536, 0, 5242933, 65536, 0, 5242932, 65536, 0, 5242931, 65536, 0, 5242930, 65536, 0, 5242929, 65536, 0, 5242928, 65536, 0, 5242927, 65536, 0, 5242926, 65536, 0, 5242925, 65536, 0, 5242924, 65536, 0, 5242923, 65536, 0, 5242922, 65536, 0, 5242921, 65536, 0, 5242920, 65536, 0, 5242919, 65536, 0, 5242918, 65536, 0, 5242917, 65536, 0, 5242916, 65536, 0, 5242915, 65536, 0, 5242914, 65536, 0, 5242913, 65536, 0, 5242912, 65536, 0, 5242911, 65536, 0, 5242910, 65536, 0, 5242909, 65536, 0, 5242908, 65536, 0, 5242907, 65536, 0, 5242906, 65536, 0, 5242905, 65536, 0, 5242904, 65536, 0, 5242903, 65536, 0, 5242902, 65536, 0, 5242901, 65536, 0, 5242900, 65536, 0, 5242899, 65536, 0, 5242898, 65536, 0, 5242897, 65536, 0, 5242896, 65536, 0, 5242895, 65536, 0, 5242894, 65536, 0, 5242893, 65536, 0, 5242892, 65536, 0, 5242891, 65536, 0, 5242890, 65536, 0, 5242889, 65536, 0, 5242888, 65536, 0, 5242887, 65536, 0, 5242886, 65536, 0, 5242885, 65536, 0, 5242880, 65536, 0, 5242881, 65536, 0, 5242882, 65536, 0, 5242883, 65536, 0, 5242884, 65536, 0, 3866673, 65536, 0, 3866674, 65536, 0, 3866675, 65536, 0, 3866676, 65536, 0, 3866677, 65536, 0, 3866678, 65536, 0, 3735607, 131072, 0, 3670071, 131072, 0, 3604535, 131072, 0, 3801143, 131072, 0, 3866679, 131072, 0, 4980858, 65536, 0, 2621541, 65536, 0, 2621542, 65536, 0, 2621543, 65536, 0, 2621544, 65536, 0, 2752613, 65536, 0, 2752614, 65536, 0, 2752615, 65536, 0, 2752616, 65536, 0, 2883685, 65536, 0, 2883686, 65536, 0, 2883687, 65536, 0, 2883688, 65536, 0, 3014757, 65536, 0, 3014758, 65536, 0, 3014759, 65536, 0, 3014760, 65536, 0, 3145829, 65536, 0, 3145830, 65536, 0, 3145832, 65536, 0, 3145831, 65536, 0, 3276901, 65536, 0, 3276902, 65536, 0, 3276903, 65536, 0, 3276904, 65536, 0, 5111935, 131072, 0, 5046399, 131072, 0, 4849791, 131072, 0, 5177471, 131072, 0, 4980863, 131072, 0, 4915327, 131072, 0, 4784255, 131072, 0, 4718719, 131072, 0, 4653183, 131072, 0)
+
+[node name="Door" parent="." index="3" instance=ExtResource("4_ppmck")]
+position = Vector2(444, 125)
+target_room = "cave_two"
+target_anchor = "Desert"
+
+[node name="Door2" parent="." index="4" instance=ExtResource("4_ppmck")]
+position = Vector2(73, 317)
+target_room = "loofa_desert"
+target_anchor = "Default"
+auto_interact = true
+
+[node name="Door3" parent="." index="5" instance=ExtResource("4_ppmck")]
+position = Vector2(344, 157)
+target_room = "loofa_town_a"
+target_anchor = "Default"
+
+[node name="Door4" parent="." index="6" instance=ExtResource("4_ppmck")]
+position = Vector2(275, 141)
+target_room = "loofa_town_b"
+target_anchor = "Default"
+
+[node name="Door5" parent="." index="7" instance=ExtResource("4_ppmck")]
+position = Vector2(325, 205)
+target_room = "loofa_town_c"
+target_anchor = "Default"
+
+[node name="Door6" parent="." index="8" instance=ExtResource("4_ppmck")]
+position = Vector2(232, 253)
+target_room = "loofa_town_d"
+target_anchor = "Default"
+
+[node name="BunnyPerson" parent="." index="9" instance=ExtResource("5_aq54a")]
+position = Vector2(291, 251)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_2n06g"), SubResource("Resource_5a0c4")])
+
+[node name="Sprite2D" parent="BunnyPerson" index="1"]
+texture = ExtResource("9_2pufv")
+
+[node name="BunnyPerson2" parent="." index="10" instance=ExtResource("5_aq54a")]
+position = Vector2(217, 231)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_4r4qn"), SubResource("Resource_7yomt")])
+convo_a = Array[ExtResource("7_3r361")]([SubResource("Resource_tw3en")])
+convo_b = Array[ExtResource("7_3r361")]([SubResource("Resource_n4wa2")])
+
+[node name="Sprite2D" parent="BunnyPerson2" index="1"]
+texture = ExtResource("9_2pufv")
+
+[node name="BunnyPerson3" parent="." index="11" instance=ExtResource("5_aq54a")]
+position = Vector2(295, 203)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_815rk"), SubResource("Resource_nu12l"), SubResource("Resource_fwqyt"), SubResource("Resource_kh1ry")])
+
+[node name="BunnyPerson5" parent="." index="12" instance=ExtResource("5_aq54a")]
+position = Vector2(357, 155)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_sd6di"), SubResource("Resource_ur5a0"), SubResource("Resource_4wg5y")])
+
+[node name="Sprite2D" parent="BunnyPerson5" index="1"]
+texture = ExtResource("11_tf0er")
+
+[node name="BunnyPerson4" parent="." index="13" instance=ExtResource("5_aq54a")]
+position = Vector2(322, 315)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_8c65p"), SubResource("Resource_234y1"), SubResource("Resource_fnd6k")])
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(444, 124)
+
+[node name="Desert" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(82, 316)
+
+[node name="A" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(344, 156)
+
+[node name="B" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(275, 140)
+
+[node name="C" type="Marker2D" parent="Anchors" index="4"]
+position = Vector2(325, 204)
+
+[node name="D" type="Marker2D" parent="Anchors" index="5"]
+position = Vector2(232, 252)
+
+[node name="Windmill" parent="." index="15" instance=ExtResource("9_ga1br")]
+position = Vector2(399, 204)
+frame = 0
+
+[node name="Windmill7" parent="." index="16" instance=ExtResource("9_ga1br")]
+position = Vector2(416, 124)
+texture = ExtResource("11_8lqg8")
+frame = 0
+
+[node name="Windmill8" parent="." index="17" instance=ExtResource("9_ga1br")]
+position = Vector2(424, 124)
+frame = 0
+
+[node name="Windmill2" parent="." index="18" instance=ExtResource("9_ga1br")]
+position = Vector2(391, 204)
+texture = ExtResource("11_8lqg8")
+frame = 0
+
+[node name="Windmill3" parent="." index="19" instance=ExtResource("9_ga1br")]
+position = Vector2(382, 204)
+frame = 0
+
+[node name="Windmill9" parent="." index="20" instance=ExtResource("9_ga1br")]
+position = Vector2(390, 252)
+texture = ExtResource("11_8lqg8")
+frame = 0
+
+[node name="Windmill10" parent="." index="21" instance=ExtResource("9_ga1br")]
+position = Vector2(399, 252)
+texture = ExtResource("11_8lqg8")
+frame = 0
+
+[node name="Windmill11" parent="." index="22" instance=ExtResource("9_ga1br")]
+position = Vector2(408, 252)
+texture = ExtResource("11_8lqg8")
+frame = 0
+
+[node name="Windmill4" parent="." index="23" instance=ExtResource("9_ga1br")]
+position = Vector2(215, 140)
+frame = 0
+
+[node name="Windmill5" parent="." index="24" instance=ExtResource("9_ga1br")]
+position = Vector2(224, 140)
+frame = 0
+
+[node name="Windmill6" parent="." index="25" instance=ExtResource("9_ga1br")]
+position = Vector2(233, 140)
+frame = 0
+
+[editable path="BunnyPerson"]
+[editable path="BunnyPerson2"]
+[editable path="BunnyPerson5"]

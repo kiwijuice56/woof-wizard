@@ -1,0 +1,428 @@
+[gd_scene load_steps=55 format=3 uid="uid://cee4vw5i28tak"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_65gtc"]
+[ext_resource type="AudioStream" uid="uid://uwwpaw3dbcyu" path="res://main/asset/music/ossuary_5_rest.ogg" id="2_38ecd"]
+[ext_resource type="Texture2D" uid="uid://cjwyfw534dhlo" path="res://main/overworld/room/origin_cave/origin_cave_sprite.png" id="2_gfm3j"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="3_tni6b"]
+[ext_resource type="PackedScene" uid="uid://d1vmsl7ynvqp1" path="res://main/overworld/interactable/npc/enemy/mad_bunny/mad_bunny.tscn" id="3_yrn0i"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="4_wmikg"]
+[ext_resource type="PackedScene" uid="uid://kqyqkrqxhytr" path="res://main/combat/fighter/edna/edna.tscn" id="4_ykqwg"]
+[ext_resource type="PackedScene" uid="uid://bs434efwr6o5x" path="res://main/overworld/interactable/npc/sign/sign.tscn" id="5_cje1x"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="5_lemh6"]
+[ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="7_oic3j"]
+[ext_resource type="AudioStream" uid="uid://cor4iwm5tadvv" path="res://main/asset/music/rocket.ogg" id="10_8xqkq"]
+[ext_resource type="PackedScene" uid="uid://dsjxn5saewhxs" path="res://main/combat/backgrounds/background_silly.tscn" id="12_pjohx"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="12_sv1ot"]
+[ext_resource type="PackedScene" uid="uid://elqbbcobedwj" path="res://main/overworld/interactable/npc/npc.tscn" id="13_ymeih"]
+[ext_resource type="Script" path="res://main/overworld/interactable/npc/chiwo/chiwo_run_away.gd" id="14_vvq68"]
+[ext_resource type="AudioStream" uid="uid://ef5p3ma5uijs" path="res://main/asset/text_box/voices/man.wav" id="15_7utjj"]
+[ext_resource type="Texture2D" uid="uid://m0n43mwlqf0c" path="res://main/asset/text_box/icons/icons1.png" id="15_fkjwu"]
+[ext_resource type="Texture2D" uid="uid://cep8m2itpdt2j" path="res://main/asset/text_box/icons/icons5.png" id="15_sjwfw"]
+[ext_resource type="AudioStream" uid="uid://d133wjg87x8uo" path="res://main/asset/text_box/voices/dog.wav" id="16_ux0go"]
+
+[sub_resource type="Resource" id="Resource_xrn1s"]
+script = ExtResource("4_wmikg")
+text = "how to fight (for dummies):"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_ig4sh"]
+script = ExtResource("4_wmikg")
+text = "you begin combat at full health (h) and ..."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_2ivfy"]
+script = ExtResource("4_wmikg")
+text = "with a little spirit (s)."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_idjko"]
+script = ExtResource("4_wmikg")
+text = "up your spirit by timing WASD hits in a combo."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_xjbnh"]
+script = ExtResource("4_wmikg")
+text = "the right order of hits can unleash a skill..."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_2lpfg"]
+script = ExtResource("4_wmikg")
+text = "if you have enough spirit!"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_cq6n3"]
+script = ExtResource("4_wmikg")
+text = "check a skill's spirit cost and combo in ..."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_aya04"]
+script = ExtResource("4_wmikg")
+text = "your skills menu. good luck!"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_xo7ts"]
+script = ExtResource("4_wmikg")
+text = "walk left and right using AD."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_s3mui"]
+script = ExtResource("4_wmikg")
+text = "jump up and down nearby ledges using WS."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_0t0et"]
+script = ExtResource("4_wmikg")
+text = "you can jump from ledges, but avoid pits!"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_1gsvk"]
+script = ExtResource("4_wmikg")
+text = "open the menu using z and ..."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_cncs8"]
+script = ExtResource("4_wmikg")
+text = "interact using space."
+speed = 0.03
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_a1sxr"]
+script = ExtResource("4_wmikg")
+text = "ouch... harsh fall."
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_jrsxy"]
+script = ExtResource("4_wmikg")
+text = "bend your knees when you land."
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_af6ql"]
+script = ExtResource("4_wmikg")
+text = "idiot... "
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_h8rcg"]
+script = ExtResource("4_wmikg")
+text = "tryhard..."
+speed = 0.07
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_5poj7"]
+script = ExtResource("4_wmikg")
+text = "it was just practice..."
+speed = 0.07
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_8tj1y"]
+script = ExtResource("4_wmikg")
+text = "bye!"
+speed = 0.07
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_my4kg"]
+script = ExtResource("4_wmikg")
+text = "did you read the sign."
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = "yes"
+choice_b = "no"
+
+[sub_resource type="Resource" id="Resource_mxs2o"]
+script = ExtResource("4_wmikg")
+text = "thank you. it took a lot of time."
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_0dnf7"]
+script = ExtResource("4_wmikg")
+text = "lets see if you really learned!"
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_wrv2a"]
+script = ExtResource("4_wmikg")
+text = "oh... rude... whatever. "
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_5xg7a"]
+script = ExtResource("4_wmikg")
+text = "let's fight anyway."
+speed = 0.03
+voice = ExtResource("5_lemh6")
+icon = ExtResource("12_sv1ot")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_udbtc"]
+script = ExtResource("4_wmikg")
+text = "chiwo ... ? where did you go..."
+speed = 0.05
+voice = ExtResource("15_7utjj")
+icon = ExtResource("15_fkjwu")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_xhtnu"]
+script = ExtResource("4_wmikg")
+text = "i miss him already."
+speed = 0.05
+voice = ExtResource("15_7utjj")
+icon = ExtResource("15_fkjwu")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_bc2k6"]
+script = ExtResource("4_wmikg")
+text = "arf arf! woof woof!"
+speed = 0.06
+voice = ExtResource("16_ux0go")
+icon = ExtResource("15_sjwfw")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_gcllf"]
+script = ExtResource("4_wmikg")
+text = "woof... woof..."
+speed = 0.09
+voice = ExtResource("16_ux0go")
+icon = ExtResource("15_sjwfw")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_5o75i"]
+script = ExtResource("4_wmikg")
+text = "this sucks."
+speed = 0.06
+voice = ExtResource("16_ux0go")
+icon = ExtResource("15_sjwfw")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_pfqfn"]
+script = ExtResource("4_wmikg")
+text = "catch ya later dawg!!!"
+speed = 0.05
+voice = ExtResource("16_ux0go")
+icon = ExtResource("15_sjwfw")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p88f"]
+size = Vector2(23, 23)
+
+[sub_resource type="Animation" id="Animation_m7ibg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1imt6"]
+resource_name = "get_up"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_10231"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(64, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpmc6"]
+_data = {
+"RESET": SubResource("Animation_m7ibg"),
+"get_up": SubResource("Animation_1imt6"),
+"run": SubResource("Animation_10231")
+}
+
+[node name="OriginCaveRoom" instance=ExtResource("1_65gtc")]
+camera_limit_bot = 72.0
+camera_limit_top = -32.0
+camera_limit_left = -32.0
+camera_limit_right = 1024.0
+music = ExtResource("2_38ecd")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(983034, 65536, 0, 983035, 65536, 0, 983036, 65536, 0, 983037, 65536, 0, 983038, 65536, 0, 983039, 65536, 0, 917504, 65536, 0, 917505, 65536, 0, 917506, 65536, 0, 917507, 65536, 0, 917508, 65536, 0, 917509, 65536, 0, 917510, 65536, 0, 917511, 65536, 0, 917512, 65536, 0, 917513, 65536, 0, 917515, 65536, 0, 917516, 65536, 0, 917517, 65536, 0, 917518, 65536, 0, 917519, 65536, 0, 917520, 65536, 0, 917521, 65536, 0, 917522, 65536, 0, 917523, 65536, 0, 917514, 65536, 0, 917524, 65536, 0, 917525, 65536, 0, 917526, 65536, 0, 917527, 65536, 0, 917528, 65536, 0, 917529, 65536, 0, 917530, 65536, 0, 917531, 65536, 0, 917532, 65536, 0, 917533, 65536, 0, 917534, 65536, 0, 917535, 65536, 0, 917536, 65536, 0, 917537, 65536, 0, 917538, 65536, 0, 917539, 65536, 0, 917540, 65536, 0, 917541, 65536, 0, 917542, 65536, 0, 917543, 65536, 0, 917544, 65536, 0, 917545, 65536, 0, 786459, 65536, 0, 786460, 65536, 0, 786461, 65536, 0, 786462, 65536, 0, 786463, 65536, 0, 786464, 65536, 0, 786458, 65536, 0, 786465, 65536, 0, 786466, 65536, 0, 786467, 65536, 0, 786468, 65536, 0, 786469, 65536, 0, 786470, 65536, 0, 786471, 65536, 0, 655394, 65536, 0, 655395, 65536, 0, 655396, 65536, 0, 655397, 65536, 0, 655398, 65536, 0, 655399, 65536, 0, 655400, 65536, 0, 655401, 65536, 0, 655402, 65536, 0, 655403, 65536, 0, 655404, 65536, 0, 655405, 65536, 0, 655406, 65536, 0, 655407, 65536, 0, 655408, 65536, 0, 655409, 65536, 0, 917554, 65536, 0, 917555, 65536, 0, 917556, 65536, 0, 917557, 65536, 0, 917558, 65536, 0, 917559, 65536, 0, 917560, 65536, 0, 917561, 65536, 0, 917562, 65536, 0, 917563, 65536, 0, 917564, 65536, 0, 917565, 65536, 0, 917566, 65536, 0, 917567, 65536, 0, 917568, 65536, 0, 917569, 65536, 0, 917570, 65536, 0, 917571, 65536, 0, 917572, 65536, 0, 917573, 65536, 0, 917574, 65536, 0, 917575, 65536, 0, 917576, 65536, 0, 917577, 65536, 0, 917578, 65536, 0, 917579, 65536, 0, 917580, 65536, 0, 917581, 65536, 0, 917582, 65536, 0, 917583, 65536, 0, 917584, 65536, 0, 917585, 65536, 0, 917586, 65536, 0, 917587, 65536, 0, 655424, 65536, 0, 655425, 65536, 0, 655426, 65536, 0, 655427, 65536, 0, 655428, 65536, 0, 655429, 65536, 0, 655430, 65536, 0, 655431, 65536, 0, 655432, 65536, 0, 655433, 65536, 0, 655434, 65536, 0, 655435, 65536, 0, 655436, 65536, 0, 655437, 65536, 0, 655438, 65536, 0, 655439, 65536, 0, 786514, 65536, 0, 786515, 65536, 0, 786516, 65536, 0, 786517, 65536, 0, 786518, 65536, 0, 786519, 65536, 0, 786520, 65536, 0, 786521, 65536, 0, 786522, 65536, 0, 786523, 65536, 0, 786524, 65536, 0, 786525, 65536, 0, 786526, 65536, 0, 786527, 65536, 0, 786528, 65536, 0, 786529, 65536, 0, 786530, 65536, 0, 786531, 65536, 0, 786532, 65536, 0, 786533, 65536, 0, 786534, 65536, 0, 786535, 65536, 0, 786536, 65536, 0, 786537, 65536, 0, 786538, 65536, 0, 786539, 65536, 0, 786540, 65536, 0, 786541, 65536, 0, 786542, 65536, 0, 786543, 65536, 0, 786544, 65536, 0, 786545, 65536, 0, 786546, 65536, 0, 786547, 65536, 0, 655464, 65536, 0, 655465, 65536, 0, 655466, 65536, 0, 655467, 65536, 0, 655468, 65536, 0, 655469, 65536, 0, 524396, 65536, 0, 524397, 65536, 0, 524398, 65536, 0, 524399, 65536, 0, 524400, 65536, 0, 524401, 65536, 0, 524402, 65536, 0, 524403, 65536, 0, 524404, 65536, 0, 524405, 65536, 0, 524406, 65536, 0, 524407, 65536, 0, 524408, 65536, 0, 524409, 65536, 0, 524410, 65536, 0, 524411, 65536, 0, 393316, 65536, 0, 393317, 65536, 0, 393318, 65536, 0, 393319, 65536, 0, 393320, 65536, 0, 393321, 65536, 0, 393322, 65536, 0, 393323, 65536, 0, 393324, 65536, 0, 393325, 65536, 0, 262230, 65536, 0, 262231, 65536, 0, 262232, 65536, 0, 262233, 65536, 0, 262234, 65536, 0, 262235, 65536, 0, 262236, 65536, 0, 262237, 65536, 0, 262238, 65536, 0, 262239, 65536, 0, 262240, 65536, 0, 262241, 65536, 0, 262242, 65536, 0, 262243, 65536, 0, 262244, 65536, 0, 262245, 65536, 0, 131154, 65536, 0, 131155, 65536, 0, 131156, 65536, 0, 131157, 65536, 0, 131158, 65536, 0, 131159, 65536, 0, 83, 65536, 0, 82, 65536, 0, 81, 65536, 0, 80, 65536, 0, 79, 65536, 0, 78, 65536, 0, 77, 65536, 0, 76, 65536, 0, 75, 65536, 0, 74, 65536, 0, 71, 65536, 0, 70, 65536, 0, 69, 65536, 0, 68, 65536, 0, 72, 65536, 0, 73, 65536, 0, 917590, 65536, 0, 917588, 65536, 0, 917589, 65536, 0, 917591, 65536, 0, 524412, 65536, 0, 524413, 65536, 0, 524414, 65536, 0, 524415, 65536, 0, 524416, 65536, 0, 524417, 65536, 0, 524418, 65536, 0, 524419, 65536, 0, 524420, 65536, 0, 524421, 65536, 0, 524422, 65536, 0, 524423, 65536, 0, 524424, 65536, 0, 524425, 65536, 0, 524426, 65536, 0, 524427, 65536, 0, 524428, 65536, 0, 524429, 65536, 0, 524430, 65536, 0, 524431, 65536, 0, 524432, 65536, 0, 524433, 65536, 0, 524443, 65536, 0, 524442, 65536, 0, 524441, 65536, 0, 524440, 65536, 0, 524435, 65536, 0, 524434, 65536, 0, 524436, 65536, 0, 524437, 65536, 0, 524438, 65536, 0, 524439, 65536, 0)
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(24, 52)
+
+[node name="Cliff" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(308, 36)
+
+[node name="First" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(612, 28)
+
+[node name="SavePoint" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(24, 52)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(320, 32)
+texture = ExtResource("2_gfm3j")
+
+[node name="Door" parent="." index="4" instance=ExtResource("3_tni6b")]
+position = Vector2(308, 37)
+target_room = "cliff"
+target_anchor = "Default"
+
+[node name="Door2" parent="." index="5" instance=ExtResource("3_tni6b")]
+position = Vector2(612, 29)
+target_room = "first_encounter"
+target_anchor = "Default"
+
+[node name="Sign" parent="." index="6" instance=ExtResource("5_cje1x")]
+position = Vector2(543, 28)
+convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_xrn1s"), SubResource("Resource_ig4sh"), SubResource("Resource_2ivfy"), SubResource("Resource_idjko"), SubResource("Resource_xjbnh"), SubResource("Resource_2lpfg"), SubResource("Resource_cq6n3"), SubResource("Resource_aya04")])
+
+[node name="Sign2" parent="." index="7" instance=ExtResource("5_cje1x")]
+position = Vector2(379, 116)
+convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_xo7ts"), SubResource("Resource_s3mui"), SubResource("Resource_0t0et"), SubResource("Resource_1gsvk"), SubResource("Resource_cncs8")])
+
+[node name="BunnyPerson" parent="." index="8" instance=ExtResource("7_oic3j")]
+position = Vector2(173, 35)
+convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_a1sxr"), SubResource("Resource_jrsxy"), SubResource("Resource_af6ql")])
+
+[node name="MadBunny" parent="." index="9" instance=ExtResource("3_yrn0i")]
+position = Vector2(561, 27)
+death_convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_h8rcg"), SubResource("Resource_5poj7"), SubResource("Resource_8tj1y")])
+music = ExtResource("10_8xqkq")
+volume = -7.0
+encounter = Array[PackedScene]([ExtResource("4_ykqwg")])
+background = ExtResource("12_pjohx")
+convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_my4kg")])
+convo_a = Array[ExtResource("4_wmikg")]([SubResource("Resource_mxs2o"), SubResource("Resource_0dnf7")])
+convo_b = Array[ExtResource("4_wmikg")]([SubResource("Resource_wrv2a"), SubResource("Resource_5xg7a")])
+unique_id = "tutorial_bunny"
+
+[node name="ChiwoRunAway" parent="." index="10" instance=ExtResource("13_ymeih")]
+position = Vector2(32, 53)
+script = ExtResource("14_vvq68")
+convo2 = Array[ExtResource("4_wmikg")]([SubResource("Resource_udbtc"), SubResource("Resource_xhtnu")])
+convo = Array[ExtResource("4_wmikg")]([SubResource("Resource_bc2k6"), SubResource("Resource_gcllf"), SubResource("Resource_5o75i"), SubResource("Resource_pfqfn")])
+unique_id = "chiwo_run_away"
+auto_interact = true
+
+[node name="CollisionShape2D" parent="ChiwoRunAway" index="0"]
+shape = SubResource("RectangleShape2D_8p88f")
+
+[node name="Sprite2D" parent="ChiwoRunAway" index="1"]
+hframes = 4
+frame = 3
+
+[node name="CustomAnimationPlayer" type="AnimationPlayer" parent="ChiwoRunAway" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_mpmc6")
+}
+
+[editable path="ChiwoRunAway"]

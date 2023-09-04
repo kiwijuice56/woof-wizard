@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StatProfile" load_steps=2 format=3 uid="uid://bpqogv3afbv5g"]
+
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="1_c4rtv"]
+
+[resource]
+script = ExtResource("1_c4rtv")
+max_hp = 10
+max_sp = 10
+hp = 10
+sp = 10
+atk = 3
+def = 2
+agi = 2
+ex = 0
+level = 1
+hp_growth = 3
+sp_growth = 2

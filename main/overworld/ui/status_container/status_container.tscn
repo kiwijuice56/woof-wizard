@@ -1,0 +1,214 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg3rgtp3o6qu8"]
+
+[ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="1_on7p8"]
+[ext_resource type="Texture2D" uid="uid://sf15a3phh6s3" path="res://main/overworld/ui/party_icon/mago2.png" id="1_thcsr"]
+[ext_resource type="Script" path="res://main/overworld/ui/status_container/status_container.gd" id="2_6c6yj"]
+[ext_resource type="Texture2D" uid="uid://bsk63unkr3ffi" path="res://main/asset/text_box/flicker_triangle.png" id="4_6oql8"]
+
+[sub_resource type="Animation" id="Animation_dpqiq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/FlickerContainer/Flicker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b43qm"]
+resource_name = "flicker_0"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/FlickerContainer/Flicker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ae52r"]
+resource_name = "flicker_1"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/FlickerContainer/Flicker2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iad0g"]
+resource_name = "flicker_2"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/FlickerContainer/Flicker3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jeax0"]
+_data = {
+"RESET": SubResource("Animation_dpqiq"),
+"flicker_0": SubResource("Animation_b43qm"),
+"flicker_1": SubResource("Animation_ae52r"),
+"flicker_2": SubResource("Animation_iad0g")
+}
+
+[node name="StatusContainer" type="VBoxContainer"]
+theme = ExtResource("1_on7p8")
+theme_override_constants/separation = 0
+script = ExtResource("2_6c6yj")
+
+[node name="TitleLabel" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "level up
+a stat!"
+horizontal_alignment = 1
+
+[node name="IDContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="IDContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "loofah"
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="IDContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("1_thcsr")
+stretch_mode = 2
+
+[node name="ImportantStatContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LvLabel" type="Label" parent="ImportantStatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.509804, 0.392157, 0.505882, 1)
+text = "lv: 99"
+
+[node name="XPLabel" type="Label" parent="ImportantStatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.509804, 0.392157, 0.505882, 1)
+text = "xp: 999"
+
+[node name="HealthStatContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Health" type="HBoxContainer" parent="HealthStatContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="H" type="Label" parent="HealthStatContainer/Health"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.988235, 0.74902, 0.541176, 1)
+text = "H"
+
+[node name="HLabel" type="Label" parent="HealthStatContainer/Health"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.898039, 0.588235, 1)
+text = "99"
+
+[node name="Spirit" type="HBoxContainer" parent="HealthStatContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="S" type="Label" parent="HealthStatContainer/Spirit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.137255, 0.211765, 0.388235, 1)
+text = "S"
+
+[node name="SLabel" type="Label" parent="HealthStatContainer/Spirit"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.309804, 0.431373, 1)
+text = "99"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="StatContainer" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AtkLabel" type="Label" parent="HBoxContainer/StatContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+text = "atk: 9"
+
+[node name="DefLabel" type="Label" parent="HBoxContainer/StatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "def: 99"
+
+[node name="WitLabel" type="Label" parent="HBoxContainer/StatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "wit: 99"
+
+[node name="FlickerContainer" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Flicker" type="TextureRect" parent="HBoxContainer/FlickerContainer"]
+layout_mode = 2
+texture = ExtResource("4_6oql8")
+flip_h = true
+
+[node name="Flicker2" type="TextureRect" parent="HBoxContainer/FlickerContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("4_6oql8")
+stretch_mode = 2
+flip_h = true
+
+[node name="Flicker3" type="TextureRect" parent="HBoxContainer/FlickerContainer"]
+layout_mode = 2
+texture = ExtResource("4_6oql8")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jeax0")
+}

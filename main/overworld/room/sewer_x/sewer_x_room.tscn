@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpbnbk8knqd5m"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_p18as"]
+[ext_resource type="AudioStream" uid="uid://dxnr1t1d7bjvm" path="res://main/asset/music/lightless_dawn.ogg" id="2_1qh52"]
+[ext_resource type="Texture2D" uid="uid://oxub31ug8myx" path="res://main/overworld/room/sewer_x/sewer_x.png" id="3_y7ap0"]
+[ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="4_2gdkv"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_3rub3"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="5_ky04j"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="6_6tbvd"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="7_i61px"]
+[ext_resource type="Texture2D" uid="uid://r7kkpf3ht7rq" path="res://main/asset/text_box/icons/icons3.png" id="8_l05m1"]
+
+[sub_resource type="Resource" id="Resource_70ncb"]
+script = ExtResource("6_6tbvd")
+text = "dodongo dislikes smoke."
+speed = 0.05
+voice = ExtResource("7_i61px")
+icon = ExtResource("5_ky04j")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_qqv23"]
+script = ExtResource("6_6tbvd")
+text = "he's gone crazy."
+speed = 0.03
+voice = ExtResource("7_i61px")
+icon = ExtResource("8_l05m1")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_65d0w"]
+script = ExtResource("6_6tbvd")
+text = "let's move it, yes?"
+speed = 0.03
+voice = ExtResource("7_i61px")
+icon = ExtResource("8_l05m1")
+choice_a = ""
+choice_b = ""
+
+[node name="SewerARoom" instance=ExtResource("1_p18as")]
+camera_limit_bot = 74.0
+camera_limit_right = 160.0
+music = ExtResource("2_1qh52")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(1048575, 131072, 0, 983039, 131072, 0, 917503, 131072, 0, 851967, 131072, 0, 1048576, 65536, 0, 1048577, 65536, 0, 1048578, 65536, 0, 1048579, 65536, 0, 1048580, 65536, 0, 1048581, 65536, 0, 1048582, 65536, 0, 1048583, 65536, 0, 1048584, 65536, 0, 1048585, 65536, 0, 1048586, 65536, 0, 1048587, 65536, 0, 1048588, 65536, 0, 1048589, 65536, 0, 1048590, 65536, 0, 1048591, 65536, 0, 1048592, 65536, 0, 1048593, 65536, 0, 1048616, 131072, 0, 983080, 131072, 0, 917544, 131072, 0, 852008, 131072, 0, 786472, 131072, 0, 720936, 131072, 0, 655400, 131072, 0, 589864, 131072, 0, 524328, 131072, 0, 458792, 131072, 0, 393256, 131072, 0, 327720, 131072, 0, 262184, 131072, 0, 196648, 131072, 0, 131112, 131072, 0, 65576, 131072, 0, 40, 131072, 0)
+
+[node name="1" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(12, 60)
+
+[node name="2" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(80, 60)
+
+[node name="3" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(148, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(80, 34)
+texture = ExtResource("3_y7ap0")
+
+[node name="BunnyPerson" parent="." index="4" instance=ExtResource("4_2gdkv")]
+position = Vector2(58, 59)
+convo = Array[ExtResource("6_6tbvd")]([SubResource("Resource_70ncb"), SubResource("Resource_qqv23"), SubResource("Resource_65d0w")])
+
+[node name="Door" parent="." index="5" instance=ExtResource("4_3rub3")]
+position = Vector2(12, 61)
+target_room = "sewer_b"
+target_anchor = "1"
+
+[node name="Door2" parent="." index="6" instance=ExtResource("4_3rub3")]
+position = Vector2(104, 97)
+target_room = "sewer_b"
+target_anchor = "2"
+
+[node name="Door3" parent="." index="7" instance=ExtResource("4_3rub3")]
+position = Vector2(172, 97)
+target_room = "sewer_d"
+target_anchor = "1"

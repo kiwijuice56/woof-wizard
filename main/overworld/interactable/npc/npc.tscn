@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://elqbbcobedwj"]
+
+[ext_resource type="PackedScene" uid="uid://dn31fs6db3ybp" path="res://main/overworld/interactable/interactable.tscn" id="1_u1l1c"]
+[ext_resource type="Script" path="res://main/overworld/interactable/npc/npc.gd" id="2_3pb5d"]
+[ext_resource type="Texture2D" uid="uid://bglkuenh5ywua" path="res://main/overworld/interactable/npc/chiwo/chiwo.png" id="3_t44i7"]
+
+[sub_resource type="Animation" id="Animation_g27pm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6ma4m"]
+resource_name = "hop"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -7), Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gacrm"]
+_data = {
+"RESET": SubResource("Animation_g27pm"),
+"hop": SubResource("Animation_6ma4m")
+}
+
+[node name="Npc" instance=ExtResource("1_u1l1c")]
+script = ExtResource("2_3pb5d")
+convo = Array[Resource("res://main/asset/text_box/line.gd")]([])
+convo_a = Array[Resource("res://main/asset/text_box/line.gd")]([])
+convo_b = Array[Resource("res://main/asset/text_box/line.gd")]([])
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_t44i7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_gacrm")
+}

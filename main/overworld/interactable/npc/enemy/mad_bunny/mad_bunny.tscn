@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1vmsl7ynvqp1"]
+
+[ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="1_wr6eq"]
+[ext_resource type="Texture2D" uid="uid://cp2hgcs52trwx" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite.png" id="2_43oox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpu5f"]
+size = Vector2(8, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sw8k"]
+size = Vector2(6, 12)
+
+[node name="MadBunny" instance=ExtResource("1_wr6eq")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_vpu5f")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, -2)
+texture = ExtResource("2_43oox")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_6sw8k")

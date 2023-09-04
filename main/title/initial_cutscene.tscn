@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://20vjjpdqx0bb"]
+
+[ext_resource type="Script" path="res://main/title/initial_cutscene.gd" id="1_ddoq3"]
+[ext_resource type="AudioStream" uid="uid://c7gnjj1ud3grn" path="res://main/title/thwack.wav" id="2_q7kbl"]
+[ext_resource type="AudioStream" uid="uid://crfjt61or44fq" path="res://main/combat/fighter/wizzrobe/fall.wav" id="3_vodev"]
+
+[node name="InitialCutscene" type="Sprite2D"]
+script = ExtResource("1_ddoq3")
+
+[node name="MagoFall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q7kbl")
+
+[node name="ChiwoFall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q7kbl")
+volume_db = -4.588
+pitch_scale = 1.18
+
+[node name="FallPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vodev")
+volume_db = -11.435
+pitch_scale = 0.4

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4lkj6clu8wys"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_8xt33"]
+[ext_resource type="Texture2D" uid="uid://dhyfrnbkkuytx" path="res://main/combat/fighter/ball/ball2.png" id="2_au7k4"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_56xst"]
+[ext_resource type="Script" path="res://main/combat/action/buff/buff.gd" id="4_akdo6"]
+[ext_resource type="PackedScene" uid="uid://us2ekq4roeqh" path="res://main/combat/effect/buff/atk_buff.tscn" id="5_yo4jb"]
+
+[sub_resource type="Resource" id="Resource_ueubc"]
+script = ExtResource("3_56xst")
+max_hp = 35
+max_sp = 0
+hp = 35
+sp = 0
+atk = 2
+def = 2
+agi = 8
+ex = 15
+level = 6
+hp_growth = 0
+sp_growth = 0
+
+[node name="SmartBall" instance=ExtResource("1_8xt33")]
+texture = ExtResource("2_au7k4")
+display_name = "slimeroll"
+stats = SubResource("Resource_ueubc")
+
+[node name="AtkUp" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_akdo6")
+buff_type = "atk"
+stage = 1
+display_name = "atk up"
+attack_description = "%s buffed its atk!"
+target_type = "own"
+target_count = "all"
+effect = ExtResource("5_yo4jb")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

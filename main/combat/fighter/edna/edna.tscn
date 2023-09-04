@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://kqyqkrqxhytr"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_dvvsi"]
+[ext_resource type="Texture2D" uid="uid://cw86nhuvvl26i" path="res://main/combat/fighter/edna/edna_sprite.png" id="2_t0o6w"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_4p5sr"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_mhg4m"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="5_arbk4"]
+
+[sub_resource type="Resource" id="Resource_qdma7"]
+script = ExtResource("3_4p5sr")
+max_hp = 20
+max_sp = 15
+hp = 20
+sp = 5
+atk = 0
+def = 2
+agi = 2
+ex = 15
+level = 1
+hp_growth = 5
+sp_growth = 5
+
+[node name="Edna" instance=ExtResource("1_dvvsi")]
+texture = ExtResource("2_t0o6w")
+display_name = "tipster"
+stats = SubResource("Resource_qdma7")
+
+[node name="Tackle" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_mhg4m")
+power = 0.01
+display_name = "tackle"
+attack_description = "%s tapped you!"
+description = "bum rush"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_arbk4")

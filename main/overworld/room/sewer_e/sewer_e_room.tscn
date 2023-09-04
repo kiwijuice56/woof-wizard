@@ -1,0 +1,127 @@
+[gd_scene load_steps=21 format=3 uid="uid://c7xlohd2qu7bx"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_g4q1q"]
+[ext_resource type="AudioStream" uid="uid://dxnr1t1d7bjvm" path="res://main/asset/music/lightless_dawn.ogg" id="2_ga47c"]
+[ext_resource type="Texture2D" uid="uid://vlxlbq868j1n" path="res://main/overworld/room/sewer_e/sewer_e.png" id="3_qmv3t"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_vexl8"]
+[ext_resource type="PackedScene" uid="uid://drdvoii5duvrm" path="res://main/overworld/room/cave_two/agua_fall.tscn" id="5_vmu0g"]
+[ext_resource type="AudioStream" uid="uid://c62wear55ie15" path="res://main/overworld/room/cave_two/waterfall.mp3" id="6_jahra"]
+[ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="6_tnwdy"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="7_w8fgy"]
+[ext_resource type="AudioStream" uid="uid://c7cb1yi8l6hp8" path="res://main/asset/music/blue_scorpion.ogg" id="7_womtq"]
+[ext_resource type="PackedScene" uid="uid://dc3am45hvr8iu" path="res://main/combat/fighter/chinmay/chinmay.tscn" id="8_8aek8"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="8_xc61e"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="9_4u6wr"]
+[ext_resource type="PackedScene" uid="uid://bcdd5rnveg27t" path="res://main/combat/fighter/shelot/shelot.tscn" id="9_ba53d"]
+[ext_resource type="PackedScene" uid="uid://dsjxn5saewhxs" path="res://main/combat/backgrounds/background_silly.tscn" id="10_j12oy"]
+[ext_resource type="Texture2D" uid="uid://dp4hf1jm8e0n7" path="res://main/combat/fighter/chinmay/chinmay_sprite.png" id="11_7w07d"]
+
+[sub_resource type="Resource" id="Resource_p1g1c"]
+script = ExtResource("8_xc61e")
+text = "forgive me..."
+speed = 0.06
+voice = ExtResource("9_4u6wr")
+icon = ExtResource("7_w8fgy")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_501o0"]
+script = ExtResource("8_xc61e")
+text = "bye!!!"
+speed = 0.03
+voice = ExtResource("9_4u6wr")
+icon = ExtResource("7_w8fgy")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_hjqxs"]
+script = ExtResource("8_xc61e")
+text = "this is for tipster."
+speed = 0.03
+voice = ExtResource("9_4u6wr")
+icon = ExtResource("7_w8fgy")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gd7d"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qwf6"]
+size = Vector2(6, 20)
+
+[node name="SewerARoom" instance=ExtResource("1_g4q1q")]
+camera_limit_bot = 74.0
+camera_limit_right = 160.0
+music = ExtResource("2_ga47c")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(1048575, 131072, 0, 983039, 131072, 0, 917503, 131072, 0, 851967, 131072, 0, 1048576, 65536, 0, 1048577, 65536, 0, 1048578, 65536, 0, 1048579, 65536, 0, 1048580, 65536, 0, 1048581, 65536, 0, 1048582, 65536, 0, 1048583, 65536, 0, 1048584, 65536, 0, 1048585, 65536, 0, 1048586, 65536, 0, 1048587, 65536, 0, 1048588, 65536, 0, 1048589, 65536, 0, 1048590, 65536, 0, 1048591, 65536, 0, 1048592, 65536, 0, 1048593, 65536, 0, 1048594, 65536, 0, 1048595, 65536, 0, 1048596, 65536, 0, 1048597, 65536, 0, 1048598, 65536, 0, 1048599, 65536, 0, 1048600, 65536, 0, 1048601, 65536, 0, 1048602, 65536, 0, 1048603, 65536, 0, 1048604, 65536, 0, 1048605, 65536, 0, 1048606, 65536, 0, 1048607, 65536, 0, 1048608, 65536, 0, 1048609, 65536, 0, 1048610, 65536, 0, 1048611, 65536, 0, 1048612, 65536, 0, 1048613, 65536, 0, 1048614, 65536, 0, 1048615, 65536, 0, 1048616, 131072, 0, 983080, 131072, 0, 917544, 131072, 0, 852008, 131072, 0, 786472, 131072, 0, 720936, 131072, 0, 655400, 131072, 0, 589864, 131072, 0, 524328, 131072, 0, 458792, 131072, 0, 393256, 131072, 0, 327720, 131072, 0, 262184, 131072, 0, 196648, 131072, 0, 131112, 131072, 0, 65576, 131072, 0, 40, 131072, 0)
+
+[node name="1" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(12, 60)
+
+[node name="2" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(80, 60)
+
+[node name="3" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(148, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(80, 34)
+texture = ExtResource("3_qmv3t")
+
+[node name="Door" parent="." index="4" instance=ExtResource("4_vexl8")]
+position = Vector2(12, 61)
+target_room = "sewer_d"
+target_anchor = "3"
+
+[node name="Door2" parent="." index="5" instance=ExtResource("4_vexl8")]
+position = Vector2(80, 61)
+target_room = "sewer_f"
+target_anchor = "1"
+
+[node name="Door3" parent="." index="6" instance=ExtResource("4_vexl8")]
+position = Vector2(148, 61)
+target_room = "sewer_z"
+target_anchor = "1"
+
+[node name="AgauFall" parent="." index="7" instance=ExtResource("5_vmu0g")]
+position = Vector2(58, 46)
+
+[node name="AgauFall2" parent="." index="8" instance=ExtResource("5_vmu0g")]
+position = Vector2(102, 45)
+
+[node name="AgauFall3" parent="." index="9" instance=ExtResource("5_vmu0g")]
+position = Vector2(32, 46)
+
+[node name="AgauFall4" parent="." index="10" instance=ExtResource("5_vmu0g")]
+position = Vector2(126, 48)
+
+[node name="Enemy" parent="." index="11" instance=ExtResource("6_tnwdy")]
+position = Vector2(46, 61)
+death_convo = Array[ExtResource("8_xc61e")]([SubResource("Resource_p1g1c"), SubResource("Resource_501o0")])
+music = ExtResource("7_womtq")
+encounter = Array[PackedScene]([ExtResource("8_8aek8"), ExtResource("9_ba53d")])
+background = ExtResource("10_j12oy")
+convo = Array[ExtResource("8_xc61e")]([SubResource("Resource_hjqxs")])
+unique_id = "chinmay_fight"
+
+[node name="CollisionShape2D" parent="Enemy" index="0"]
+position = Vector2(3, -3)
+shape = SubResource("RectangleShape2D_6gd7d")
+
+[node name="Sprite2D" parent="Enemy" index="1"]
+position = Vector2(3, -4)
+texture = ExtResource("11_7w07d")
+
+[node name="CollisionShape2D" parent="Enemy/StaticBody2D" index="0"]
+position = Vector2(2, -2)
+shape = SubResource("RectangleShape2D_2qwf6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource("6_jahra")
+volume_db = -40.67
+autoplay = true
+
+[editable path="Enemy"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmfn1rgvq8xjp"]
+
+[ext_resource type="Script" path="res://main/combat/ui/combat_button/combat_button.gd" id="1_6lp6n"]
+
+[node name="CombatButton" type="Button"]
+custom_minimum_size = Vector2(8, 8)
+theme_override_colors/icon_disabled_color = Color(0.121569, 0.0941176, 0.2, 1)
+icon_alignment = 1
+script = ExtResource("1_6lp6n")

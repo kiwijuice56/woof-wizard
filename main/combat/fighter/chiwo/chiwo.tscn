@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu6570w43ecft"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_0j1uy"]
+[ext_resource type="Texture2D" uid="uid://hq1i5t7c2ksb" path="res://main/combat/fighter/chiwo/chiwo_boss.png" id="2_rfkgw"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_esqgv"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_gdruq"]
+[ext_resource type="PackedScene" uid="uid://b8v6wvpyx7yag" path="res://main/combat/effect/physical/physical_blood.tscn" id="5_vqw36"]
+[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="6_jn5vb"]
+[ext_resource type="Script" path="res://main/combat/action/buff/buff.gd" id="7_sxyfh"]
+[ext_resource type="PackedScene" uid="uid://us2ekq4roeqh" path="res://main/combat/effect/buff/atk_buff.tscn" id="8_0pw4k"]
+[ext_resource type="PackedScene" uid="uid://dx06bphxjyefp" path="res://main/combat/effect/buff/def_buff.tscn" id="9_rinav"]
+[ext_resource type="Script" path="res://main/combat/fighter/loofa/loofa_brain.gd" id="10_xxpg3"]
+
+[sub_resource type="Resource" id="Resource_5jipb"]
+script = ExtResource("3_esqgv")
+max_hp = 900
+max_sp = 0
+hp = 900
+sp = 0
+atk = 15
+def = 3
+agi = 11
+ex = 1
+level = 15
+hp_growth = 0
+sp_growth = 0
+
+[node name="Chiwo" instance=ExtResource("1_0j1uy")]
+texture = ExtResource("2_rfkgw")
+display_name = "chiwo"
+stats = SubResource("Resource_5jipb")
+
+[node name="Chomp" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_gdruq")
+power = 15.0
+display_name = "chomp"
+attack_description = "%s chomped down!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_vqw36")
+
+[node name="Fire" type="Node" parent="Actions" index="1"]
+script = ExtResource("4_gdruq")
+inflicts_burning = true
+inflicts_dizzy = true
+power = 8.0
+display_name = "fire"
+attack_description = "%s spit oil!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("6_jn5vb")
+
+[node name="Buff" type="Node" parent="Actions" index="2"]
+script = ExtResource("7_sxyfh")
+buff_type = "atk"
+stage = 1
+display_name = "atk up"
+attack_description = "%s buffed its atk!"
+target_type = "own"
+target_count = "all"
+effect = ExtResource("8_0pw4k")
+
+[node name="Buff2" type="Node" parent="Actions" index="3"]
+script = ExtResource("7_sxyfh")
+buff_type = "def"
+stage = 1
+display_name = "def up"
+attack_description = "%s buffed its def!"
+target_type = "own"
+target_count = "all"
+effect = ExtResource("9_rinav")
+
+[node name="Brain" parent="." index="2"]
+script = ExtResource("10_xxpg3")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

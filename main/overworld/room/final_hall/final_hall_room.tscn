@@ -1,0 +1,356 @@
+[gd_scene load_steps=44 format=3 uid="uid://cmn6b0ioi4bv0"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_g7jps"]
+[ext_resource type="Texture2D" uid="uid://dmmo5iy7hjrvq" path="res://main/overworld/room/final_hall/final_hall_sprite.png" id="2_66wi1"]
+[ext_resource type="AudioStream" uid="uid://8y6se7d80qst" path="res://main/asset/music/static_motion.ogg" id="2_qfhhy"]
+[ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="3_v5jxt"]
+[ext_resource type="PackedScene" uid="uid://byg3cj6tduc3b" path="res://main/overworld/interactable/save_point/save_point.tscn" id="4_54bha"]
+[ext_resource type="Script" path="res://main/overworld/interactable/npc/enemy/chiwo_boss.gd" id="5_8it23"]
+[ext_resource type="Texture2D" uid="uid://da6xalh2k6mwu" path="res://main/combat/fighter/knight/knight_sprite2.png" id="5_avl8s"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="5_bff18"]
+[ext_resource type="AudioStream" uid="uid://b31bslfl4tfp8" path="res://main/asset/music/trips_it.ogg" id="5_pjuwy"]
+[ext_resource type="Texture2D" uid="uid://civctaxwh0pyx" path="res://main/combat/fighter/knight/knight_sprite1.png" id="6_fvyov"]
+[ext_resource type="PackedScene" uid="uid://bu6570w43ecft" path="res://main/combat/fighter/chiwo/chiwo.tscn" id="6_topd7"]
+[ext_resource type="PackedScene" uid="uid://b4ql2w7fr880a" path="res://main/combat/backgrounds/background_love.tscn" id="7_oq53s"]
+[ext_resource type="AudioStream" uid="uid://cv8ubn4ln8syn" path="res://main/combat/fighter/loofa/super_laser.ogg" id="9_bfi1u"]
+[ext_resource type="Texture2D" uid="uid://m0n43mwlqf0c" path="res://main/asset/text_box/icons/icons1.png" id="10_ph2yn"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="11_c8ogj"]
+[ext_resource type="AudioStream" uid="uid://ef5p3ma5uijs" path="res://main/asset/text_box/voices/man.wav" id="12_jubkf"]
+[ext_resource type="Texture2D" uid="uid://cep8m2itpdt2j" path="res://main/asset/text_box/icons/icons5.png" id="13_v7kjt"]
+[ext_resource type="AudioStream" uid="uid://d133wjg87x8uo" path="res://main/asset/text_box/voices/dog.wav" id="14_s1qj6"]
+[ext_resource type="Texture2D" uid="uid://cc0pqdv8v2v8c" path="res://main/asset/text_box/icons/icons4.png" id="15_td8nx"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="16_nhkyi"]
+[ext_resource type="Texture2D" uid="uid://r7kkpf3ht7rq" path="res://main/asset/text_box/icons/icons3.png" id="17_52sip"]
+[ext_resource type="Texture2D" uid="uid://botehw81wv76d" path="res://main/asset/text_box/icons/icons8.png" id="18_7me28"]
+[ext_resource type="AudioStream" uid="uid://c5s0ejpthav1s" path="res://main/asset/text_box/voices/man_large.wav" id="19_hlcwm"]
+
+[sub_resource type="Resource" id="Resource_dli3b"]
+script = ExtResource("11_c8ogj")
+text = "awesome..."
+speed = 0.05
+voice = ExtResource("14_s1qj6")
+icon = ExtResource("13_v7kjt")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_nidf0"]
+script = ExtResource("11_c8ogj")
+text = "let's go home now."
+speed = 0.05
+voice = ExtResource("12_jubkf")
+icon = ExtResource("10_ph2yn")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_isb55"]
+script = ExtResource("11_c8ogj")
+text = "ok."
+speed = 0.03
+voice = ExtResource("16_nhkyi")
+icon = ExtResource("15_td8nx")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_spq0n"]
+script = ExtResource("11_c8ogj")
+text = "i'm going too."
+speed = 0.03
+voice = ExtResource("16_nhkyi")
+icon = ExtResource("17_52sip")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_xhfa0"]
+script = ExtResource("11_c8ogj")
+text = "the end."
+speed = 0.1
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_ou0ot"]
+script = ExtResource("11_c8ogj")
+text = "chiwo!!!"
+speed = 0.05
+voice = ExtResource("12_jubkf")
+icon = ExtResource("10_ph2yn")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_bt0u7"]
+script = ExtResource("11_c8ogj")
+text = "you have done well."
+speed = 0.05
+voice = ExtResource("14_s1qj6")
+icon = ExtResource("13_v7kjt")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_g032x"]
+script = ExtResource("11_c8ogj")
+text = "this is your hound?"
+speed = 0.03
+voice = ExtResource("16_nhkyi")
+icon = ExtResource("15_td8nx")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_anpnx"]
+script = ExtResource("11_c8ogj")
+text = "he's ugly."
+speed = 0.03
+voice = ExtResource("16_nhkyi")
+icon = ExtResource("17_52sip")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_b7irh"]
+script = ExtResource("11_c8ogj")
+text = "silence."
+speed = 0.05
+voice = ExtResource("14_s1qj6")
+icon = ExtResource("13_v7kjt")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_dq457"]
+script = ExtResource("11_c8ogj")
+text = "prove your strength to me."
+speed = 0.05
+voice = ExtResource("14_s1qj6")
+icon = ExtResource("13_v7kjt")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_6orr5"]
+script = ExtResource("11_c8ogj")
+text = "woof woof!!!"
+speed = 0.05
+voice = ExtResource("14_s1qj6")
+icon = ExtResource("13_v7kjt")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_og1b3"]
+script = ExtResource("11_c8ogj")
+text = "aww yeah let's do this."
+speed = 0.05
+voice = ExtResource("19_hlcwm")
+icon = ExtResource("18_7me28")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvt6p"]
+size = Vector2(21, 20)
+
+[sub_resource type="Animation" id="Animation_72q2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fnw41"]
+resource_name = "wag"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncmxf"]
+_data = {
+"RESET": SubResource("Animation_72q2s"),
+"wag": SubResource("Animation_fnw41")
+}
+
+[sub_resource type="Animation" id="Animation_ph7w2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line2D:width")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d3cdr"]
+resource_name = "kill_losers"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line2D:width")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 32.0, 32.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gaqg"]
+_data = {
+"RESET": SubResource("Animation_ph7w2"),
+"kill_losers": SubResource("Animation_d3cdr")
+}
+
+[node name="FinalHallRoom" instance=ExtResource("1_g7jps")]
+camera_limit_bot = 72.0
+camera_limit_right = 512.0
+music = ExtResource("2_qfhhy")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(983040, 65536, 0, 983041, 65536, 0, 983042, 65536, 0, 983043, 65536, 0, 983044, 65536, 0, 983045, 65536, 0, 983046, 65536, 0, 983047, 65536, 0, 983048, 65536, 0, 983049, 65536, 0, 983050, 65536, 0, 983051, 65536, 0, 983052, 65536, 0, 983053, 65536, 0, 983054, 65536, 0, 983055, 65536, 0, 983056, 65536, 0, 983057, 65536, 0, 983058, 65536, 0, 983059, 65536, 0, 983060, 65536, 0, 983061, 65536, 0, 983062, 65536, 0, 983063, 65536, 0, 983064, 65536, 0, 983065, 65536, 0, 983066, 65536, 0, 983067, 65536, 0, 983068, 65536, 0, 983069, 65536, 0, 983070, 65536, 0, 983071, 65536, 0, 983072, 65536, 0, 983073, 65536, 0, 983074, 65536, 0, 983075, 65536, 0, 983076, 65536, 0, 983077, 65536, 0, 983078, 65536, 0, 983079, 65536, 0, 983080, 65536, 0, 983081, 65536, 0, 983082, 65536, 0, 983083, 65536, 0, 983084, 65536, 0, 983085, 65536, 0, 983086, 65536, 0, 983087, 65536, 0, 983088, 65536, 0, 983089, 65536, 0, 983090, 65536, 0, 983091, 65536, 0, 983092, 65536, 0, 983093, 65536, 0, 983094, 65536, 0, 983095, 65536, 0, 983096, 65536, 0, 983097, 65536, 0, 983098, 65536, 0, 983099, 65536, 0, 983100, 65536, 0, 983101, 65536, 0, 983102, 65536, 0, 983103, 65536, 0, 983104, 65536, 0, 983105, 65536, 0, 983106, 65536, 0, 983107, 65536, 0, 983108, 65536, 0, 983109, 65536, 0, 983110, 65536, 0, 983111, 65536, 0, 983112, 65536, 0, 983113, 65536, 0, 983114, 65536, 0, 983115, 65536, 0, 983116, 65536, 0, 983117, 65536, 0, 983118, 65536, 0, 983119, 65536, 0, 983120, 65536, 0, 983121, 65536, 0, 983122, 65536, 0, 983123, 65536, 0, 983124, 65536, 0, 983125, 65536, 0, 983126, 65536, 0, 983127, 65536, 0, 983128, 65536, 0, 983129, 65536, 0, 983130, 65536, 0, 983131, 65536, 0, 983132, 65536, 0, 983133, 65536, 0, 983134, 65536, 0, 983135, 65536, 0, 983136, 65536, 0, 983137, 65536, 0, 983138, 65536, 0, 983139, 65536, 0, 983140, 65536, 0, 983141, 65536, 0, 983142, 65536, 0, 983143, 65536, 0, 983144, 65536, 0, 983145, 65536, 0, 983146, 65536, 0, 983147, 65536, 0, 983148, 65536, 0, 983149, 65536, 0, 983150, 65536, 0, 983151, 65536, 0, 983152, 65536, 0, 983153, 65536, 0, 983154, 65536, 0, 983155, 65536, 0, 983156, 65536, 0, 983157, 65536, 0, 983158, 65536, 0, 983159, 65536, 0, 983160, 65536, 0, 983161, 65536, 0, 983162, 65536, 0, 983163, 65536, 0, 983164, 65536, 0, 983165, 65536, 0, 983166, 65536, 0, 983167, 65536, 0, 917632, 131072, 0, 852096, 131072, 0, 983168, 131072, 0, 1048704, 131072, 0, 786560, 131072, 0, 721024, 131072, 0, 655488, 131072, 0, 589952, 131072, 0, 524416, 131072, 0, 458880, 131072, 0, 393344, 131072, 0, 1179647, 131072, 0, 1114111, 131072, 0, 1048575, 131072, 0, 983039, 131072, 0, 917503, 131072, 0, 851967, 131072, 0, 786431, 131072, 0, 720895, 131072, 0, 655359, 131072, 0, 589823, 131072, 0, 524287, 131072, 0)
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(492, 56)
+
+[node name="SavePoint" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(458, 56)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(256, 32)
+texture = ExtResource("2_66wi1")
+
+[node name="SavePoint" parent="." index="4" instance=ExtResource("4_54bha")]
+position = Vector2(478, 55)
+
+[node name="Door" parent="." index="5" instance=ExtResource("5_bff18")]
+position = Vector2(492, 57)
+target_room = "sewer_f"
+target_anchor = "2"
+
+[node name="Enemy" parent="." index="6" instance=ExtResource("3_v5jxt")]
+position = Vector2(45, 46)
+script = ExtResource("5_8it23")
+death_convo = Array[ExtResource("11_c8ogj")]([SubResource("Resource_dli3b"), SubResource("Resource_nidf0"), SubResource("Resource_isb55"), SubResource("Resource_spq0n"), SubResource("Resource_xhfa0")])
+music = ExtResource("5_pjuwy")
+encounter = Array[PackedScene]([ExtResource("6_topd7")])
+background = ExtResource("7_oq53s")
+convo = Array[ExtResource("11_c8ogj")]([SubResource("Resource_ou0ot"), SubResource("Resource_bt0u7"), SubResource("Resource_g032x"), SubResource("Resource_anpnx"), SubResource("Resource_b7irh"), SubResource("Resource_dq457"), SubResource("Resource_6orr5"), SubResource("Resource_og1b3")])
+unique_id = "dog_boss"
+auto_interact = true
+
+[node name="CollisionShape2D" parent="Enemy" index="0"]
+position = Vector2(3, 4)
+shape = SubResource("RectangleShape2D_tvt6p")
+
+[node name="Sprite2D" parent="Enemy" index="1"]
+position = Vector2(-4, 0)
+hframes = 4
+
+[node name="CustomAnimationPlayer" type="AnimationPlayer" parent="Enemy" index="6"]
+autoplay = "wag"
+libraries = {
+"": SubResource("AnimationLibrary_ncmxf")
+}
+
+[node name="CustomAnimationPlayer2" type="AnimationPlayer" parent="Enemy" index="7"]
+libraries = {
+"": SubResource("AnimationLibrary_8gaqg")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="Enemy" index="8"]
+position = Vector2(20, 5)
+texture = ExtResource("5_avl8s")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Enemy/Sprite2D2" index="0"]
+position = Vector2(11, 2)
+texture = ExtResource("6_fvyov")
+
+[node name="Line2D" type="Line2D" parent="Enemy" index="9"]
+visible = false
+position = Vector2(26, -61)
+points = PackedVector2Array(0, 0, 0, 256)
+width = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Enemy" index="10"]
+stream = ExtResource("9_bfi1u")
+volume_db = -15.857
+pitch_scale = 1.2
+
+[editable path="Enemy"]

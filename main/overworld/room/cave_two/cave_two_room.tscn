@@ -1,0 +1,356 @@
+[gd_scene load_steps=53 format=3 uid="uid://bmsfoojhkswhf"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_f37lu"]
+[ext_resource type="Texture2D" uid="uid://b346nhbv43inc" path="res://main/overworld/room/cave_two/cave_two_sprite.png" id="2_8712j"]
+[ext_resource type="AudioStream" uid="uid://uwwpaw3dbcyu" path="res://main/asset/music/ossuary_5_rest.ogg" id="2_lwpkd"]
+[ext_resource type="AudioStream" uid="uid://da57a5o3tyn54" path="res://main/asset/music/in_a_heartbeat.ogg" id="2_wl63f"]
+[ext_resource type="PackedScene" uid="uid://drdvoii5duvrm" path="res://main/overworld/room/cave_two/agua_fall.tscn" id="3_y24hp"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_8p5l8"]
+[ext_resource type="AudioStream" uid="uid://cre6ntv5ka30o" path="res://main/asset/music/the_way_out.ogg" id="5_cimnt"]
+[ext_resource type="PackedScene" uid="uid://dyafquys17a5x" path="res://main/overworld/interactable/item_chest/item_chest.tscn" id="5_rovft"]
+[ext_resource type="AudioStream" uid="uid://c62wear55ie15" path="res://main/overworld/room/cave_two/waterfall.mp3" id="6_2wyjb"]
+[ext_resource type="PackedScene" uid="uid://cdo4xu3v3q8x8" path="res://main/combat/fighter/bad_bunny/bad_bunny.tscn" id="6_spxmt"]
+[ext_resource type="PackedScene" uid="uid://cfjjdi6uuuobq" path="res://main/combat/backgrounds/background_scary.tscn" id="7_nspr3"]
+[ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="7_ohxwy"]
+[ext_resource type="Texture2D" uid="uid://bq6be7yk8rw54" path="res://main/asset/text_box/icons/icons9.png" id="8_jx6y2"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="9_73cut"]
+[ext_resource type="AudioStream" uid="uid://d133wjg87x8uo" path="res://main/asset/text_box/voices/dog.wav" id="10_bhxuo"]
+[ext_resource type="AudioStream" uid="uid://cgpcfyaleqmr3" path="res://main/asset/music/mta.ogg" id="11_kwk8u"]
+[ext_resource type="Texture2D" uid="uid://br4hrpfo8mjni" path="res://main/combat/fighter/loofa/loofa_sprite.png" id="11_rypm6"]
+[ext_resource type="Texture2D" uid="uid://m0n43mwlqf0c" path="res://main/asset/text_box/icons/icons1.png" id="11_vv776"]
+[ext_resource type="PackedScene" uid="uid://bnk12lr185chq" path="res://main/combat/fighter/loofa/loofa_boss.tscn" id="12_3de2b"]
+[ext_resource type="AudioStream" uid="uid://ef5p3ma5uijs" path="res://main/asset/text_box/voices/man.wav" id="12_juq0w"]
+[ext_resource type="PackedScene" uid="uid://brp3de8wg2hc2" path="res://main/combat/fighter/mr_sign/mr_sign.tscn" id="12_qg637"]
+[ext_resource type="Texture2D" uid="uid://dnkr027810nt0" path="res://main/overworld/interactable/npc/sign/sign_sprite.png" id="13_n1d50"]
+[ext_resource type="PackedScene" uid="uid://dsjxn5saewhxs" path="res://main/combat/backgrounds/background_silly.tscn" id="16_gl00g"]
+[ext_resource type="PackedScene" uid="uid://byg3cj6tduc3b" path="res://main/overworld/interactable/save_point/save_point.tscn" id="17_u6goc"]
+[ext_resource type="PackedScene" uid="uid://dkjrg34xfg1ey" path="res://main/overworld/interactable/npc/enemy/party_enemy.tscn" id="20_kwc0q"]
+[ext_resource type="Texture2D" uid="uid://cc0pqdv8v2v8c" path="res://main/asset/text_box/icons/icons4.png" id="23_fmt0s"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="24_iihil"]
+[ext_resource type="PackedScene" uid="uid://byl3vuyhjym76" path="res://main/combat/backgrounds/background_fishy.tscn" id="26_coyu0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miqip"]
+size = Vector2(6, 6)
+
+[sub_resource type="Resource" id="Resource_4fr7u"]
+script = ExtResource("9_73cut")
+text = "the hunger... oh god..."
+speed = 0.07
+voice = ExtResource("10_bhxuo")
+icon = ExtResource("8_jx6y2")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_o6pvb"]
+script = ExtResource("9_73cut")
+text = "how to be cool (for dummies):"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_h1r8g"]
+script = ExtResource("9_73cut")
+text = "let signs eat you."
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_y0w6o"]
+script = ExtResource("9_73cut")
+text = "... ?"
+speed = 0.07
+voice = ExtResource("12_juq0w")
+icon = ExtResource("11_vv776")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_nqlxn"]
+script = ExtResource("9_73cut")
+text = "........"
+speed = 0.04
+icon = ExtResource("8_jx6y2")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_t13al"]
+script = ExtResource("9_73cut")
+text = "... (oh my god does he see me)"
+speed = 0.04
+icon = ExtResource("8_jx6y2")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_4jtdc"]
+script = ExtResource("9_73cut")
+text = "(sign defense activate!!!)"
+speed = 0.04
+icon = ExtResource("8_jx6y2")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_c3jde"]
+script = ExtResource("9_73cut")
+text = "roooar!!!!"
+speed = 0.04
+voice = ExtResource("10_bhxuo")
+icon = ExtResource("8_jx6y2")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk8lr"]
+size = Vector2(6, 6)
+
+[sub_resource type="Resource" id="Resource_ivv0j"]
+script = ExtResource("9_73cut")
+text = "loofa joined your party!"
+speed = 0.02
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_i2wna"]
+script = ExtResource("9_73cut")
+text = "you are powerful..."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_fyug4"]
+script = ExtResource("9_73cut")
+text = "you are clearly no knave."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_6rwm3"]
+script = ExtResource("9_73cut")
+text = "what compels you here?"
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_62ysi"]
+script = ExtResource("9_73cut")
+text = "my dog ran away :("
+speed = 0.06
+voice = ExtResource("12_juq0w")
+icon = ExtResource("11_vv776")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_qcgnq"]
+script = ExtResource("9_73cut")
+text = "i see... so be it."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_7d35r"]
+script = ExtResource("9_73cut")
+text = "i shall join your quest."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_qc0h2"]
+script = ExtResource("9_73cut")
+text = "behold... i am among you."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_4sawr"]
+script = ExtResource("9_73cut")
+text = "who dares disturb me?"
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_lghup"]
+script = ExtResource("9_73cut")
+text = "hi?"
+speed = 0.06
+voice = ExtResource("12_juq0w")
+icon = ExtResource("11_vv776")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_4oghg"]
+script = ExtResource("9_73cut")
+text = "ugh... yet another hooligan..."
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_u4bqc"]
+script = ExtResource("9_73cut")
+text = "begone scoundrel!!!"
+speed = 0.06
+voice = ExtResource("24_iihil")
+icon = ExtResource("23_fmt0s")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx52f"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sv2a"]
+size = Vector2(4, 8)
+
+[node name="CaveTwo" instance=ExtResource("1_f37lu")]
+camera_limit_bot = 264.0
+camera_limit_right = 1024.0
+music = ExtResource("2_lwpkd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(384, 128)
+texture = ExtResource("2_8712j")
+
+[node name="CollisionTileMap" parent="." index="2"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(2621442, 65536, 0, 2621443, 65536, 0, 2621444, 65536, 0, 2621445, 65536, 0, 2621446, 65536, 0, 2621447, 65536, 0, 2621448, 65536, 0, 2621449, 65536, 0, 2621450, 65536, 0, 2621451, 65536, 0, 2621452, 65536, 0, 2621453, 65536, 0, 2621454, 65536, 0, 2621455, 65536, 0, 2621456, 65536, 0, 2621457, 65536, 0, 2621458, 65536, 0, 2621459, 65536, 0, 2621460, 65536, 0, 2621461, 65536, 0, 2621462, 65536, 0, 2621463, 65536, 0, 2621464, 65536, 0, 2621465, 65536, 0, 2621466, 65536, 0, 2621467, 65536, 0, 2621468, 65536, 0, 2621469, 65536, 0, 2621470, 65536, 0, 2621471, 65536, 0, 2490394, 65536, 0, 2490395, 65536, 0, 2490396, 65536, 0, 2490397, 65536, 0, 2490398, 65536, 0, 2490399, 65536, 0, 2490400, 65536, 0, 2490401, 65536, 0, 2490402, 65536, 0, 2490403, 65536, 0, 2490404, 65536, 0, 2490405, 65536, 0, 2490406, 65536, 0, 2490407, 65536, 0, 2490408, 65536, 0, 2490410, 65536, 0, 2490409, 65536, 0, 2490411, 65536, 0, 2359328, 65536, 0, 2359329, 65536, 0, 2359330, 65536, 0, 2359331, 65536, 0, 2228256, 65536, 0, 2228257, 65536, 0, 2228258, 65536, 0, 2228259, 65536, 0, 2097184, 65536, 0, 2097185, 65536, 0, 2097186, 65536, 0, 2097187, 65536, 0, 1966114, 65536, 0, 1966115, 65536, 0, 1966116, 65536, 0, 1966117, 65536, 0, 1966118, 65536, 0, 1966119, 65536, 0, 1966120, 65536, 0, 1966121, 65536, 0, 1966122, 65536, 0, 1966123, 65536, 0, 1966124, 65536, 0, 1966125, 65536, 0, 1966126, 65536, 0, 1966127, 65536, 0, 1966128, 65536, 0, 1966130, 65536, 0, 1966129, 65536, 0, 1966131, 65536, 0, 1835056, 65536, 0, 1835057, 65536, 0, 1835058, 65536, 0, 1835059, 65536, 0, 1835060, 65536, 0, 1835061, 65536, 0, 1835062, 65536, 0, 1835063, 65536, 0, 1835064, 65536, 0, 1835065, 65536, 0, 1835066, 65536, 0, 1835067, 65536, 0, 1835068, 65536, 0, 1835069, 65536, 0, 1835070, 65536, 0, 1835071, 65536, 0, 1703992, 65536, 0, 1703993, 65536, 0, 1703994, 65536, 0, 1703995, 65536, 0, 1703996, 65536, 0, 1703997, 65536, 0, 1703998, 65536, 0, 1704005, 65536, 0, 1704004, 65536, 0, 1704003, 65536, 0, 1704002, 65536, 0, 1704001, 65536, 0, 1704000, 65536, 0, 1703999, 65536, 0, 1835076, 65536, 0, 1835077, 65536, 0, 1835078, 65536, 0, 1835079, 65536, 0, 1835080, 65536, 0, 1835081, 65536, 0, 1835082, 65536, 0, 1835083, 65536, 0, 1835084, 65536, 0, 1835085, 65536, 0, 1835086, 65536, 0, 1835087, 65536, 0, 1835088, 65536, 0, 1835089, 65536, 0, 1835090, 65536, 0, 1835091, 65536, 0, 1835092, 65536, 0, 1835093, 65536, 0, 1835094, 65536, 0, 1835095, 65536, 0, 1835096, 65536, 0, 1835097, 65536, 0, 1835098, 65536, 0, 1835099, 65536, 0, 1835100, 65536, 0, 1835101, 65536, 0, 1966164, 65536, 0, 1966165, 65536, 0, 1966166, 65536, 0, 1966167, 65536, 0, 2097236, 65536, 0, 2097237, 65536, 0, 2097238, 65536, 0, 2097239, 65536, 0, 2228308, 65536, 0, 2228309, 65536, 0, 2228310, 65536, 0, 2228311, 65536, 0, 2359382, 65536, 0, 2359380, 65536, 0, 2359381, 65536, 0, 2359383, 65536, 0, 2490452, 65536, 0, 2490453, 65536, 0, 2490454, 65536, 0, 2490455, 65536, 0, 2621524, 65536, 0, 2621525, 65536, 0, 2621526, 65536, 0, 2621527, 65536, 0, 2752596, 65536, 0, 2752597, 65536, 0, 2752598, 65536, 0, 2752599, 65536, 0, 2883668, 65536, 0, 2883669, 65536, 0, 2883670, 65536, 0, 2883671, 65536, 0, 3014740, 65536, 0, 3014741, 65536, 0, 3014742, 65536, 0, 3014743, 65536, 0, 3145812, 65536, 0, 3145813, 65536, 0, 3145814, 65536, 0, 3145815, 65536, 0, 3276884, 65536, 0, 3276885, 65536, 0, 3276886, 65536, 0, 3276887, 65536, 0, 3407954, 65536, 0, 3407955, 65536, 0, 3407956, 65536, 0, 3407957, 65536, 0, 3407958, 65536, 0, 3407959, 65536, 0, 3539024, 65536, 0, 3539025, 65536, 0, 3539026, 65536, 0, 3670093, 65536, 0, 3670094, 65536, 0, 3670095, 65536, 0, 3670096, 65536, 0, 3670097, 65536, 0, 3670098, 65536, 0, 3670099, 65536, 0, 3670100, 65536, 0, 3670101, 65536, 0, 3539027, 65536, 0, 3670092, 65536, 0, 3801162, 65536, 0, 3801163, 65536, 0, 3801164, 65536, 0, 3801165, 65536, 0, 3801166, 65536, 0, 3801167, 65536, 0, 3801168, 65536, 0, 3801169, 65536, 0, 3801170, 65536, 0, 3801171, 65536, 0, 3801172, 65536, 0, 3801173, 65536, 0, 3801174, 65536, 0, 3801175, 65536, 0, 3801176, 65536, 0, 3801177, 65536, 0, 3801178, 65536, 0, 3801179, 65536, 0, 3801181, 65536, 0, 3801182, 65536, 0, 3801183, 65536, 0, 3801180, 65536, 0, 3801161, 65536, 0, 3801160, 65536, 0, 3801159, 65536, 0, 3801158, 65536, 0, 3801157, 65536, 0, 3801156, 65536, 0, 3801155, 65536, 0, 3801154, 65536, 0, 3801153, 65536, 0, 3801152, 65536, 0, 3801151, 65536, 0, 3801150, 65536, 0, 3801149, 65536, 0, 3801148, 65536, 0, 3801147, 65536, 0, 3801146, 65536, 0, 3801145, 65536, 0, 3801144, 65536, 0, 3801143, 65536, 0, 3801142, 65536, 0, 3801141, 65536, 0, 3801140, 65536, 0, 3801139, 65536, 0, 3801138, 65536, 0, 3801137, 65536, 0, 3801136, 65536, 0, 3801135, 65536, 0, 3801134, 65536, 0, 3932202, 65536, 0, 3932203, 65536, 0, 3932204, 65536, 0, 3932205, 65536, 0, 3932206, 65536, 0, 3932207, 65536, 0, 4063243, 65536, 0, 4063244, 65536, 0, 4063245, 65536, 0, 4063246, 65536, 0, 4063247, 65536, 0, 4063248, 65536, 0, 4063242, 65536, 0, 4063249, 65536, 0, 4063250, 65536, 0, 4063251, 65536, 0, 4063252, 65536, 0, 4063253, 65536, 0, 4063254, 65536, 0, 4063255, 65536, 0, 4063256, 65536, 0, 4063257, 65536, 0, 4063258, 65536, 0, 4063259, 65536, 0, 4063260, 65536, 0, 4063261, 65536, 0, 4063262, 65536, 0, 4063263, 65536, 0, 4063264, 65536, 0, 4063265, 65536, 0, 4063266, 65536, 0, 4063267, 65536, 0, 4063268, 65536, 0, 4063269, 65536, 0, 4063270, 65536, 0, 4063271, 65536, 0, 4063272, 65536, 0, 4063273, 65536, 0, 4063274, 65536, 0, 4063275, 65536, 0, 4063276, 65536, 0, 4063277, 65536, 0, 4063278, 65536, 0, 4063279, 65536, 0, 4063280, 65536, 0, 4063281, 65536, 0, 3538964, 65536, 0, 3538965, 65536, 0, 3538966, 65536, 0, 3538967, 65536, 0, 3538968, 65536, 0, 3538969, 65536, 0, 3145754, 65536, 0, 3145755, 65536, 0, 3145756, 65536, 0, 3145757, 65536, 0, 3145758, 65536, 0, 3145759, 65536, 0, 2883616, 65536, 0, 2883617, 65536, 0, 2883618, 65536, 0, 2883619, 65536, 0, 2883620, 65536, 0, 2883621, 65536, 0, 3932262, 65536, 0, 3932263, 65536, 0, 3932264, 65536, 0, 3932265, 65536, 0, 3932266, 65536, 0, 3932267, 65536, 0, 3932268, 65536, 0, 3932269, 65536, 0, 3932270, 65536, 0, 3932271, 65536, 0, 3932260, 65536, 0, 3932261, 65536, 0, 3932272, 65536, 0, 3932273, 65536, 0, 3932274, 65536, 0, 3932275, 65536, 0, 3932276, 65536, 0, 3932277, 65536, 0, 3932278, 65536, 0, 3932283, 65536, 0, 3932284, 65536, 0, 3932285, 65536, 0, 3932286, 65536, 0, 3932287, 65536, 0, 3932288, 65536, 0, 3932289, 65536, 0, 3932290, 65536, 0, 3932291, 65536, 0, 3932282, 65536, 0, 3932281, 65536, 0, 3932280, 65536, 0, 3932279, 65536, 0, 3801210, 65536, 0, 3801209, 65536, 0, 3801208, 65536, 0, 3801211, 65536, 0, 3801212, 65536, 0, 3801213, 65536, 0, 3670140, 65536, 0, 3670141, 65536, 0, 3670142, 65536, 0, 3670143, 65536, 0, 3670144, 65536, 0, 3670145, 65536, 0, 3670146, 65536, 0, 3670147, 65536, 0, 3670148, 65536, 0, 3670149, 65536, 0, 3670150, 65536, 0, 3670151, 65536, 0, 3670152, 65536, 0, 3670153, 65536, 0, 3670154, 65536, 0, 3670155, 65536, 0, 3670156, 65536, 0, 3670157, 65536, 0, 3670158, 65536, 0, 3670159, 65536, 0, 3670160, 65536, 0, 3670161, 65536, 0, 3670162, 65536, 0, 3670163, 65536, 0, 3670164, 65536, 0, 3670165, 65536, 0, 3670166, 65536, 0, 3670167, 65536, 0, 3670168, 65536, 0, 3670169, 65536, 0, 3670170, 65536, 0, 3670171, 65536, 0, 3670172, 65536, 0, 3670173, 65536, 0, 3670174, 65536, 0, 3670175, 65536, 0, 3670176, 65536, 0, 3670177, 65536, 0, 3670178, 65536, 0, 3670179, 65536, 0, 3670180, 65536, 0, 3670181, 65536, 0, 3670182, 65536, 0, 3670183, 65536, 0, 3670184, 65536, 0, 3670185, 65536, 0, 3670186, 65536, 0, 3670187, 65536, 0, 3539080, 65536, 0, 3539081, 65536, 0, 3539082, 65536, 0, 3539083, 65536, 0, 3408008, 65536, 0, 3408009, 65536, 0, 3408010, 65536, 0, 3408011, 65536, 0, 3276936, 65536, 0, 3276937, 65536, 0, 3276938, 65536, 0, 3276939, 65536, 0, 3145864, 65536, 0, 3145865, 65536, 0, 3145866, 65536, 0, 3145867, 65536, 0, 3014792, 65536, 0, 3014793, 65536, 0, 3014794, 65536, 0, 3014795, 65536, 0, 2883709, 65536, 0, 2883710, 65536, 0, 2883711, 65536, 0, 2883712, 65536, 0, 2883713, 65536, 0, 2883714, 65536, 0, 2883715, 65536, 0, 2883716, 65536, 0, 2883717, 65536, 0, 2883718, 65536, 0, 2883719, 65536, 0, 2883720, 65536, 0, 2883721, 65536, 0, 2883722, 65536, 0, 2883723, 65536, 0, 2883708, 65536, 0, 2752638, 65536, 0, 2752639, 65536, 0, 2752640, 65536, 0, 2752641, 65536, 0, 2621566, 65536, 0, 2621567, 65536, 0, 2621568, 65536, 0, 2621569, 65536, 0, 2490494, 65536, 0, 2490495, 65536, 0, 2490496, 65536, 0, 2490497, 65536, 0, 2359422, 65536, 0, 2359423, 65536, 0, 2359424, 65536, 0, 2359425, 65536, 0, 2228351, 65536, 0, 2228350, 65536, 0, 2228352, 65536, 0, 2228353, 65536, 0, 2097281, 65536, 0, 2097280, 65536, 0, 2097279, 65536, 0, 2097278, 65536, 0, 2097277, 65536, 0, 2097276, 65536, 0, 2097275, 65536, 0, 2097274, 65536, 0, 2097273, 65536, 0, 2097272, 65536, 0, 2097271, 65536, 0, 2097270, 65536, 0, 2097269, 65536, 0, 2097268, 65536, 0, 2097267, 65536, 0, 2097266, 65536, 0, 2097265, 65536, 0, 2097264, 65536, 0, 2097263, 65536, 0, 2097262, 65536, 0, 1966191, 65536, 0, 1966190, 65536, 0, 1966189, 65536, 0, 1966188, 65536, 0, 1966187, 65536, 0, 1966186, 65536, 0, 1966185, 65536, 0, 1966184, 65536, 0, 1966183, 65536, 0, 1966182, 65536, 0, 1966181, 65536, 0, 1966180, 65536, 0, 1966179, 65536, 0, 1966178, 65536, 0, 1966177, 65536, 0, 1966176, 65536, 0, 1966175, 65536, 0, 1966174, 65536, 0, 1966173, 65536, 0, 1966172, 65536, 0, 3276862, 65536, 0, 3276863, 65536, 0, 3276864, 65536, 0, 3276865, 65536, 0, 3276866, 65536, 0, 3276867, 65536, 0, 3276861, 65536, 0, 3276860, 65536, 0)
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(20, 156)
+
+[node name="Desert" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(676, 220)
+
+[node name="SavePoint" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(420, 236)
+
+[node name="Cliff" type="Marker2D" parent="Anchors" index="3"]
+position = Vector2(372, 228)
+
+[node name="Enemy2" parent="." index="4" instance=ExtResource("7_ohxwy")]
+position = Vector2(263, 98)
+music = ExtResource("5_cimnt")
+volume = 0.0
+encounter = Array[PackedScene]([ExtResource("6_spxmt")])
+background = ExtResource("7_nspr3")
+unique_id = "bad_bunny"
+auto_interact = true
+
+[node name="CollisionShape2D" parent="Enemy2" index="0"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_miqip")
+
+[node name="Sprite2D" parent="Enemy2" index="1"]
+visible = false
+
+[node name="Enemy3" parent="." index="5" instance=ExtResource("7_ohxwy")]
+position = Vector2(551, 209)
+music = ExtResource("5_cimnt")
+volume = 0.0
+encounter = Array[PackedScene]([ExtResource("6_spxmt"), ExtResource("6_spxmt")])
+background = ExtResource("7_nspr3")
+unique_id = "bad_bunnies"
+auto_interact = true
+
+[node name="CollisionShape2D" parent="Enemy3" index="0"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_miqip")
+
+[node name="Sprite2D" parent="Enemy3" index="1"]
+visible = false
+
+[node name="Door" parent="." index="6" instance=ExtResource("4_8p5l8")]
+position = Vector2(20, 157)
+target_room = "first_encounter"
+target_anchor = "First"
+
+[node name="Door2" parent="." index="7" instance=ExtResource("4_8p5l8")]
+position = Vector2(676, 221)
+target_room = "loofa_town"
+target_anchor = "Default"
+
+[node name="Door3" parent="." index="8" instance=ExtResource("4_8p5l8")]
+position = Vector2(372, 229)
+target_room = "cliff_two"
+target_anchor = "Default"
+
+[node name="ItemChest" parent="." index="9" instance=ExtResource("5_rovft")]
+position = Vector2(267, 197)
+item = "flan"
+cnt = 1
+unique_id = "cave_two_flan"
+
+[node name="AgauFall" parent="." index="10" instance=ExtResource("3_y24hp")]
+position = Vector2(240, 91)
+
+[node name="AgauFall2" parent="." index="11" instance=ExtResource("3_y24hp")]
+position = Vector2(574, 99)
+
+[node name="AgauFall4" parent="." index="12" instance=ExtResource("3_y24hp")]
+position = Vector2(590, 99)
+
+[node name="AgauFall3" parent="." index="13" instance=ExtResource("3_y24hp")]
+position = Vector2(288, 91)
+
+[node name="Enemy" parent="." index="14" instance=ExtResource("7_ohxwy")]
+position = Vector2(101, 235)
+death_convo = Array[ExtResource("9_73cut")]([SubResource("Resource_4fr7u")])
+music = ExtResource("11_kwk8u")
+encounter = Array[PackedScene]([ExtResource("12_qg637")])
+background = ExtResource("16_gl00g")
+convo = Array[ExtResource("9_73cut")]([SubResource("Resource_o6pvb"), SubResource("Resource_h1r8g"), SubResource("Resource_y0w6o"), SubResource("Resource_nqlxn"), SubResource("Resource_t13al"), SubResource("Resource_4jtdc"), SubResource("Resource_c3jde")])
+unique_id = "first_sign_guy"
+
+[node name="CollisionShape2D" parent="Enemy" index="0"]
+position = Vector2(-13, 10)
+shape = SubResource("RectangleShape2D_qk8lr")
+
+[node name="Sprite2D" parent="Enemy" index="1"]
+position = Vector2(-13, 9)
+texture = ExtResource("13_n1d50")
+
+[node name="SavePoint" parent="." index="15" instance=ExtResource("17_u6goc")]
+position = Vector2(408, 236)
+
+[node name="PartyEnemy" parent="." index="16" instance=ExtResource("20_kwc0q")]
+position = Vector2(656, 217)
+join = "loofa"
+join_convo = Array[ExtResource("9_73cut")]([SubResource("Resource_ivv0j")])
+death_convo = Array[ExtResource("9_73cut")]([SubResource("Resource_i2wna"), SubResource("Resource_fyug4"), SubResource("Resource_6rwm3"), SubResource("Resource_62ysi"), SubResource("Resource_qcgnq"), SubResource("Resource_7d35r"), SubResource("Resource_qc0h2")])
+music = ExtResource("2_wl63f")
+encounter = Array[PackedScene]([ExtResource("12_3de2b")])
+background = ExtResource("26_coyu0")
+convo = Array[ExtResource("9_73cut")]([SubResource("Resource_4sawr"), SubResource("Resource_lghup"), SubResource("Resource_4oghg"), SubResource("Resource_u4bqc")])
+unique_id = "loofa_boss"
+
+[node name="CollisionShape2D" parent="PartyEnemy" index="0"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_lx52f")
+
+[node name="Sprite2D" parent="PartyEnemy" index="1"]
+texture = ExtResource("11_rypm6")
+hframes = 6
+
+[node name="CollisionShape2D" parent="PartyEnemy/StaticBody2D" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_3sv2a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="17"]
+stream = ExtResource("6_2wyjb")
+volume_db = -42.0
+autoplay = true
+
+[editable path="Enemy2"]
+[editable path="Enemy3"]
+[editable path="Enemy"]
+[editable path="PartyEnemy"]

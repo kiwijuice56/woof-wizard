@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn31fs6db3ybp"]
+
+[ext_resource type="Script" path="res://main/overworld/interactable/interactable.gd" id="1_ri6mk"]
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ri6mk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

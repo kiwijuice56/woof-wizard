@@ -1,0 +1,83 @@
+[gd_scene load_steps=15 format=3 uid="uid://ctrsre3flfve6"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_sivt0"]
+[ext_resource type="AudioStream" uid="uid://bt3s5tiuj0qfx" path="res://main/asset/music/distant_tension.ogg" id="2_yv0ce"]
+[ext_resource type="Texture2D" uid="uid://kvq1cpp403hu" path="res://main/overworld/room/loofa_town_c/loofa_town_c_sprite.png" id="3_7pqrp"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="4_8aet6"]
+[ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="5_jo11q"]
+[ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="6_4f8xu"]
+[ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="7_q618x"]
+[ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="8_fthyn"]
+[ext_resource type="Texture2D" uid="uid://cbe0pu0djgxms" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite3.png" id="9_dehnv"]
+[ext_resource type="AudioStream" uid="uid://ef5p3ma5uijs" path="res://main/asset/text_box/voices/man.wav" id="9_gpnkt"]
+
+[sub_resource type="Resource" id="Resource_hvm1d"]
+script = ExtResource("7_q618x")
+text = "welcome!"
+speed = 0.03
+voice = ExtResource("8_fthyn")
+icon = ExtResource("6_4f8xu")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_2aisf"]
+script = ExtResource("7_q618x")
+text = "..."
+speed = 0.05
+voice = ExtResource("8_fthyn")
+icon = ExtResource("6_4f8xu")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_2fvfr"]
+script = ExtResource("7_q618x")
+text = "your fish is creeping me out."
+speed = 0.03
+voice = ExtResource("8_fthyn")
+icon = ExtResource("6_4f8xu")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_rf8mb"]
+script = ExtResource("7_q618x")
+text = "i wish my wife would buy chairs."
+speed = 0.03
+voice = ExtResource("9_gpnkt")
+icon = ExtResource("6_4f8xu")
+choice_a = ""
+choice_b = ""
+
+[node name="LoofaTownRoomC" instance=ExtResource("1_sivt0")]
+camera_limit_bot = 46.0
+camera_limit_left = -24.0
+camera_limit_right = 64.0
+music = ExtResource("2_yv0ce")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(720896, 65536, 0, 720897, 65536, 0, 720898, 65536, 0, 720899, 65536, 0, 720903, 65536, 0, 720902, 65536, 0, 720901, 65536, 0, 720900, 65536, 0, 720904, 65536, 0, 720905, 65536, 0, 720906, 65536, 0, 720907, 65536, 0, 655372, 131072, 0, 589836, 131072, 0, 524300, 131072, 0, 458764, 131072, 0, 393228, 131072, 0, 720908, 131072, 0, 786427, 65536, 0, 720891, 131072, 0, 655355, 131072, 0, 589819, 131072, 0, 524283, 131072, 0, 458747, 131072, 0, 786428, 65536, 0, 786429, 65536, 0, 786430, 65536, 0, 786431, 65536, 0)
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(19, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(32, 23)
+texture = ExtResource("3_7pqrp")
+
+[node name="Door" parent="." index="4" instance=ExtResource("4_8aet6")]
+position = Vector2(18, 41)
+target_room = "loofa_town"
+target_anchor = "C"
+
+[node name="BunnyPerson" parent="." index="5" instance=ExtResource("5_jo11q")]
+position = Vector2(10, 39)
+convo = Array[ExtResource("7_q618x")]([SubResource("Resource_hvm1d"), SubResource("Resource_2aisf"), SubResource("Resource_2fvfr")])
+
+[node name="Sprite2D" parent="BunnyPerson" index="1"]
+texture = ExtResource("9_dehnv")
+
+[node name="BunnyPerson2" parent="." index="6" instance=ExtResource("5_jo11q")]
+position = Vector2(-11, 39)
+convo = Array[ExtResource("7_q618x")]([SubResource("Resource_rf8mb")])
+
+[editable path="BunnyPerson"]

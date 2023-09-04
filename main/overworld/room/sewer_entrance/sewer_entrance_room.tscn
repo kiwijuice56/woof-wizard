@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5nn5c8rdteqs"]
+
+[ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_2yu47"]
+[ext_resource type="Texture2D" uid="uid://dahoef7h36f8r" path="res://main/overworld/room/sewer_entrance/sewer_entrance_sprite.png" id="2_6vbut"]
+[ext_resource type="PackedScene" uid="uid://crti84iwhjnjs" path="res://main/overworld/interactable/door/door.tscn" id="3_fbjfd"]
+[ext_resource type="PackedScene" uid="uid://drdvoii5duvrm" path="res://main/overworld/room/cave_two/agua_fall.tscn" id="4_4uxhv"]
+[ext_resource type="AudioStream" uid="uid://c62wear55ie15" path="res://main/overworld/room/cave_two/waterfall.mp3" id="5_qiqxp"]
+[ext_resource type="PackedScene" uid="uid://byg3cj6tduc3b" path="res://main/overworld/interactable/save_point/save_point.tscn" id="6_xvbxo"]
+
+[node name="SewerEntranceRoom" instance=ExtResource("1_2yu47")]
+camera_limit_bot = 128.0
+camera_limit_top = -32.0
+camera_limit_right = 128.0
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 1
+layer_0/tile_data = PackedInt32Array(131082, 65536, 0, 131083, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 65536, 0, 131089, 65536, 0, 131090, 65536, 0, 131091, 65536, 0, 262154, 65536, 0, 262155, 65536, 0, 262156, 65536, 0, 262157, 65536, 0, 393226, 65536, 0, 393227, 65536, 0, 393228, 65536, 0, 393229, 65536, 0, 524298, 65536, 0, 524299, 65536, 0, 524300, 65536, 0, 524301, 65536, 0, 655370, 65536, 0, 655371, 65536, 0, 655372, 65536, 0, 655373, 65536, 0, 786442, 65536, 0, 786443, 65536, 0, 786444, 65536, 0, 786445, 65536, 0, 917514, 65536, 0, 917515, 65536, 0, 917516, 65536, 0, 917517, 65536, 0, 1048586, 65536, 0, 1048587, 65536, 0, 1048588, 65536, 0, 1048589, 65536, 0, 1179658, 65536, 0, 1179659, 65536, 0, 1179660, 65536, 0, 1179661, 65536, 0, 1310730, 65536, 0, 1310731, 65536, 0, 1310732, 65536, 0, 1310733, 65536, 0, 1441802, 65536, 0, 1441803, 65536, 0, 1441804, 65536, 0, 1441805, 65536, 0, 1572874, 65536, 0, 1572875, 65536, 0, 1572876, 65536, 0, 1572877, 65536, 0, 1703946, 65536, 0, 1703947, 65536, 0, 1703948, 65536, 0, 1703949, 65536, 0, 1835018, 65536, 0, 1835019, 65536, 0, 1835020, 65536, 0, 1835021, 65536, 0, 1966080, 65536, 0, 1966081, 65536, 0, 1966082, 65536, 0, 1966083, 65536, 0, 1966084, 65536, 0, 1966085, 65536, 0, 1966086, 65536, 0, 1966087, 65536, 0, 1966088, 65536, 0, 1966089, 65536, 0, 1966090, 65536, 0, 1966091, 65536, 0, 1966092, 65536, 0, 1966093, 65536, 0, 1966094, 65536, 0, 1966095, 65536, 0, 1966096, 65536, 0, 1966097, 65536, 0, 1966098, 65536, 0, 1966099, 65536, 0, 1966100, 65536, 0, 1966101, 65536, 0, 1966102, 65536, 0, 1966103, 65536, 0, 1966078, 131072, 0, 1900542, 131072, 0, 1835006, 131072, 0, 1835007, 131072, 0, 1900543, 131072, 0, 1966079, 131072, 0, 1769471, 131072, 0, 1703934, 131072, 0, 1638398, 131072, 0, 1572862, 131072, 0, 1900568, 131072, 0, 1835032, 131072, 0, 1769496, 131072, 0, 1703960, 131072, 0, 1769470, 131072, 0, 1572863, 131072, 0, 1638399, 131072, 0, 1703935, 131072, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(64, 64)
+texture = ExtResource("2_6vbut")
+
+[node name="Door" parent="." index="3" instance=ExtResource("3_fbjfd")]
+position = Vector2(68, 5)
+target_room = "loofa_desert"
+target_anchor = "Desert"
+
+[node name="Door2" parent="." index="4" instance=ExtResource("3_fbjfd")]
+position = Vector2(4, 117)
+target_room = "sewer_a"
+target_anchor = "1"
+
+[node name="Default" parent="Anchors" index="0"]
+position = Vector2(68, 4)
+
+[node name="Exit" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(4, 116)
+
+[node name="SavePoint" type="Marker2D" parent="Anchors" index="2"]
+position = Vector2(64, 116)
+
+[node name="AgauFall" parent="." index="6" instance=ExtResource("4_4uxhv")]
+position = Vector2(22, 91)
+
+[node name="WaterFall" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("5_qiqxp")
+volume_db = -38.441
+autoplay = true
+
+[node name="SavePoint" parent="." index="8" instance=ExtResource("6_xvbxo")]
+position = Vector2(64, 116)
