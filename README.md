@@ -1,4 +1,4 @@
-# Wizards and Woofers Handguide
+# woof-wizard-hand-guide
 This document contains details about the stats, skills, and mechanics of wizards and woofers. It is not necessary to complete the game, but may help players who want to strategize further. 
 
 ## Stats
