@@ -8,9 +8,9 @@
 
 [sub_resource type="Resource" id="Resource_de7o7"]
 script = ExtResource("2_ofscv")
-max_hp = 20
+max_hp = 13
 max_sp = 0
-hp = 20
+hp = 14
 sp = 0
 atk = 1
 def = 3
@@ -28,9 +28,9 @@ stats = SubResource("Resource_de7o7")
 [node name="Singe" type="Node" parent="Actions" index="0"]
 script = ExtResource("4_xvdag")
 inflicts_burning = true
-power = 3.0
+power = 2.0
 display_name = "singe"
-attack_description = "%s did a fire tackle!"
+attack_description = "%s sang a fire beat!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("6_atdev")

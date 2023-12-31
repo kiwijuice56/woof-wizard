@@ -73,7 +73,7 @@ func add_status(status: String) -> void:
 		get_node(status.capitalize()).visible = true
 
 func set_buff(type: String, count: int) -> bool:
-	if get(type) >= 2 and count >= 1 or get(type) <= -2 and count <= 1:
+	if get(type) >= 2 and count > 1 or get(type) <= -2 and count < 1:
 		return false
 	set(type, clamp(get(type) + count, -2, 2))
 	return true

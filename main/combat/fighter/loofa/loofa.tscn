@@ -1135,7 +1135,7 @@ attack_description = "%s buffed the party's DEF!"
 combo = Array[int]([1, 0, 2])
 target_type = "own"
 target_count = "all"
-cost = 13
+cost = 10
 effect = ExtResource("8_hv8u2")
 icon = ExtResource("9_c0bt0")
 
@@ -1148,7 +1148,7 @@ attack_description = "%s buffed the party's ATK!"
 combo = Array[int]([3, 2, 0])
 target_type = "own"
 target_count = "all"
-cost = 13
+cost = 10
 effect = ExtResource("9_erwcu")
 icon = ExtResource("11_45skb")
 

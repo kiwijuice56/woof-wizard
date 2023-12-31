@@ -66,12 +66,12 @@ func calculate_damage(attacker: Fighter, target: Fighter) -> int:
 	var atk: int = attacker.stats.atk
 	if attacker.is_player and "atk charm" in GlobalData.data.inventory:
 		print("atk charm used")
-		atk += int(0.12 * atk)
+		atk += int(0.18 * atk)
 	var def: int = target.stats.def
 	if target.is_player and "def charm" in GlobalData.data.inventory:
 		print("def charm used")
-		def += int(0.12 * def)
+		def += int(0.18 * def)
 	
 	var atk_pow: int = int((atk + attacker.stats.level / 3.0 + power + randf() * 0.1 * attacker.stats.atk) * pow(1.45, attacker.atk_buff))
-	var def_pow: int = int((def + target.stats.level / 6.0) * pow(1.7, target.def_buff))
+	var def_pow: int = int((def * 1.2 + target.stats.level / 6.0) * pow(1.7, target.def_buff))
 	return ceil(atk_pow * 6.0 / (6.0 + def_pow))

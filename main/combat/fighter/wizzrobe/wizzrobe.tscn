@@ -893,7 +893,7 @@ attack_description = "%s eats up!"
 combo = Array[int]([1, 0, 0])
 target_type = "other"
 target_count = "single"
-cost = 9
+cost = 6
 effect = ExtResource("4_i5f14")
 icon = ExtResource("5_rq1dn")
 
@@ -905,20 +905,20 @@ attack_description = "%s flew!"
 combo = Array[int]([2, 2, 2])
 target_type = "other"
 target_count = "all"
-cost = 16
+cost = 13
 effect = ExtResource("4_i5f14")
 icon = ExtResource("7_sxhrh")
 
 [node name="Suplex" type="Node" parent="Actions" index="2"]
 script = ExtResource("3_i6gkk")
 inflicts_dizzy = true
-power = 20.0
+power = 28.0
 display_name = "suplex"
 attack_description = "%s exploded!!!"
 combo = Array[int]([0, 1, 0])
 target_type = "other"
 target_count = "single"
-cost = 19
+cost = 18
 effect = ExtResource("4_y3ocl")
 icon = ExtResource("8_qkl1j")
 
@@ -968,6 +968,10 @@ libraries = {
 
 [node name="DamageLabel" parent="." index="15"]
 z_index = 1
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996
 
 [node name="Eagle" type="Sprite2D" parent="." index="24"]
 visible = false

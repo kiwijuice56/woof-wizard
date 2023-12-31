@@ -40,6 +40,8 @@ border_width_bottom = 1
 border_color = Color(0.121094, 0.09375, 0.199219, 1)
 
 [node name="PartyMemberButton" type="Button"]
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_jby7j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mvy2t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jby7j")

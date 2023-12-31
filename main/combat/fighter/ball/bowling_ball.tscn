@@ -14,11 +14,11 @@
 
 [sub_resource type="Resource" id="Resource_dhfre"]
 script = ExtResource("3_r7j0j")
-max_hp = 150
+max_hp = 130
 max_sp = 0
-hp = 150
+hp = 130
 sp = 0
-atk = 14
+atk = 15
 def = 9
 agi = 5
 ex = 100
@@ -73,4 +73,8 @@ effect = ExtResource("7_hn5eu")
 script = ExtResource("10_esdch")
 
 [node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996
 script = ExtResource("11_ambf5")

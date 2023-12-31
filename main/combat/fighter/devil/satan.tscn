@@ -12,7 +12,7 @@ max_hp = 160
 max_sp = 0
 hp = 160
 sp = 0
-atk = 7
+atk = 9
 def = 7
 agi = 7
 ex = 500
@@ -27,7 +27,7 @@ stats = SubResource("Resource_yj67q")
 
 [node name="Attack" type="Node" parent="Actions" index="0"]
 script = ExtResource("4_eckut")
-power = 8.0
+power = 9.0
 display_name = "heart rip"
 attack_description = "%s ripped your heart out!"
 target_type = "other"
@@ -38,7 +38,7 @@ effect = ExtResource("5_eqoik")
 script = ExtResource("4_eckut")
 power = 5.0
 display_name = "sweep"
-attack_description = "%s swept your party!"
+attack_description = "%s sliced your party!"
 target_type = "other"
 target_count = "all"
 effect = ExtResource("5_eqoik")
