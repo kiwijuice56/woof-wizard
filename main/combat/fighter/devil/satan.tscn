@@ -8,15 +8,15 @@
 
 [sub_resource type="Resource" id="Resource_yj67q"]
 script = ExtResource("3_onv0m")
-max_hp = 160
+max_hp = 200
 max_sp = 0
-hp = 160
+hp = 200
 sp = 0
 atk = 9
 def = 7
 agi = 7
 ex = 500
-level = 11
+level = 12
 hp_growth = 0
 sp_growth = 0
 
@@ -42,3 +42,9 @@ attack_description = "%s sliced your party!"
 target_type = "other"
 target_count = "all"
 effect = ExtResource("5_eqoik")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 8.0
+offset_bottom = 6.00004

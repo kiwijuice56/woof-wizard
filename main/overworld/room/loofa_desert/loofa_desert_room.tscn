@@ -238,11 +238,11 @@ shape = SubResource("RectangleShape2D_tttbn")
 [node name="Sprite2D" parent="Enemy" index="1"]
 texture = ExtResource("5_sqage")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Enemy" index="6"]
+[node name="Sprite2D2" type="Sprite2D" parent="Enemy/Sprite2D" index="0"]
 position = Vector2(-13, -7)
 texture = ExtResource("6_nkdoy")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Enemy" index="7"]
+[node name="Sprite2D3" type="Sprite2D" parent="Enemy/Sprite2D" index="1"]
 position = Vector2(-26, -7)
 texture = ExtResource("6_nkdoy")
 
@@ -278,24 +278,24 @@ shape = SubResource("RectangleShape2D_8dxic")
 [node name="Sprite2D" parent="Enemy2" index="1"]
 texture = ExtResource("13_rg2dx")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Enemy2" index="6"]
-position = Vector2(-8, 0)
+[node name="Sprite2D2" type="Sprite2D" parent="Enemy2/Sprite2D" index="0"]
+position = Vector2(-7, 0)
 texture = ExtResource("16_o665n")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Enemy2" index="7"]
-position = Vector2(-15, 0)
+[node name="Sprite2D3" type="Sprite2D" parent="Enemy2/Sprite2D" index="1"]
+position = Vector2(-14, 0)
 texture = ExtResource("16_o665n")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Enemy2" index="8"]
-position = Vector2(-22, 0)
+[node name="Sprite2D4" type="Sprite2D" parent="Enemy2/Sprite2D" index="2"]
+position = Vector2(-21, 0)
 texture = ExtResource("13_rg2dx")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Enemy2" index="9"]
-position = Vector2(-29, 0)
+[node name="Sprite2D5" type="Sprite2D" parent="Enemy2/Sprite2D" index="3"]
+position = Vector2(-28, 0)
 texture = ExtResource("13_rg2dx")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Enemy2" index="10"]
-position = Vector2(-36, 0)
+[node name="Sprite2D6" type="Sprite2D" parent="Enemy2/Sprite2D" index="4"]
+position = Vector2(-35, 0)
 texture = ExtResource("16_o665n")
 
 [node name="Enemy3" parent="." index="13" instance=ExtResource("4_eqohb")]
@@ -314,8 +314,8 @@ shape = SubResource("RectangleShape2D_8dxic")
 position = Vector2(0, -1)
 texture = ExtResource("25_kwtfi")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Enemy3" index="6"]
-position = Vector2(10, -1)
+[node name="Sprite2D2" type="Sprite2D" parent="Enemy3/Sprite2D" index="0"]
+position = Vector2(10, 0)
 texture = ExtResource("32_6pwm6")
 
 [node name="ItemChest" parent="." index="14" instance=ExtResource("3_42154")]

@@ -90,7 +90,7 @@ func enter_battle(encounter: Array[PackedScene], music: AudioStream, volume: flo
 	
 	await $Transition.trans_out()
 	
-	var xp: int = await $TurnQueue.battle()
+	var xp: int = ceil(await $TurnQueue.battle() * 1.2)
 	
 	end_battle()
 	

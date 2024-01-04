@@ -28,7 +28,7 @@ stats = SubResource("Resource_rn2q3")
 [node name="Kick" type="Node" parent="Actions" index="0"]
 script = ExtResource("4_i5boy")
 power = 8.0
-attack_description = "%s used kinetic energy!"
+attack_description = "%s isn't messing around."
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_65xnf")

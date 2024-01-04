@@ -8,9 +8,9 @@
 
 [sub_resource type="Resource" id="Resource_63f86"]
 script = ExtResource("3_nwyqs")
-max_hp = 30
+max_hp = 25
 max_sp = 0
-hp = 30
+hp = 25
 sp = 0
 atk = 3
 def = 5
@@ -29,7 +29,7 @@ stats = SubResource("Resource_63f86")
 script = ExtResource("4_22lrf")
 power = 2.0
 display_name = "rollout"
-attack_description = "%s rolled!"
+attack_description = "%s made a mess!"
 target_type = "other"
 target_count = "all"
 effect = ExtResource("5_02sln")
@@ -38,13 +38,7 @@ effect = ExtResource("5_02sln")
 script = ExtResource("4_22lrf")
 power = 5.0
 display_name = "slam"
-attack_description = "%s slammed!"
+attack_description = "%s slimed you!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_02sln")
-
-[node name="DamageLabel" parent="." index="6"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996

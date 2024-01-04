@@ -74,7 +74,7 @@ func convo(lines: Array[Line]) -> bool:
 		
 		visible_char = 0
 		var tween: Tween = get_tree().create_tween()
-		tween.tween_property(self, "visible_char", len(line.text), line.speed * len(line.text))
+		tween.tween_property(self, "visible_char", len(line.text), line.speed * len(line.text) * 0.8)
 		await tween.finished
 		
 		if i == len(lines) - 1:

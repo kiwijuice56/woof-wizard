@@ -893,7 +893,7 @@ attack_description = "%s eats up!"
 combo = Array[int]([1, 0, 0])
 target_type = "other"
 target_count = "single"
-cost = 6
+cost = 5
 effect = ExtResource("4_i5f14")
 icon = ExtResource("5_rq1dn")
 
@@ -905,7 +905,7 @@ attack_description = "%s flew!"
 combo = Array[int]([2, 2, 2])
 target_type = "other"
 target_count = "all"
-cost = 13
+cost = 10
 effect = ExtResource("4_i5f14")
 icon = ExtResource("7_sxhrh")
 
@@ -918,7 +918,7 @@ attack_description = "%s exploded!!!"
 combo = Array[int]([0, 1, 0])
 target_type = "other"
 target_count = "single"
-cost = 18
+cost = 15
 effect = ExtResource("4_y3ocl")
 icon = ExtResource("8_qkl1j")
 
@@ -968,10 +968,6 @@ libraries = {
 
 [node name="DamageLabel" parent="." index="15"]
 z_index = 1
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996
 
 [node name="Eagle" type="Sprite2D" parent="." index="24"]
 visible = false

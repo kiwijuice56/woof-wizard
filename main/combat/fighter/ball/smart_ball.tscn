@@ -34,9 +34,3 @@ attack_description = "%s buffed its atk!"
 target_type = "own"
 target_count = "all"
 effect = ExtResource("5_yo4jb")
-
-[node name="DamageLabel" parent="." index="6"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996

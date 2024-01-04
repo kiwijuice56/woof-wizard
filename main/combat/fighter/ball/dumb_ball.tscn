@@ -29,13 +29,7 @@ stats = SubResource("Resource_rn2q3")
 script = ExtResource("4_pvs1c")
 inflicts_dizzy = true
 power = 4.0
-attack_description = "%s confused you!"
+attack_description = "%s is absolutely fascinating."
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_ceie7")
-
-[node name="DamageLabel" parent="." index="6"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996

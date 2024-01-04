@@ -17,11 +17,11 @@ max_hp = 900
 max_sp = 0
 hp = 900
 sp = 0
-atk = 15
+atk = 16
 def = 3
 agi = 11
-ex = 1
-level = 15
+ex = 999
+level = 16
 hp_growth = 0
 sp_growth = 0
 
@@ -75,6 +75,4 @@ script = ExtResource("10_xxpg3")
 
 [node name="DamageLabel" parent="." index="6"]
 offset_left = -7.5
-offset_top = -7.5
 offset_right = 0.5
-offset_bottom = -1.49996

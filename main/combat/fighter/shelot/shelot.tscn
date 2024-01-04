@@ -22,7 +22,7 @@ sp_growth = 0
 
 [node name="Shelot" instance=ExtResource("1_xryra")]
 texture = ExtResource("2_e6q3b")
-display_name = "shelot"
+display_name = "shelby"
 stats = SubResource("Resource_08uf7")
 
 [node name="Flop" type="Node" parent="Actions" index="0"]
@@ -30,7 +30,7 @@ script = ExtResource("4_pashg")
 inflicts_dizzy = true
 power = 3.0
 display_name = "flop"
-attack_description = "%s flopped around"
+attack_description = "%s hypnotized you?!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_fi2vu")

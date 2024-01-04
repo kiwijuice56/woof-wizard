@@ -28,7 +28,7 @@ stats = SubResource("Resource_igetf")
 [node name="Tackle" type="Node" parent="Actions" index="0"]
 script = ExtResource("6_aowem")
 display_name = "tackle"
-attack_description = "%s tackled!"
+attack_description = "%s tackled you!"
 description = "-"
 target_type = "other"
 target_count = "single"
@@ -43,3 +43,9 @@ description = "-"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_i875k")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

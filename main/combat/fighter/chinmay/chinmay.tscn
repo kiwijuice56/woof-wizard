@@ -29,7 +29,13 @@ stats = SubResource("Resource_or3cn")
 script = ExtResource("4_lxgo4")
 power = 6.0
 display_name = "fire"
-attack_description = "%s shot at you!"
+attack_description = "%s shot his gun!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_bw3da")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

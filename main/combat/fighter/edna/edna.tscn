@@ -27,10 +27,15 @@ stats = SubResource("Resource_qdma7")
 
 [node name="Tackle" type="Node" parent="Actions" index="0"]
 script = ExtResource("4_mhg4m")
-power = 0.01
 display_name = "tackle"
-attack_description = "%s tapped you!"
+attack_description = "%s poked you!"
 description = "bum rush"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_arbk4")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

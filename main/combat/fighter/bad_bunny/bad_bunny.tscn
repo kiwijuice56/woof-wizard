@@ -10,7 +10,7 @@
 script = ExtResource("2_ofscv")
 max_hp = 13
 max_sp = 0
-hp = 14
+hp = 13
 sp = 0
 atk = 1
 def = 3
@@ -34,9 +34,3 @@ attack_description = "%s sang a fire beat!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("6_atdev")
-
-[node name="DamageLabel" parent="." index="6"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996

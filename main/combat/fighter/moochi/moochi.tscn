@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw71f5gant4br"]
+
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_ujgv3"]
+[ext_resource type="Texture2D" uid="uid://b174f6cllto4j" path="res://main/combat/fighter/moochi/moochi.png" id="2_smy3t"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_h5ml1"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_npp4t"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="5_8gbat"]
+[ext_resource type="PackedScene" uid="uid://6bl3g8cedg0b" path="res://main/combat/effect/heal/heal.tscn" id="5_sfsn6"]
+
+[sub_resource type="Resource" id="Resource_jln78"]
+script = ExtResource("3_h5ml1")
+max_hp = 30
+max_sp = 0
+hp = 30
+sp = 0
+atk = 4
+def = 8
+agi = 1
+ex = 12
+level = 5
+hp_growth = 0
+sp_growth = 0
+
+[node name="Moochi" instance=ExtResource("1_ujgv3")]
+texture = ExtResource("2_smy3t")
+display_name = "moochi"
+stats = SubResource("Resource_jln78")
+
+[node name="Lick" type="Node" parent="Actions" index="0"]
+script = ExtResource("4_npp4t")
+heal = true
+power = 0.3
+display_name = "lick"
+attack_description = "%s soothed its wounds!"
+target_type = "own"
+target_count = "single"
+effect = ExtResource("5_sfsn6")
+
+[node name="Slam" type="Node" parent="Actions" index="1"]
+script = ExtResource("4_npp4t")
+power = 5.0
+display_name = "whack"
+attack_description = "%s whacked you!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("5_8gbat")

@@ -40,7 +40,13 @@ effect = ExtResource("5_tva7k")
 script = ExtResource("4_4b1o7")
 power = 6.0
 display_name = "chomp"
-attack_description = "%s chomped down!"
+attack_description = "%s took a bite!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("6_rns6r")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

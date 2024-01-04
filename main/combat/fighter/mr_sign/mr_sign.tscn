@@ -8,9 +8,9 @@
 
 [sub_resource type="Resource" id="Resource_i8wsq"]
 script = ExtResource("2_d6wkq")
-max_hp = 15
+max_hp = 10
 max_sp = 0
-hp = 15
+hp = 10
 sp = 0
 atk = 6
 def = 1
@@ -29,7 +29,13 @@ stats = SubResource("Resource_i8wsq")
 script = ExtResource("4_51ecw")
 power = 4.0
 display_name = "bite"
-attack_description = "%s chomped down!"
+attack_description = "%s went crazy!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_jhs6g")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 0.5
+offset_bottom = -1.49996

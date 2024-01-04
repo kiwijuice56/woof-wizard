@@ -571,7 +571,7 @@ party_icon = ExtResource("4_h3jni")
 [node name="Combo" type="Node" parent="." index="1"]
 script = ExtResource("5_u27xb")
 display_name = "combo"
-attack_description = "%s attacked!"
+attack_description = "%s went unhinged!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("6_i3ol2")
