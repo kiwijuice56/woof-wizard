@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ou3w8dyq2rp6"]
 
 [ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_ht36d"]
-[ext_resource type="Texture2D" uid="uid://jxgo55mgwdds" path="res://main/combat/fighter/fall_guy/fall_guy.png" id="2_17mrk"]
+[ext_resource type="Texture2D" uid="uid://wikrkkypf4r2" path="res://main/combat/fighter/fall_guy/fall_guy.tres" id="2_y23d8"]
 [ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_lhfx3"]
 [ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="4_pjc53"]
 [ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="6_gms45"]
@@ -21,7 +21,7 @@ hp_growth = 0
 sp_growth = 0
 
 [node name="Fallguy" instance=ExtResource("1_ht36d")]
-texture = ExtResource("2_17mrk")
+texture = ExtResource("2_y23d8")
 display_name = "the bomb"
 stats = SubResource("Resource_d3av3")
 
@@ -34,9 +34,3 @@ attack_description = "%s tapped you!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("6_gms45")
-
-[node name="DamageLabel" parent="." index="6"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996

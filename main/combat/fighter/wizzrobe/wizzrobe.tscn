@@ -918,7 +918,7 @@ attack_description = "%s exploded!!!"
 combo = Array[int]([0, 1, 0])
 target_type = "other"
 target_count = "single"
-cost = 15
+cost = 20
 effect = ExtResource("4_y3ocl")
 icon = ExtResource("8_qkl1j")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jxgo55mgwdds"
-path="res://.godot/imported/fall_guy.png-90777a439d6dd89f9a8ff837b875aa4c.ctex"
+uid="uid://hdkdp0lnj80j"
+path="res://.godot/imported/fall_guy1.png-0628a221e3a8ad185cf6eab5dee1c97b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/combat/fighter/fall_guy/fall_guy.png"
-dest_files=["res://.godot/imported/fall_guy.png-90777a439d6dd89f9a8ff837b875aa4c.ctex"]
+source_file="res://main/combat/fighter/fall_guy/fall_guy1.png"
+dest_files=["res://.godot/imported/fall_guy1.png-0628a221e3a8ad185cf6eab5dee1c97b.ctex"]
 
 [params]
 

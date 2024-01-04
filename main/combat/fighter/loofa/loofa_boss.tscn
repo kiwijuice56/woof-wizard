@@ -1025,11 +1025,5 @@ visible = false
 points = PackedVector2Array(0, 0, -64, 0)
 width = 1.0
 
-[node name="DamageLabel" parent="." index="11"]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 0.5
-offset_bottom = -1.49996
-
 [node name="Dead" parent="." index="16"]
 visible = false

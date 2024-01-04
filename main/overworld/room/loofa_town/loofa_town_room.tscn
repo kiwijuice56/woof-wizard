@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ccolo68arfns7"]
+[gd_scene load_steps=39 format=3 uid="uid://ccolo68arfns7"]
 
 [ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_0fqji"]
 [ext_resource type="AudioStream" uid="uid://7vi4ul0rauiu" path="res://main/asset/music/bossa_bossa.ogg" id="2_4hs3w"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dlv8lqbmxk0v1" path="res://main/overworld/interactable/npc/enemy/enemy.tscn" id="5_7qehg"]
 [ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="5_aq54a"]
 [ext_resource type="PackedScene" uid="uid://ou3w8dyq2rp6" path="res://main/combat/fighter/fall_guy/fallguy.tscn" id="6_432fx"]
-[ext_resource type="Texture2D" uid="uid://jxgo55mgwdds" path="res://main/combat/fighter/fall_guy/fall_guy.png" id="6_fle53"]
 [ext_resource type="AudioStream" uid="uid://da57a5o3tyn54" path="res://main/asset/music/in_a_heartbeat.ogg" id="6_rusxd"]
 [ext_resource type="Texture2D" uid="uid://nqa77n6m354m" path="res://main/asset/text_box/icons/icons2.png" id="6_x8fyh"]
 [ext_resource type="Script" path="res://main/asset/text_box/line.gd" id="7_3r361"]
@@ -15,9 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://ebum0ksaltx7" path="res://main/asset/text_box/voices/girl.wav" id="8_t3j0m"]
 [ext_resource type="Texture2D" uid="uid://cbe0pu0djgxms" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite3.png" id="9_2pufv"]
 [ext_resource type="PackedScene" uid="uid://cm2e0u4xbhafj" path="res://main/overworld/room/loofa_town/windmill.tscn" id="9_ga1br"]
+[ext_resource type="Texture2D" uid="uid://wikrkkypf4r2" path="res://main/combat/fighter/fall_guy/fall_guy.tres" id="9_hbqfq"]
 [ext_resource type="Texture2D" uid="uid://cc0pqdv8v2v8c" path="res://main/asset/text_box/icons/icons4.png" id="9_t26s3"]
 [ext_resource type="Texture2D" uid="uid://cs36c8k6qg2bk" path="res://main/overworld/room/loofa_town/wind_mill2.png" id="11_8lqg8"]
 [ext_resource type="Texture2D" uid="uid://bnm3oeywlwntv" path="res://main/overworld/interactable/npc/bunny_person/bunny_person_sprite2.png" id="11_tf0er"]
+[ext_resource type="PackedScene" uid="uid://bs434efwr6o5x" path="res://main/overworld/interactable/npc/sign/sign.tscn" id="15_vlyvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en3st"]
 size = Vector2(12, 12)
@@ -39,6 +40,13 @@ text = "don't say i didn't warn you."
 speed = 0.03
 voice = ExtResource("8_t3j0m")
 icon = ExtResource("6_x8fyh")
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_bfx30"]
+script = ExtResource("7_3r361")
+text = "bombs for sale!!!"
+speed = 0.02
 choice_a = ""
 choice_b = ""
 
@@ -225,15 +233,15 @@ shape = SubResource("RectangleShape2D_en3st")
 
 [node name="Sprite2D" parent="Enemy" index="1"]
 position = Vector2(-1, -4)
-texture = ExtResource("6_fle53")
+texture = ExtResource("9_hbqfq")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Enemy/Sprite2D" index="0"]
 position = Vector2(9, 0)
-texture = ExtResource("6_fle53")
+texture = ExtResource("9_hbqfq")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Enemy/Sprite2D" index="1"]
 position = Vector2(18, 0)
-texture = ExtResource("6_fle53")
+texture = ExtResource("9_hbqfq")
 
 [node name="CollisionShape2D" parent="Enemy/StaticBody2D" index="0"]
 position = Vector2(6, -7)
@@ -246,7 +254,11 @@ convo = Array[ExtResource("7_3r361")]([SubResource("Resource_2n06g"), SubResourc
 [node name="Sprite2D" parent="BunnyPerson" index="1"]
 texture = ExtResource("9_2pufv")
 
-[node name="BunnyPerson2" parent="." index="11" instance=ExtResource("5_aq54a")]
+[node name="Sign" parent="." index="11" instance=ExtResource("15_vlyvm")]
+position = Vector2(181, 252)
+convo = Array[ExtResource("7_3r361")]([SubResource("Resource_bfx30")])
+
+[node name="BunnyPerson2" parent="." index="12" instance=ExtResource("5_aq54a")]
 position = Vector2(217, 231)
 convo = Array[ExtResource("7_3r361")]([SubResource("Resource_4r4qn"), SubResource("Resource_7yomt")])
 convo_a = Array[ExtResource("7_3r361")]([SubResource("Resource_tw3en")])
@@ -255,18 +267,18 @@ convo_b = Array[ExtResource("7_3r361")]([SubResource("Resource_n4wa2")])
 [node name="Sprite2D" parent="BunnyPerson2" index="1"]
 texture = ExtResource("9_2pufv")
 
-[node name="BunnyPerson3" parent="." index="12" instance=ExtResource("5_aq54a")]
+[node name="BunnyPerson3" parent="." index="13" instance=ExtResource("5_aq54a")]
 position = Vector2(295, 203)
 convo = Array[ExtResource("7_3r361")]([SubResource("Resource_815rk"), SubResource("Resource_nu12l"), SubResource("Resource_fwqyt"), SubResource("Resource_kh1ry")])
 
-[node name="BunnyPerson5" parent="." index="13" instance=ExtResource("5_aq54a")]
+[node name="BunnyPerson5" parent="." index="14" instance=ExtResource("5_aq54a")]
 position = Vector2(357, 155)
 convo = Array[ExtResource("7_3r361")]([SubResource("Resource_sd6di"), SubResource("Resource_ur5a0"), SubResource("Resource_4wg5y")])
 
 [node name="Sprite2D" parent="BunnyPerson5" index="1"]
 texture = ExtResource("11_tf0er")
 
-[node name="BunnyPerson4" parent="." index="14" instance=ExtResource("5_aq54a")]
+[node name="BunnyPerson4" parent="." index="15" instance=ExtResource("5_aq54a")]
 position = Vector2(322, 315)
 convo = Array[ExtResource("7_3r361")]([SubResource("Resource_8c65p"), SubResource("Resource_234y1"), SubResource("Resource_fnd6k")])
 
@@ -288,52 +300,52 @@ position = Vector2(325, 204)
 [node name="D" type="Marker2D" parent="Anchors" index="5"]
 position = Vector2(232, 252)
 
-[node name="Windmill" parent="." index="16" instance=ExtResource("9_ga1br")]
+[node name="Windmill" parent="." index="17" instance=ExtResource("9_ga1br")]
 position = Vector2(399, 204)
 frame = 0
 
-[node name="Windmill7" parent="." index="17" instance=ExtResource("9_ga1br")]
+[node name="Windmill7" parent="." index="18" instance=ExtResource("9_ga1br")]
 position = Vector2(416, 124)
 texture = ExtResource("11_8lqg8")
 frame = 0
 
-[node name="Windmill8" parent="." index="18" instance=ExtResource("9_ga1br")]
+[node name="Windmill8" parent="." index="19" instance=ExtResource("9_ga1br")]
 position = Vector2(424, 124)
 frame = 0
 
-[node name="Windmill2" parent="." index="19" instance=ExtResource("9_ga1br")]
+[node name="Windmill2" parent="." index="20" instance=ExtResource("9_ga1br")]
 position = Vector2(391, 204)
 texture = ExtResource("11_8lqg8")
 frame = 0
 
-[node name="Windmill3" parent="." index="20" instance=ExtResource("9_ga1br")]
+[node name="Windmill3" parent="." index="21" instance=ExtResource("9_ga1br")]
 position = Vector2(382, 204)
 frame = 0
 
-[node name="Windmill9" parent="." index="21" instance=ExtResource("9_ga1br")]
+[node name="Windmill9" parent="." index="22" instance=ExtResource("9_ga1br")]
 position = Vector2(390, 252)
 texture = ExtResource("11_8lqg8")
 frame = 0
 
-[node name="Windmill10" parent="." index="22" instance=ExtResource("9_ga1br")]
+[node name="Windmill10" parent="." index="23" instance=ExtResource("9_ga1br")]
 position = Vector2(399, 252)
 texture = ExtResource("11_8lqg8")
 frame = 0
 
-[node name="Windmill11" parent="." index="23" instance=ExtResource("9_ga1br")]
+[node name="Windmill11" parent="." index="24" instance=ExtResource("9_ga1br")]
 position = Vector2(408, 252)
 texture = ExtResource("11_8lqg8")
 frame = 0
 
-[node name="Windmill4" parent="." index="24" instance=ExtResource("9_ga1br")]
+[node name="Windmill4" parent="." index="25" instance=ExtResource("9_ga1br")]
 position = Vector2(215, 140)
 frame = 0
 
-[node name="Windmill5" parent="." index="25" instance=ExtResource("9_ga1br")]
+[node name="Windmill5" parent="." index="26" instance=ExtResource("9_ga1br")]
 position = Vector2(224, 140)
 frame = 0
 
-[node name="Windmill6" parent="." index="26" instance=ExtResource("9_ga1br")]
+[node name="Windmill6" parent="." index="27" instance=ExtResource("9_ga1br")]
 position = Vector2(233, 140)
 frame = 0
 

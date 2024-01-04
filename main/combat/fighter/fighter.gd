@@ -66,6 +66,7 @@ func die() -> void:
 		scale.y = 1.0
 		modulate.a = 1.0
 		self_modulate.a = 0
+		$DamageLabel.scale.y = 1
 
 func add_status(status: String) -> void:
 	if not status in status_effects:

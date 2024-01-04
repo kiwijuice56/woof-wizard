@@ -13,7 +13,7 @@ signal sp_changed
 		if hide_next:
 			hide_next = false
 		else:
-			hp_changed.emit(hp - old_hp)
+			hp_changed.emit(val - old_hp)
 @export var sp: int:
 	set(val):
 		var old_sp: int = sp
