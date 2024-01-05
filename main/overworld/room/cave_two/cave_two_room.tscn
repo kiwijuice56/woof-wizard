@@ -109,7 +109,7 @@ choice_b = ""
 
 [sub_resource type="Resource" id="Resource_i2wna"]
 script = ExtResource("9_73cut")
-text = "you are powerful..."
+text = "powerful..."
 speed = 0.06
 voice = ExtResource("24_iihil")
 icon = ExtResource("23_fmt0s")

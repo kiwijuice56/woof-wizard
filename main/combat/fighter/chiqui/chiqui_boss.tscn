@@ -1,45 +1,45 @@
-[gd_scene load_steps=29 format=3 uid="uid://bs7yh27v444dm"]
+[gd_scene load_steps=29 format=3 uid="uid://dqf3sx8x8fpfc"]
 
-[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_gip4g"]
-[ext_resource type="Texture2D" uid="uid://dbuml8l63ton2" path="res://main/combat/fighter/chiqui/chiqui_sprite.png" id="2_lbvn4"]
-[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_e38vx"]
-[ext_resource type="Texture2D" uid="uid://dv8c510yflg3u" path="res://main/overworld/ui/party_icon/chiqui.png" id="4_h3jni"]
-[ext_resource type="AudioStream" uid="uid://cl8juow7ugiqx" path="res://main/combat/fighter/chiqui/punch_1.ogg" id="5_2aros"]
-[ext_resource type="Script" path="res://main/combat/action/attack/combo/combo.gd" id="5_u27xb"]
-[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="6_i3ol2"]
-[ext_resource type="AudioStream" uid="uid://drusf1j0yli6a" path="res://main/combat/fighter/chiqui/punch_2.ogg" id="6_koptn"]
-[ext_resource type="AudioStream" uid="uid://dc6hub81nut8h" path="res://main/combat/fighter/chiqui/punch_3.ogg" id="7_alxjh"]
-[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="7_rhfmq"]
-[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="8_nsqfq"]
-[ext_resource type="Texture2D" uid="uid://c43o0fcqnkdxs" path="res://main/combat/ui/combat_button/icons/loofaicon2.png" id="9_e7mdi"]
-[ext_resource type="PackedScene" uid="uid://6bl3g8cedg0b" path="res://main/combat/effect/heal/heal.tscn" id="10_dc3cx"]
-[ext_resource type="Texture2D" uid="uid://x0pq1lng3v40" path="res://main/combat/ui/combat_button/icons/mcicons1.png" id="10_ygovi"]
-[ext_resource type="AudioStream" uid="uid://42h6fohse066" path="res://main/combat/fighter/chiqui/fume.wav" id="13_24tf3"]
-[ext_resource type="Texture2D" uid="uid://bjwmyyoicr4tr" path="res://main/combat/fighter/chiqui/fume_sprite.png" id="13_iugqn"]
-[ext_resource type="AudioStream" uid="uid://cfalfl88smpji" path="res://main/combat/fighter/chiqui/angel_dance.ogg" id="14_rok28"]
+[ext_resource type="PackedScene" uid="uid://dvcoy17r8tc31" path="res://main/combat/fighter/fighter.tscn" id="1_dp10l"]
+[ext_resource type="Texture2D" uid="uid://dbuml8l63ton2" path="res://main/combat/fighter/chiqui/chiqui_sprite.png" id="2_6gv4c"]
+[ext_resource type="Script" path="res://main/combat/fighter/stat_profile.gd" id="3_vu1dl"]
+[ext_resource type="Texture2D" uid="uid://dv8c510yflg3u" path="res://main/overworld/ui/party_icon/chiqui.png" id="4_gjfig"]
+[ext_resource type="Script" path="res://main/combat/action/attack/combo/combo.gd" id="5_bn17c"]
+[ext_resource type="PackedScene" uid="uid://b6gpap83k00hn" path="res://main/combat/effect/physical/physical.tscn" id="6_7mu2p"]
+[ext_resource type="Script" path="res://main/combat/action/attack/attack.gd" id="7_o3b0v"]
+[ext_resource type="PackedScene" uid="uid://b4s3ah1lw0iqf" path="res://main/combat/effect/physical/physical_fire.tscn" id="8_pxyle"]
+[ext_resource type="Texture2D" uid="uid://c43o0fcqnkdxs" path="res://main/combat/ui/combat_button/icons/loofaicon2.png" id="9_koid1"]
+[ext_resource type="PackedScene" uid="uid://6bl3g8cedg0b" path="res://main/combat/effect/heal/heal.tscn" id="10_tlfuw"]
+[ext_resource type="Texture2D" uid="uid://x0pq1lng3v40" path="res://main/combat/ui/combat_button/icons/mcicons1.png" id="11_ubt3r"]
+[ext_resource type="AudioStream" uid="uid://cl8juow7ugiqx" path="res://main/combat/fighter/chiqui/punch_1.ogg" id="12_tau6o"]
+[ext_resource type="AudioStream" uid="uid://drusf1j0yli6a" path="res://main/combat/fighter/chiqui/punch_2.ogg" id="13_dvgbu"]
+[ext_resource type="AudioStream" uid="uid://dc6hub81nut8h" path="res://main/combat/fighter/chiqui/punch_3.ogg" id="14_rr8yt"]
+[ext_resource type="AudioStream" uid="uid://42h6fohse066" path="res://main/combat/fighter/chiqui/fume.wav" id="15_kx1i2"]
+[ext_resource type="AudioStream" uid="uid://cfalfl88smpji" path="res://main/combat/fighter/chiqui/angel_dance.ogg" id="16_jx6ah"]
+[ext_resource type="Texture2D" uid="uid://bjwmyyoicr4tr" path="res://main/combat/fighter/chiqui/fume_sprite.png" id="17_yc3s4"]
 
-[sub_resource type="Resource" id="Resource_bsort"]
-script = ExtResource("3_e38vx")
-max_hp = 30
-max_sp = 30
-hp = 30
-sp = 30
-atk = 7
-def = 1
-agi = 5
-ex = 0
-level = 8
+[sub_resource type="Resource" id="Resource_ia17s"]
+script = ExtResource("3_vu1dl")
+max_hp = 135
+max_sp = 125
+hp = 135
+sp = 150
+atk = 8
+def = 3
+agi = 8
+ex = 60
+level = 10
 hp_growth = 2
 sp_growth = 2
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mdtff"]
 streams_count = 3
 random_volume_offset_db = 3.0
-stream_0/stream = ExtResource("5_2aros")
+stream_0/stream = ExtResource("12_tau6o")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("6_koptn")
+stream_1/stream = ExtResource("13_dvgbu")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("7_alxjh")
+stream_2/stream = ExtResource("14_rr8yt")
 stream_2/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_yh1tt"]
@@ -560,24 +560,24 @@ _data = {
 "holy bomb": SubResource("Animation_mjs6l")
 }
 
-[node name="Chiqui" instance=ExtResource("1_gip4g")]
-texture = ExtResource("2_lbvn4")
+[node name="Chiqui" instance=ExtResource("1_dp10l")]
+texture = ExtResource("2_6gv4c")
 hframes = 6
 display_name = "chiqui"
 internal_name = "chiqui"
-stats = SubResource("Resource_bsort")
-party_icon = ExtResource("4_h3jni")
+stats = SubResource("Resource_ia17s")
+party_icon = ExtResource("4_gjfig")
 
 [node name="Combo" type="Node" parent="." index="1"]
-script = ExtResource("5_u27xb")
+script = ExtResource("5_bn17c")
 display_name = "combo"
 attack_description = "%s went unhinged!"
 target_type = "other"
 target_count = "single"
-effect = ExtResource("6_i3ol2")
+effect = ExtResource("6_7mu2p")
 
 [node name="Fume" type="Node" parent="Actions" index="0"]
-script = ExtResource("7_rhfmq")
+script = ExtResource("7_o3b0v")
 inflicts_burning = true
 inflicts_dizzy = true
 power = 0.0
@@ -587,11 +587,11 @@ combo = Array[int]([0, 2, 1])
 target_type = "other"
 target_count = "all"
 cost = 15
-effect = ExtResource("8_nsqfq")
-icon = ExtResource("9_e7mdi")
+effect = ExtResource("8_pxyle")
+icon = ExtResource("9_koid1")
 
 [node name="AngelBop" type="Node" parent="Actions" index="1"]
-script = ExtResource("7_rhfmq")
+script = ExtResource("7_o3b0v")
 inflicts_blessed = true
 power = 0.0
 display_name = "angel bop"
@@ -600,8 +600,26 @@ combo = Array[int]([3, 2, 0])
 target_type = "own"
 target_count = "all"
 cost = 15
-effect = ExtResource("10_dc3cx")
-icon = ExtResource("10_ygovi")
+effect = ExtResource("10_tlfuw")
+icon = ExtResource("11_ubt3r")
+
+[node name="Headbutt" type="Node" parent="Actions" index="2"]
+script = ExtResource("7_o3b0v")
+power = 7.0
+display_name = "bite"
+attack_description = "%s headbutt you!!"
+target_type = "other"
+target_count = "single"
+effect = ExtResource("6_7mu2p")
+
+[node name="Headbutt2" type="Node" parent="Actions" index="3"]
+script = ExtResource("7_o3b0v")
+power = 4.0
+display_name = "bite"
+attack_description = "%s sliced twice!"
+target_type = "other"
+target_count = "all"
+effect = ExtResource("6_7mu2p")
 
 [node name="DamageLabel" parent="." index="7"]
 offset_left = 0.0
@@ -617,11 +635,11 @@ stream = SubResource("AudioStreamRandomizer_mdtff")
 volume_db = -14.0
 
 [node name="FumePlayer" type="AudioStreamPlayer" parent="." index="17"]
-stream = ExtResource("13_24tf3")
+stream = ExtResource("15_kx1i2")
 volume_db = -5.905
 
 [node name="DancePlayer" type="AudioStreamPlayer" parent="." index="18"]
-stream = ExtResource("14_rok28")
+stream = ExtResource("16_jx6ah")
 volume_db = -6.0
 
 [node name="CustomAnimationPlayer" type="AnimationPlayer" parent="." index="19"]
@@ -632,5 +650,5 @@ libraries = {
 [node name="Fume" type="Sprite2D" parent="." index="20"]
 visible = false
 position = Vector2(-18, -7)
-texture = ExtResource("13_iugqn")
+texture = ExtResource("17_yc3s4")
 hframes = 8

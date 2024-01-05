@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://birjget0wq62f"]
+[gd_scene load_steps=55 format=3 uid="uid://birjget0wq62f"]
 
 [ext_resource type="PackedScene" uid="uid://e7nm5sx8f6xx" path="res://main/overworld/room/room.tscn" id="1_a0qyi"]
 [ext_resource type="AudioStream" uid="uid://dqqx4bvhx7rf" path="res://main/asset/music/past_sadness.ogg" id="2_5nwih"]
@@ -13,11 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://bd3q2bywyleqt" path="res://main/combat/fighter/ball/ball1.png" id="6_nkdoy"]
 [ext_resource type="PackedScene" uid="uid://6xwafs2ff0il" path="res://main/combat/fighter/ball/stupid_ball.tscn" id="6_rkmf6"]
 [ext_resource type="PackedScene" uid="uid://dkjrg34xfg1ey" path="res://main/overworld/interactable/npc/enemy/party_enemy.tscn" id="6_sk0gk"]
+[ext_resource type="PackedScene" uid="uid://dqf3sx8x8fpfc" path="res://main/combat/fighter/chiqui/chiqui_boss.tscn" id="7_0cn6j"]
+[ext_resource type="AudioStream" uid="uid://da57a5o3tyn54" path="res://main/asset/music/in_a_heartbeat.ogg" id="7_g8md5"]
 [ext_resource type="PackedScene" uid="uid://d4lkj6clu8wys" path="res://main/combat/fighter/ball/smart_ball.tscn" id="7_m53tu"]
 [ext_resource type="Texture2D" uid="uid://r7kkpf3ht7rq" path="res://main/asset/text_box/icons/icons3.png" id="7_tl0w6"]
+[ext_resource type="PackedScene" uid="uid://byl3vuyhjym76" path="res://main/combat/backgrounds/background_fishy.tscn" id="9_bgxya"]
 [ext_resource type="Texture2D" uid="uid://cc0pqdv8v2v8c" path="res://main/asset/text_box/icons/icons4.png" id="10_8aaue"]
 [ext_resource type="Texture2D" uid="uid://dbuml8l63ton2" path="res://main/combat/fighter/chiqui/chiqui_sprite.png" id="11_65isr"]
-[ext_resource type="Texture2D" uid="uid://m0n43mwlqf0c" path="res://main/asset/text_box/icons/icons1.png" id="11_73bvh"]
 [ext_resource type="PackedScene" uid="uid://5q6hgwlq58o1" path="res://main/overworld/interactable/npc/bunny_person/bunny_person.tscn" id="13_ccrjv"]
 [ext_resource type="AudioStream" uid="uid://cgpcfyaleqmr3" path="res://main/asset/music/mta.ogg" id="13_rbb7y"]
 [ext_resource type="Texture2D" uid="uid://cpov8ll0f1m8i" path="res://main/combat/fighter/ball/ball4.png" id="13_rg2dx"]
@@ -35,6 +37,22 @@
 [ext_resource type="Texture2D" uid="uid://dhrl7cbrl1wjs" path="res://main/combat/fighter/ball/knight_ball3.png" id="25_kwtfi"]
 [ext_resource type="PackedScene" uid="uid://br24ceaaikq6y" path="res://main/combat/fighter/ball/dumb_ball.tscn" id="31_m6lec"]
 [ext_resource type="Texture2D" uid="uid://dnes7xbxmdyhr" path="res://main/combat/fighter/ball/knight_ball4.png" id="32_6pwm6"]
+
+[sub_resource type="Resource" id="Resource_0petu"]
+script = ExtResource("15_dasq8")
+text = "chiqui joined your party!"
+speed = 0.06
+choice_a = ""
+choice_b = ""
+
+[sub_resource type="Resource" id="Resource_31xki"]
+script = ExtResource("15_dasq8")
+text = "i give up. i'll join you."
+speed = 0.04
+voice = ExtResource("17_0u53v")
+icon = ExtResource("7_tl0w6")
+choice_a = ""
+choice_b = ""
 
 [sub_resource type="Resource" id="Resource_3a0wu"]
 script = ExtResource("15_dasq8")
@@ -92,25 +110,7 @@ choice_b = ""
 
 [sub_resource type="Resource" id="Resource_jb7nk"]
 script = ExtResource("15_dasq8")
-text = "jeez. ok. my name is chiqui."
-speed = 0.04
-voice = ExtResource("17_0u53v")
-icon = ExtResource("7_tl0w6")
-choice_a = ""
-choice_b = ""
-
-[sub_resource type="Resource" id="Resource_35sxx"]
-script = ExtResource("15_dasq8")
-text = "nice to meet you!!!"
-speed = 0.05
-voice = ExtResource("16_qy67o")
-icon = ExtResource("11_73bvh")
-choice_a = ""
-choice_b = ""
-
-[sub_resource type="Resource" id="Resource_wkkcu"]
-script = ExtResource("15_dasq8")
-text = "shut up."
+text = "make me..."
 speed = 0.04
 voice = ExtResource("17_0u53v")
 icon = ExtResource("7_tl0w6")
@@ -206,7 +206,12 @@ position = Vector2(631, 184)
 [node name="PartyEnemy" parent="." index="7" instance=ExtResource("6_sk0gk")]
 position = Vector2(591, 138)
 join = "chiqui"
-convo = Array[ExtResource("15_dasq8")]([SubResource("Resource_3a0wu"), SubResource("Resource_bvygo"), SubResource("Resource_ac2dl"), SubResource("Resource_g8mbm"), SubResource("Resource_2e64m"), SubResource("Resource_6ub6a"), SubResource("Resource_jb7nk"), SubResource("Resource_35sxx"), SubResource("Resource_wkkcu")])
+join_convo = Array[ExtResource("15_dasq8")]([SubResource("Resource_0petu")])
+death_convo = Array[ExtResource("15_dasq8")]([SubResource("Resource_31xki")])
+music = ExtResource("7_g8md5")
+encounter = Array[PackedScene]([ExtResource("7_0cn6j")])
+background = ExtResource("9_bgxya")
+convo = Array[ExtResource("15_dasq8")]([SubResource("Resource_3a0wu"), SubResource("Resource_bvygo"), SubResource("Resource_ac2dl"), SubResource("Resource_g8mbm"), SubResource("Resource_2e64m"), SubResource("Resource_6ub6a"), SubResource("Resource_jb7nk")])
 unique_id = "chiqui_join"
 
 [node name="CollisionShape2D" parent="PartyEnemy" index="0"]

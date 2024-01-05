@@ -32,3 +32,9 @@ attack_description = "%s did a badass kick!"
 target_type = "other"
 target_count = "single"
 effect = ExtResource("5_h3wgs")
+
+[node name="DamageLabel" parent="." index="6"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 8.0
+offset_bottom = 6.00004

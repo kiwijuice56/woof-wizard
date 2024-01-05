@@ -24,6 +24,10 @@ text = "flan"
 layout_mode = 2
 text = "copal"
 
+[node name="Label3" type="Label" parent="HBoxContainer/ItemContainer"]
+layout_mode = 2
+text = "atk charm"
+
 [node name="CountContainer" type="VBoxContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -37,3 +41,7 @@ text = "x3"
 [node name="Label2" type="Label" parent="HBoxContainer/CountContainer"]
 layout_mode = 2
 text = "x0"
+
+[node name="Label3" type="Label" parent="HBoxContainer/CountContainer"]
+layout_mode = 2
+text = "x1"

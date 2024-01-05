@@ -302,52 +302,53 @@ position = Vector2(232, 252)
 
 [node name="Windmill" parent="." index="17" instance=ExtResource("9_ga1br")]
 position = Vector2(399, 204)
-frame = 0
 
 [node name="Windmill7" parent="." index="18" instance=ExtResource("9_ga1br")]
 position = Vector2(416, 124)
 texture = ExtResource("11_8lqg8")
-frame = 0
 
 [node name="Windmill8" parent="." index="19" instance=ExtResource("9_ga1br")]
 position = Vector2(424, 124)
-frame = 0
 
 [node name="Windmill2" parent="." index="20" instance=ExtResource("9_ga1br")]
 position = Vector2(391, 204)
 texture = ExtResource("11_8lqg8")
-frame = 0
 
 [node name="Windmill3" parent="." index="21" instance=ExtResource("9_ga1br")]
 position = Vector2(382, 204)
-frame = 0
 
 [node name="Windmill9" parent="." index="22" instance=ExtResource("9_ga1br")]
 position = Vector2(390, 252)
 texture = ExtResource("11_8lqg8")
-frame = 0
 
-[node name="Windmill10" parent="." index="23" instance=ExtResource("9_ga1br")]
+[node name="Windmill12" parent="." index="23" instance=ExtResource("9_ga1br")]
+position = Vector2(269, 316)
+texture = ExtResource("11_8lqg8")
+
+[node name="Windmill13" parent="." index="24" instance=ExtResource("9_ga1br")]
+position = Vector2(259, 316)
+texture = ExtResource("11_8lqg8")
+
+[node name="Windmill14" parent="." index="25" instance=ExtResource("9_ga1br")]
+position = Vector2(250, 316)
+texture = ExtResource("11_8lqg8")
+
+[node name="Windmill10" parent="." index="26" instance=ExtResource("9_ga1br")]
 position = Vector2(399, 252)
 texture = ExtResource("11_8lqg8")
-frame = 0
 
-[node name="Windmill11" parent="." index="24" instance=ExtResource("9_ga1br")]
+[node name="Windmill11" parent="." index="27" instance=ExtResource("9_ga1br")]
 position = Vector2(408, 252)
 texture = ExtResource("11_8lqg8")
-frame = 0
 
-[node name="Windmill4" parent="." index="25" instance=ExtResource("9_ga1br")]
+[node name="Windmill4" parent="." index="28" instance=ExtResource("9_ga1br")]
 position = Vector2(215, 140)
-frame = 0
 
-[node name="Windmill5" parent="." index="26" instance=ExtResource("9_ga1br")]
+[node name="Windmill5" parent="." index="29" instance=ExtResource("9_ga1br")]
 position = Vector2(224, 140)
-frame = 0
 
-[node name="Windmill6" parent="." index="27" instance=ExtResource("9_ga1br")]
+[node name="Windmill6" parent="." index="30" instance=ExtResource("9_ga1br")]
 position = Vector2(233, 140)
-frame = 0
 
 [editable path="Enemy"]
 [editable path="BunnyPerson"]

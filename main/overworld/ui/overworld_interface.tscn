@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhqoftydhu0ql"]
+[gd_scene load_steps=12 format=3 uid="uid://bhqoftydhu0ql"]
 
 [ext_resource type="Theme" uid="uid://bex8yexjg5o6t" path="res://main/asset/theme/main_theme.tres" id="1_517me"]
 [ext_resource type="Texture2D" uid="uid://bsk63unkr3ffi" path="res://main/asset/text_box/flicker_triangle.png" id="2_kaskh"]
@@ -23,6 +23,18 @@ border_color = Color(0.509804, 0.392157, 0.505882, 1)
 content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.509804, 0.392157, 0.505882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1aou"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 1.0
 content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
@@ -154,12 +166,6 @@ layout_mode = 2
 [node name="PartyMemberButton3" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
 layout_mode = 2
 
-[node name="PartyMemberButton4" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
-layout_mode = 2
-
-[node name="PartyMemberButton5" parent="MarginContainer/HBoxContainer/PartyContainer" instance=ExtResource("4_5cew2")]
-layout_mode = 2
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -196,7 +202,7 @@ offset_right = 25.0
 offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tls1n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_c1aou")
 
 [node name="ItemVBoxContainer" parent="ItemPanelContainer" instance=ExtResource("7_vhnrh")]
 unique_name_in_owner = true

@@ -74,7 +74,7 @@ func initialize() -> void:
 		new_button.initialize(party.party_member_current[party_member])
 		new_button.pressed.connect(emit_signal.bind("party_member_pressed", new_button))
 		%PartyContainer.add_child(new_button)
-	for i in range(5 - len(GlobalData.data.party_config)):
+	for i in range(3 - len(GlobalData.data.party_config)):
 		var new_button: PartyMemberButton = PARTY_MEMBER_BUTTON.instantiate()
 		new_button.initialize(null)
 		%PartyContainer.add_child(new_button)
@@ -181,7 +181,8 @@ func open_menu(starting_idx: int = 0, starting_level: int = 0, starting_member: 
 			
 			await open_menu(2, 0)
 			return
-			
+		3:
+			get_tree().reload_current_scene()
 
 func close_menu() -> void:
 	player.can_interact = true
